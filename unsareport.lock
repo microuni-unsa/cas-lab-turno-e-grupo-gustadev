@@ -1,0 +1,79 @@
+{
+  "lockfile_version": "1",
+  "template": {
+    "name": "multi-lab",
+    "version": "1.0.0",
+    "files": {
+      "README.md": {
+        "integrity": "sha256-a1ce4ca0e7c6c1fc0e497b0fb15b2966eb9c90d29bc1e3bc5c43079bfd68b042"
+      },
+      "flake.nix": {
+        "integrity": "sha256-60cb874275e863697e1e7d31e08a677a58396c6d9d0004badd539d69a305b668"
+      },
+      "functions.typ": {
+        "integrity": "sha256-2468acf53714ffb466d1486935e38a639e868439acc5967a654192263c993207"
+      },
+      "img/fixed/abet.png": {
+        "integrity": "sha256-3323246a7efb9d7cb3930bc9012a6d741f75e6641cec7bc484802c321c37ccbc"
+      },
+      "img/fixed/epis.png": {
+        "integrity": "sha256-21503da115acbfa0afadc9d10d870a67cb51e0cf7e5eb07e576119486729e7e8"
+      },
+      "img/fixed/unsa.png": {
+        "integrity": "sha256-07049c4b8e257bcb80b60d4889498ea1bebd230e8c353991521ad3371f0459d7"
+      },
+      "l1/bibliography.bib": {
+        "integrity": "sha256-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "l1/report.typ": {
+        "integrity": "sha256-833a3b64899b0d83841324150cf42a7ffad620e0ae9bb589b99b51f7746ed89c"
+      },
+      "l1/sections/1-resultados.typ": {
+        "integrity": "sha256-049c93dccb3f1c0357123b69d328154c25fa62055c21b7ab882b7b32c8e4999f"
+      },
+      "l1/sections/1-resultados/ejercicio-1.typ": {
+        "integrity": "sha256-54f845d78297ef5c6574d1f53878432cd1d03393fcabf07315c5b1b0ea44f98d"
+      },
+      "l1/sections/2-cuestionario.typ": {
+        "integrity": "sha256-80fa1395ac4cbef5cd0911520c66163763eea2e0004714efb78a6f3a90f6d5f3"
+      },
+      "l1/sections/2-cuestionario/pregunta-1.typ": {
+        "integrity": "sha256-9614db35947f3fe78a9cb3f41957386a1aaa0b78519395ee34763b24812c0e9b"
+      },
+      "l1/sections/3-conclusiones.typ": {
+        "integrity": "sha256-888b17b40c8516fd8c3818d477e561b5b381373113c0c0285f9909f29e98c826"
+      },
+      "l1/sections/3-conclusiones/conclusion-1.typ": {
+        "integrity": "sha256-de365976e105cf3bf76fcd417f099ce059aa02b7e20fa6c1c90648ab255f5dd4"
+      },
+      "l1/sections/4-referencias.typ": {
+        "integrity": "sha256-f51572a24ea5c45dbdb40d97823faaec93f1dffe99fe3f5987559a3fd851e46c"
+      },
+      "lib.typ": {
+        "integrity": "sha256-ecded881ff7bd61bc3e9ed1ae5d159b08d1afad68c33a6027681f432636296e2"
+      }
+    }
+  },
+  "packages": {
+    "components/basic-info-table.typ": {
+      "version": "1.0.0",
+      "resolved": "https://raw.githubusercontent.com/UNSAReport/components/main/components/templates/lab/basic-info-table/1.0.0/basic-info-table.typ",
+      "integrity": "sha256-6522437d2614276ed368b255b4b9186a3d58c6ec8d616806ef0d35f2ca6eff22"
+    },
+    "components/code-block.typ": {
+      "version": "1.0.0",
+      "resolved": "https://raw.githubusercontent.com/UNSAReport/components/main/components/programming/code-block/1.0.0/code-block.typ",
+      "integrity": "sha256-39a584e44197fa74bb65e670de2c1b9a51e7009349a09b9ee37a4e04ed849ffb"
+    },
+    "components/lab-section.typ": {
+      "version": "1.0.0",
+      "resolved": "https://raw.githubusercontent.com/UNSAReport/components/main/components/templates/lab/lab-section/1.0.0/lab-section.typ",
+      "integrity": "sha256-34db7fc73a48be1928217fc3e04fd7601529e2958a7fc3ac1c51ede45eed8553"
+    },
+    "components/page-header.typ": {
+      "version": "1.0.0",
+      "resolved": "https://raw.githubusercontent.com/UNSAReport/components/main/components/templates/lab/page-header/1.0.0/page-header.typ",
+      "integrity": "sha256-7751524c390d18ac761d2570cdcd04e56049c4428ed71aca2a50abf34ef84c21"
+    }
+  }
+}
