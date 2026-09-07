@@ -1,22 +1,18 @@
-= Pregunta 3: ¿Cuál considera más efectiva: el cuestionario o la encuesta?
+= Pregunta 3: Porcentaje aceptable de recursos para la gestión de cambios
 
-Ambos instrumentos cumplen funciones complementarias según la etapa del proyecto:
+*Enunciado:* _¿Qué % de recursos del proyecto considera aceptable para gestión de cambios?_
 
-*Diferenciación Metodológica:*
-- *Cuestionario:* Instrumento de recolección compuesto por preguntas estructuradas o abiertas orientado al análisis detallado.
-- *Encuesta:* Método de investigación cuantitativa que aplica cuestionarios a una muestra representativa para inferir conclusiones estadísticas sobre una población.
+Conforme a los estándares de ingeniería de software y las directrices de estimación de proyectos de Pressman @pressman2020, Sommerville @sommerville2011 y Baufest @baufest2003, el porcentaje de recursos (tiempo, personal y presupuesto) considerado aceptable y óptimo para la gestión de cambios oscila entre el *10% y el 15%* del esfuerzo total del proyecto.
 
-#table(
-  columns: (2fr, 2.5fr, 2.5fr),
-  align: (left, left, left),
-  table.header([*Dimensión*], [*Cuestionario Cualitativo*], [*Encuesta Cuantitativa*]),
-  [Objetivo Principal], [Profundizar en aspectos técnicos y reglas de negocio.], [Medir tendencias, frecuencias y prioridades estadísticas.],
-  [Tipo de Preguntas], [Preguntas abiertas y semiestructuradas.], [Preguntas cerradas de selección múltiple y escalas.],
-  [Tamaño Muestral], [Grupos reducidos y roles especializados.], [Poblaciones amplias o dispersas.],
-  [Análisis], [Cualitativo y descriptivo.], [Estadístico e inferencial.],
-  [Efectividad], [Descubrimiento de necesidades y restricciones complejas.], [Priorización y validación de requisitos conocidos.],
-)
+*1. Distribución del Esfuerzo según la Metodología:*
+- *Modelos Predictivos o Tradicionales (Cascada / V-Model / RUP @guerrero2003):*
+  Se recomienda destinar entre un *5% y un 10%*. Dado que las líneas base de requerimientos se definen rigurosamente al inicio del ciclo de vida, los cambios aprobados por el Comité de Control de Cambios (CCB) son más esporádicos y altamente controlados.
+- *Modelos Adaptativos o Ágiles (Scrum / Kanban / DevOps):*
+  Se admite una reserva entre un *15% y un 20%*. La naturaleza iterativa acepta la evolución continua de las necesidades del cliente como parte del valor del negocio, requiriendo refinamientos constantes del backlog, evaluaciones de impacto técnico en cada sprint y re-priorizaciones frecuentes.
 
-*Criterio de Efectividad:*
-- En fases tempranas de descubrimiento, el cuestionario cualitativo resulta más efectivo para identificar necesidades no anticipadas y reglas complejas.
-- En fases de priorización y consenso con múltiples usuarios, la encuesta estadística resulta más efectiva por su representatividad y rapidez de procesamiento.
+*2. Impacto de una Asignación Desequilibrada:*
+- *Asignación Insuficiente ($< 8\%$):* Conlleva al fenómeno de corrupción de alcance (_scope creep_), ausencia de análisis de regresión, introducción inadvertida de fallos de seguridad y retrabajos costosos que pueden triplicar el costo original de desarrollo.
+- *Sobreasignación Burocrática ($> 25\%$):* Desemboca en la "parálisis por análisis", generando lentitud en la entrega de valor, desmotivación en el equipo técnico y costos administrativos desproporcionados.
+
+*Conclusión:*
+Un margen presupuestal y de cronograma del *10% al 15%* proporciona la holgura necesaria para absorber modificaciones legítimas del cliente, ejecutar pruebas de regresión adecuadas y mantener la documentación sincronizada, protegiendo la calidad sin comprometer los plazos de entrega.

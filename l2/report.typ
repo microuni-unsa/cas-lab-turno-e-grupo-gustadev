@@ -3,8 +3,8 @@
 
 #show: unsa-report.with(
   course_name: "Laboratorio - Calidad de Software",
-  lab_title: "Requerimientos",
-  lab_number: "01",
+  lab_title: "Proceso de Requerimientos I: Gestión de Cambios",
+  lab_number: "02",
   instructor_name: "Delgado Bastidas, Jose Rafael",
   members: (
     "Sequeiros Condori Luis Gustavo",

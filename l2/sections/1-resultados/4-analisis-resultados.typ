@@ -1,40 +1,21 @@
-== IV. Análisis de Resultados
+== V. Análisis de Resultados
 
-El análisis del proceso de especificación y trazabilidad de requerimientos arrojó los siguientes resultados técnicos:
+A fin de validar cuantitativa y cualitativamente el procedimiento experimental desarrollado, se evalúan las tres interrogantes metodológicas de la guía de práctica:
 
-+ *Mitigación de Problemas de Elicitación:*
-  - *Problemas de Alcance:* Se delimitaron mediante la definición previa de objetivos del sistema y actores, estableciendo las fronteras del software antes de redactar los requerimientos funcionales detallados.
-  - *Problemas de Comprensión:* Se resolvieron aplicando la estructura de la norma IEEE Std 830-1998, asignando criterios de aceptación cuantificables en los requisitos no funcionales y estados formales de ciclo de vida.
-  - *Problemas de Volatilidad:* Se mitigaron mediante el control de versiones en cada entidad, el registro de modificaciones y la clasificación por estabilidad.
+*1. ¿Con qué valores comprobaste que tu práctica estuviera correcta?*
+- *Catálogo de Entrada:* Se introdujeron formalmente 5 solicitudes de cambio (RFCs: `CHG-001` a `CHG-005`) derivadas de los requerimientos especificados en el Laboratorio 1.
+- *Validación de Estados de Ciclo de Vida:* Se verificó que el sistema admitiera y forzara las transiciones de estado canónicas: _Pendiente_, _En revisión_, _En desarrollo_, _En pruebas_ y _Cerrado_.
+- *Consistencia de Metadatos:* Cada registro incluyó de manera estricta identificador unívoco, requerimiento base afectado, motivo justificado de la modificación, nivel de prioridad, responsable asignado y fecha límite de entrega.
+- *Ejecución de Servicios Contenerizados y CLI:* Se comprobó que el endpoint `/health` de i-doit reportara estado `ready` (versión 38) y que las consultas de la CLI de GitHub (`gh issue list`) retornaran la totalidad de los ítems con sus respectivas etiquetas y estados.
 
-+ *Eficacia de la Matriz de Trazabilidad Bidireccional:*
-  - La vinculación entre objetivos, requerimientos funcionales, no funcionales, restricciones y casos de uso asegura una cobertura total sin presencia de requerimientos huérfanos.
+*2. ¿Qué resultado esperabas obtener para cada valor de entrada?*
+- Que cada solicitud de cambio fuera almacenada de forma persistente con integridad referencial hacia el requerimiento base de origen.
+- Que las transiciones de ciclo de vida mantuvieran un historial inalterable de auditoría (registrando fecha, usuario responsable y causa del cambio de estado).
+- Que las herramientas permitieran clasificar, filtrar y generar reportes ejecutivos consolidados para el Comité de Control de Cambios (CCB), evidenciando cuellos de botella y requerimientos completados.
+- Que no se produjeran inconsistencias entre las fechas planificadas y el avance de las tareas en el tablero colaborativo.
 
-*Matriz de Trazabilidad Bidireccional:*
-
-#table(
-  columns: (1.8fr, 0.8fr, 0.8fr, 0.8fr, 0.8fr, 0.8fr, 0.8fr, 0.8fr, 0.8fr, 0.8fr, 1.2fr),
-  align: (left, center, center, center, center, center, center, center, center, center, center),
-  table.header(
-    [*Objetivo del Sistema*],
-    [*RF-01*], [*RF-02*], [*RF-03*], [*RF-04*], [*RF-05*], [*RF-06*],
-    [*CU-01*], [*CU-02*], [*CU-03*],
-    [*Cobertura*]
-  ),
-  [OBJ-01: Estandarización IEEE 830], [X], [X], [ ], [ ], [ ], [ ], [X], [ ], [ ], [100%],
-  [OBJ-02: Trazabilidad Bidireccional], [ ], [ ], [X], [ ], [ ], [ ], [ ], [X], [ ], [100%],
-  [OBJ-03: Automatización de Informes], [ ], [ ], [ ], [ ], [X], [X], [ ], [ ], [X], [100%],
-  [OBJ-04: Gestión de Cambios y Versiones], [ ], [ ], [ ], [X], [ ], [ ], [X], [ ], [ ], [100%],
-)
-
-*Mapeo y Dependencias Directas entre Artefactos:*
-
-#table(
-  columns: (1.2fr, 1.8fr, 1.2fr, 1.4fr, 2.4fr),
-  align: (center, left, center, center, left),
-  table.header([*Objetivo*], [*Requerimiento Funcional*], [*Caso de Uso*], [*RNF / Restricción*], [*Criterio de Verificación y Justificación*]),
-  [OBJ-01], [RF-01: Elicitación y Registro \ RF-02: Clasificación IEEE 830], [CU-01], [RNF-03: Usabilidad \ RC-01: Esquema REM], [Garantiza el ingreso no ambiguo y estandarizado de requisitos.],
-  [OBJ-02], [RF-03: Trazabilidad Bidireccional], [CU-02], [RNF-01: Rendimiento], [Permite auditar el impacto hacia atrás y adelante en menos de 2 segundos.],
-  [OBJ-03], [RF-05: Validación Automática \ RF-06: Exportación ERS], [CU-03], [RC-01: Esquema XML], [Comprueba consistencia estructural y exporta documentos formales.],
-  [OBJ-04], [RF-04: Control de Cambios y Versiones], [CU-01], [RNF-02: Seguridad RBAC], [Asegura la trazabilidad histórica de versiones aprobadas.],
-)
+*3. ¿Qué valor o comportamiento obtuviste para cada valor de entrada?*
+- La totalidad de los 5 requerimientos de cambio se registraron exitosamente sin pérdida de atributos ni inconsistencias tipológicas en las bases de datos de ambas plataformas.
+- La simulación de transiciones reflejó una distribución realista del ciclo de desarrollo: 1 cambio cerrado (`CHG-005`), 1 en pruebas (`CHG-003`), 1 en desarrollo activo (`CHG-001`), 1 en evaluación colegiada (`CHG-002`) y 1 en cola de espera (`CHG-004`).
+- La integración de GitHub Projects a través de `gh` demostró alta agilidad operativa para desarrolladores, mientras que i-doit proporcionó una sólida visión de impacto sobre infraestructura y servicios de TI.
+- Se constató que un proceso formal de control de cambios previene el crecimiento descontrolado del alcance (_scope creep_) y asegura la estabilidad de las líneas base del proyecto @pressman2020.
