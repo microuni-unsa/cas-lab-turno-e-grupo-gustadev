@@ -1,47 +1,42 @@
-== III. Resultados Obtenidos: Ejercicios Resueltos
+== II. Resultados Obtenidos: Ejercicios Resueltos
 
-=== a) Instalación y Configuración de Herramientas para Gestión de Cambios
+=== a) Herramientas para la Gestión de Proyectos y Control de Cambios
 
-Para dar soporte a la gestión integral de requerimientos y cambios de software, se desplegaron dos herramientas bajo paradigmas complementarios: una solución empresarial on-premise orientada a CMDB e ITIL (*i-doit*) y una plataforma ágil y moderna en la nube (*GitHub Projects* a través de `gh` CLI).
+Para la administración del proyecto y la trazabilidad de los requerimientos, se emplearon dos herramientas orientadas a diferentes facetas de la gestión:
 
-*1. Despliegue de i-doit (Open Edition 38) mediante Docker:*
-- *Arquitectura Contenerizada:* Se diseñó un entorno orquestado con Docker Compose compuesto por dos servicios aislados:
-  - `idoit-app`: Contenedor basado en `php:8.3-apache` provisto de extensiones críticas (`mysqli`, `pdo_mysql`, `gd`, `ldap`, `mbstring`, `sockets`, `zip`, `xml`, `opcache`), soporte para reescritura de cabeceras (`mod_rewrite`, `headers`, `expires`) y configuración afinada de memoria y variables de entrada (`max_input_vars = 10000`, `post_max_size = 128M`, `memory_limit = 512M`).
-  - `idoit-db`: Servidor de base de datos relacional `mariadb:10.11` configurado con tamaño de paquete extendido (`max_allowed_packet = 128M`), modo SQL flexible y formato dinámico de filas InnoDB.
-- *Instalación e Inicialización:* Mediante la interfaz de línea de comandos de i-doit (`console.php install` y `console.php tenant-create`), se inicializó la base de datos del sistema (`idoit_system`) y se aprovisionó el mandante de trabajo *Laboratorio 2* con su base de datos operacional (`idoit_data`), validando el acceso en `http://localhost:8080`.
+*1. i-doit en la Gestión de Configuración del Proyecto:*
+- *Inventario y Catálogo de Elementos del Proyecto:* Permite registrar los módulos de software, dependencias funcionales y componentes del sistema como elementos de configuración (CIs), manteniendo claridad sobre qué partes del proyecto existen y cómo se relacionan entre sí.
+- *Bitácora de Auditoría (Logbook):* Cada cambio o actualización sobre los componentes del proyecto queda registrado cronológicamente con autor y fecha, garantizando control formal de versiones y facilitando auditorías de seguimiento.
 
-// PLACEHOLDER: Captura de pantalla de la interfaz de i-doit (Login o Vista General del CMDB)
+// PLACEHOLDER: Captura de pantalla de la interfaz de i-doit (Catálogo de módulos o Logbook del proyecto)
 // #figure(
 //   image("/l2/img/idoit-dashboard.png", width: 85%),
-//   caption: [Panel principal de control y CMDB de i-doit en ejecución contenerizada.],
+//   caption: [Registro y auditoría de componentes del proyecto en i-doit.],
 // ) <fig-idoit-dashboard>
 
-*2. Configuración de GitHub Projects y Repositorio Institucional:*
-- *Infraestructura en GitHub:* Se creó y enlazó el repositorio `cas-lab-turno-e-grupo-gustadev` dentro de la organización universitaria `microuni-unsa`.
-- *Modelado del Flujo de Estados con GitHub CLI:* A través de la CLI `gh`, se definieron las etiquetas de severidad y ciclo de vida de los cambios:
-  - `rfc`: Identificador general de Solicitud de Cambio (*Request for Change*).
-  - `estado:pendiente`, `estado:en-revision`, `estado:en-desarrollo`, `estado:en-pruebas`, `estado:cerrado`.
-  - `prioridad:baja`, `prioridad:media`, `prioridad:alta`, `prioridad:critica`.
+*2. GitHub Projects en la Planificación Ágil y Colaboración del Equipo:*
+- *Planificación y Asignación:* Facilita la división del trabajo mediante tarjetas de cambio (*RFC*), asignando responsables individuales, prioridades y fechas límite de entrega.
+- *Visibilidad del Flujo de Trabajo:* El tablero Kanban interactivo proporciona a los miembros del equipo y a los interesados una visión en tiempo real del estado de cada requerimiento, agilizando la toma de decisiones y la coordinación diaria.
 
 // PLACEHOLDER: Captura de pantalla del repositorio y listado de issues/etiquetas en GitHub
 // #figure(
 //   image("/l2/img/github-issues-list.png", width: 85%),
-//   caption: [Listado de requerimientos de cambio (RFC) gestionados en el repositorio de GitHub.],
+//   caption: [Listado de requerimientos de cambio en GitHub para el seguimiento del equipo.],
 // ) <fig-gh-issues>
 
-=== b) Diagrama de Flujo del Proceso de Gestión de Cambios (Anexo 21 e ITIL)
+=== b) Diagrama de Flujo del Proceso de Gestión de Cambios (Anexo 21)
 
-El proceso formal de gestión de cambios implementado en la práctica se fundamenta en las directrices de la norma IEEE Std 828-2012 @ieee828, el marco ITIL 4 para la habilitación del cambio @itil4 y el flujo de referencia del Anexo 21. La estructura secuencial garantiza que ninguna alteración ingrese al código fuente o a la documentación sin evaluación previa:
+El control de cambios del proyecto asegura que cualquier modificación solicitada pase por un ciclo formal de revisión antes de ser incorporada. De este modo, se protege el alcance, se evalúa el esfuerzo requerido y se previenen retrasos imprevistos en el cronograma:
 
-+ *Solicitud de Cambio (RFC - Request for Change):* Se origina ante nuevas necesidades del cliente, defectos encontrados en pruebas o actualizaciones normativas. Se registran sus atributos: identificador, requisito afectado, justificación técnica y prioridad.
-+ *Análisis de Impacto Técnico y Económico:* El equipo de desarrollo evalúa el impacto sobre la arquitectura, la base de datos, el esfuerzo estimado en horas y los riesgos potenciales.
-+ *Revisión y Decisión del Comité de Control de Cambios (CCB / CAB):* El comité colegiado revisa la solicitud y emite un veredicto formal: _Aprobado_, _Rechazado_ o _Diferido_.
-+ *Planificación e Implementación:* Los cambios aprobados entran al ciclo de desarrollo activo (rama de trabajo o sprint correspondiente).
-+ *Pruebas de Regresión y Aseguramiento de Calidad (QA):* El equipo de calidad valida que la modificación cumpla el criterio de aceptación y no altere funcionalidades existentes.
-+ *Despliegue y Actualización de Línea Base:* Tras la aprobación de QA, se fusiona el cambio, se actualiza la especificación formal y se cierra el ciclo de vida del cambio.
+#figure(
+  image("/l2/img/flujo-gestion-cambios.png", width: 65%),
+  caption: [Diagrama de flujo del proceso de gestión de cambios del proyecto (generado en Mermaid).],
+) <fig-flujo-cambios>
 
-// PLACEHOLDER: Diagrama de flujo del proceso de gestión de cambios (Anexo 21 / IEEE 828)
-// #figure(
-//   image("/l2/img/flujo-gestion-cambios.png", width: 80%),
-//   caption: [Diagrama de flujo del ciclo de vida de una Solicitud de Cambio (RFC).],
-// ) <fig-flujo-cambios>
+*Fases del Proceso de Gestión de Cambios:*
++ *1. Registro de Solicitud de Cambio (RFC):* Un miembro del equipo o cliente formula la necesidad indicando su justificación, urgencia y requerimiento afectado.
++ *2. Análisis de Impacto:* El equipo estima el esfuerzo en horas, los costos asociados y el impacto en las fechas de entrega.
++ *3. Evaluación del Comité de Control de Cambios (CCB):* Se decide colegiadamente si la solicitud se aprueba, se rechaza o se posterga.
++ *4. Planificación y Asignación:* Si es aprobada, se asigna al responsable y se establece la fecha límite en el tablero del proyecto.
++ *5. Implementación y Pruebas QA:* Se realiza la modificación y el área de calidad valida que cumpla con los criterios acordados.
++ *6. Cierre e Integración:* Se actualiza la línea base documental del proyecto y se da por completada la tarea.

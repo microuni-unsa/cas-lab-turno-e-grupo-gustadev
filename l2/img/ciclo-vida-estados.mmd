@@ -1,0 +1,10 @@
+stateDiagram-v2
+    [*] --> Pendiente: Solicitud de Cambio (RFC) Registrada
+    Pendiente --> EnRevision: Envío al Comité de Control de Cambios (CCB)
+    EnRevision --> Rechazado: Desestimado por Viabilidad / Costo
+    EnRevision --> EnDesarrollo: Aprobado por el CCB y Asignado
+    EnDesarrollo --> EnPruebas: Finalización de Modificación Técnica
+    EnPruebas --> EnDesarrollo: Observaciones / Pruebas Fallidas
+    EnPruebas --> Cerrado: Validación QA Conforme
+    Cerrado --> [*]: Actualización Formal de Línea Base
+    Rechazado --> [*]: Notificación al Solicitante

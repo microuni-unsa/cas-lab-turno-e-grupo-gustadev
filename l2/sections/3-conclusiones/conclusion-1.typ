@@ -1,5 +1,3 @@
-= VI. Conclusiones
-
 + *Control Formal de Cambios como Salvaguarda del Alcance:*
   El cambio en los requisitos de software es un fenómeno inevitable motivado por la evolución del entendimiento del cliente y las condiciones tecnológicas @baufest2003. La implementación de un proceso estructurado de Solicitudes de Cambio (RFC), analizado técnica y económicamente por un Comité de Control de Cambios (CCB), previene de manera categórica la corrupción de alcance (_scope creep_) y asegura la estabilidad de las líneas base del proyecto @pressman2020.
 

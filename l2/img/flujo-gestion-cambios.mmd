@@ -1,0 +1,23 @@
+flowchart TD
+    A(["Inicio: Solicitud de Cambio (RFC)"]) --> B["1. Registro y Priorización de la Necesidad"]
+    B --> C["2. Análisis de Impacto Técnico, Costo y Cronograma"]
+    C --> D{"3. Evaluación del Comité<br/>de Control de Cambios (CCB)"}
+    
+    D -- "Aprobado" --> E["4. Planificación y Asignación de Responsable"]
+    D -- "Rechazado" --> R(["Fin: Solicitud Desestimada"])
+    
+    E --> F["5. Implementación Técnica (En Desarrollo)"]
+    F --> G["6. Pruebas de Regresión y Aseguramiento QA"]
+    G -- "Observaciones" --> F
+    G -- "Conforme" --> H["7. Actualización de Línea Base del Proyecto"]
+    H --> S(["Fin: Cambio Cerrado y Desplegado"])
+
+    classDef proc fill:#e3f2fd,stroke:#1565c0,stroke-width:1.5px;
+    classDef decision fill:#fff8e1,stroke:#f57f17,stroke-width:1.5px;
+    classDef term fill:#e8f5e9,stroke:#2e7d32,stroke-width:1.5px;
+    classDef reject fill:#ffebee,stroke:#c62828,stroke-width:1.5px;
+
+    class B,C,E,F,G,H proc;
+    class D decision;
+    class A,S term;
+    class R reject;
