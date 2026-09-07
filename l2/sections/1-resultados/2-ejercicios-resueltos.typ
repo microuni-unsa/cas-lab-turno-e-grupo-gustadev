@@ -10,13 +10,13 @@ Para la administración del proyecto y la trazabilidad de los requerimientos, se
 
 #figure(
   image("/l2/img/idoit-dashboard.png", width: 88%),
-  caption: [Vista principal del entorno de gestión de configuración en i-doit con el espacio de trabajo del proyecto.],
+  caption: [Vista principal del entorno de gestión de configuración en i-doit con el espacio de trabajo y componentes activos del proyecto.],
 ) <fig-idoit-dashboard>
 
 #figure(
-  image("/l2/img/idoit-software.png", width: 88%),
-  caption: [Estructuración y catálogo de componentes de software y aplicaciones en i-doit.],
-) <fig-idoit-software>
+  image("/l2/img/idoit-ci-detail.png", width: 88%),
+  caption: [Ficha técnica detallada de un elemento de configuración (CI #27: Módulo 2FA) en i-doit mostrando atributos de estado y asignaciones.],
+) <fig-idoit-ci-detail>
 
 *2. GitHub Projects en la Planificación Ágil y Colaboración del Equipo:*
 - *Planificación y Asignación:* Facilita la división del trabajo mediante tarjetas de cambio (*RFC*), asignando responsables individuales, prioridades y fechas límite de entrega.
@@ -24,7 +24,7 @@ Para la administración del proyecto y la trazabilidad de los requerimientos, se
 
 #figure(
   image("/l2/img/github-issues-list.png", width: 88%),
-  caption: [Listado de requerimientos de cambio en GitHub para el seguimiento del equipo.],
+  caption: [Listado de requerimientos de cambio en GitHub para el seguimiento del equipo con etiquetas de prioridad y estado.],
 ) <fig-gh-issues>
 
 #figure(
