@@ -20,7 +20,7 @@ El desarrollo de la práctica comprendió las siguientes etapas metodológicas:
   Se analizó el flujo de control de cambios descrito en el Anexo 21 y la práctica de _Change Enablement_ de ITIL 4 @itil4, formalizando las transiciones válidas: _Pendiente_ $->$ _En revisión_ $->$ _En desarrollo_ $->$ _En pruebas_ $->$ _Cerrado_.
 
 + *Registro y Trazabilidad de Cambios del Laboratorio 1:*
-  A partir de los requerimientos funcionales y de seguridad elaborados en el Laboratorio 1, se redactaron cinco Solicitudes de Cambio (RFC/CHG) con justificación técnica, impacto, responsable asignado y fecha límite, registrándose tanto en la CMDB de i-doit como en el tablero de GitHub Projects.
+  A partir de los requerimientos funcionales, no funcionales y de seguridad elaborados en el Laboratorio 1, se redactaron diez Solicitudes de Cambio (RFC/CHG) con justificación técnica, impacto, responsable asignado y fecha límite, registrándose tanto en la CMDB de i-doit como en el repositorio institucional de GitHub.
 
 + *Simulación del Ciclo de Vida y Generación de Reportes:*
   Se ejecutó el avance y transición de los cambios conforme al progreso de desarrollo y pruebas, emitiendo reportes consolidados para el seguimiento del Comité de Control de Cambios (CCB).
