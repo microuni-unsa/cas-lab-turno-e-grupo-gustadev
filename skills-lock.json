@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "skills": {
+    "academic-writing": {
+      "source": "skills.sh",
+      "sourceUrl": "https://skills.sh/p/W9ICl9dbZsZkeynU",
+      "sourceType": "well-known",
+      "computedHash": "597a7bec13473f751a7cc4738e35399e5e411c2b37a76042bd5a5ea65431357c",
+      "wellKnownDigest": "sha256:96037fbe976ff8e2019047d04b8c7ce8108158442353d4cedd92f4dc84b0d028"
+    }
+  }
+}
