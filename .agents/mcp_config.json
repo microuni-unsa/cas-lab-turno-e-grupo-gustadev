@@ -5,6 +5,10 @@
       "headers": {
         "Authorization": "Bearer secret"
       }
+    },
+    "brave-devtools": {
+      "command": "bunx",
+      "args": ["brave-mcp@latest", "--autoConnect"]
     }
   }
 }

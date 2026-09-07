@@ -1,4 +1,4 @@
-== II. Resultados Obtenidos: Ejercicios Resueltos
+== II. Resultados Obtenidos
 
 === a) Herramientas para la Gestión de Proyectos y Control de Cambios
 
@@ -8,28 +8,36 @@ Para la administración del proyecto y la trazabilidad de los requerimientos, se
 - *Inventario y Catálogo de Elementos del Proyecto:* Permite registrar los módulos de software, dependencias funcionales y componentes del sistema como elementos de configuración (CIs), manteniendo claridad sobre qué partes del proyecto existen y cómo se relacionan entre sí.
 - *Bitácora de Auditoría (Logbook):* Cada cambio o actualización sobre los componentes del proyecto queda registrado cronológicamente con autor y fecha, garantizando control formal de versiones y facilitando auditorías de seguimiento.
 
-// PLACEHOLDER: Captura de pantalla de la interfaz de i-doit (Catálogo de módulos o Logbook del proyecto)
-// #figure(
-//   image("/l2/img/idoit-dashboard.png", width: 85%),
-//   caption: [Registro y auditoría de componentes del proyecto en i-doit.],
-// ) <fig-idoit-dashboard>
+#figure(
+  image("/l2/img/idoit-dashboard.png", width: 88%),
+  caption: [Vista principal del entorno de gestión de configuración en i-doit con el espacio de trabajo del proyecto.],
+) <fig-idoit-dashboard>
+
+#figure(
+  image("/l2/img/idoit-software.png", width: 88%),
+  caption: [Estructuración y catálogo de componentes de software y aplicaciones en i-doit.],
+) <fig-idoit-software>
 
 *2. GitHub Projects en la Planificación Ágil y Colaboración del Equipo:*
 - *Planificación y Asignación:* Facilita la división del trabajo mediante tarjetas de cambio (*RFC*), asignando responsables individuales, prioridades y fechas límite de entrega.
 - *Visibilidad del Flujo de Trabajo:* El tablero Kanban interactivo proporciona a los miembros del equipo y a los interesados una visión en tiempo real del estado de cada requerimiento, agilizando la toma de decisiones y la coordinación diaria.
 
-// PLACEHOLDER: Captura de pantalla del repositorio y listado de issues/etiquetas en GitHub
-// #figure(
-//   image("/l2/img/github-issues-list.png", width: 85%),
-//   caption: [Listado de requerimientos de cambio en GitHub para el seguimiento del equipo.],
-// ) <fig-gh-issues>
+#figure(
+  image("/l2/img/github-issues-list.png", width: 88%),
+  caption: [Listado de requerimientos de cambio en GitHub para el seguimiento del equipo.],
+) <fig-gh-issues>
+
+#figure(
+  image("/l2/img/github-issue-detail.png", width: 88%),
+  caption: [Detalle de una Solicitud de Cambio (RFC #5) en GitHub mostrando asignación, prioridad y descripción técnica.],
+) <fig-gh-issue-detail>
 
 === b) Diagrama de Flujo del Proceso de Gestión de Cambios (Anexo 21)
 
 El control de cambios del proyecto asegura que cualquier modificación solicitada pase por un ciclo formal de revisión antes de ser incorporada. De este modo, se protege el alcance, se evalúa el esfuerzo requerido y se previenen retrasos imprevistos en el cronograma:
 
 #figure(
-  image("/l2/img/flujo-gestion-cambios.png", width: 65%),
+  image("/l2/img/flujo-gestion-cambios.png", width: 45%),
   caption: [Diagrama de flujo del proceso de gestión de cambios del proyecto (generado en Mermaid).],
 ) <fig-flujo-cambios>
 

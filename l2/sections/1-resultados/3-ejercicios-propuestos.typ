@@ -20,11 +20,10 @@ A partir de los requerimientos analizados en el Laboratorio 1, se estructuraron 
   [CHG-010], [RC-01], [Desacoplamiento de persistencia para compatibilidad multi-nube.], [Alta], [Pendiente], [Arq. Cloud], [30/09],
 )
 
-// PLACEHOLDER: Captura de pantalla del Tablero de Proyectos (GitHub Projects Kanban o Vista de i-doit)
-// #figure(
-//   image("/l2/img/github-projects-board.png", width: 85%),
-//   caption: [Tablero Kanban para la asignación y seguimiento de tareas en GitHub Projects.],
-// ) <fig-kanban-board>
+#figure(
+  image("/l2/img/github-projects-board.png", width: 92%),
+  caption: [Tablero Kanban interactivo en GitHub Projects para la asignación y seguimiento de tareas.],
+) <fig-kanban-board>
 
 === b) Estados y Ciclo de Vida en la Gestión del Proyecto
 
@@ -58,8 +57,12 @@ Se contrastan *i-doit* y *GitHub Projects* evaluando su utilidad práctica para 
   [Mejor Aplicación], [Gobierno y control de inventario de infraestructura y software.], [Seguimiento del trabajo diario del equipo y control de cambios ágil.],
 )
 
-// PLACEHOLDER: Captura del Reporte o Registro de Auditoría (Logbook de i-doit o Reporte de avance de GitHub)
-// #figure(
-//   image("/l2/img/reporte-seguimiento.png", width: 85%),
-//   caption: [Vista de seguimiento y reporte de estado de avance del proyecto.],
-// ) <fig-reporte-seguimiento>
+#figure(
+  image("/l2/img/idoit-logbook.png", width: 90%),
+  caption: [Bitácora de auditoría (Logbook) en i-doit para el seguimiento formal y control de cambios en componentes.],
+) <fig-idoit-logbook>
+
+#figure(
+  image("/l2/img/idoit-applications.png", width: 90%),
+  caption: [Detalle de inventario de aplicaciones y servicios en i-doit para el control de configuración del software.],
+) <fig-idoit-applications>
