@@ -1,18 +1,18 @@
-= Pregunta 1: Actividades frecuentes vs. esenciales en la gestión de requerimientos
+== Pregunta 1: Actividades Frecuentes vs. Esenciales en la Ingeniería de Requerimientos
 
 *Enunciado:* _Actualmente, ¿qué actividades utiliza con frecuencia en la gestión de requerimientos y cuáles considera que son esenciales?_
 
-En la práctica profesional de la ingeniería de software se distinguen dos grupos de actividades:
+En la práctica contemporánea de la ingeniería de software se diferencian con claridad las actividades instrumentales rutinarias de aquellas que resultan estrictamente críticas para la viabilidad del proyecto:
 
-*1. Actividades utilizadas con frecuencia en el proceso de requerimientos:*
-- *Elicitación y Descubrimiento:* Entrevistas a partes interesadas (_stakeholders_), sesiones conjuntas de diseño (JAD), cuestionarios y lluvia de ideas.
-- *Documentación y Especificación:* Redacción estructurada de requisitos funcionales y no funcionales mediante fichas técnicas normativas (IEEE Std 830, ISO/IEC/IEEE 29148 @iso29148) o historias de usuario en marcos ágiles.
-- *Priorización:* Clasificación por valor de negocio y urgencia utilizando técnicas como MoSCoW, matriz de valor vs. esfuerzo o priorización numérica.
-- *Validación y Revisiones de Pares:* Inspecciones formales conjuntas con el cliente para verificar ausencia de ambigüedades.
-- *Control de Versiones y Gestión de Cambios:* Registro sistemático de solicitudes de cambio (RFC) y actualización del historial de modificaciones.
+*1. Actividades Utilizadas con Frecuencia en el Ciclo de Vida de Requerimientos:*
+- *Elicitación Multicanal:* Entrevistas semiestructuradas a partes interesadas (_stakeholders_), talleres conjuntos de diseño de aplicaciones (JAD), observación directa y análisis de documentación preexistente.
+- *Especificación Estandarizada:* Modelado formal de requerimientos funcionales y no funcionales conforme a estándares internacionales como ISO/IEC/IEEE 29148:2018 @iso29148 y redacción de historias de usuario con criterios de aceptación Gherkin en marcos ágiles.
+- *Priorización Basada en Valor:* Ponderación de criticidad y retorno de inversión utilizando marcos como MoSCoW, modelo Kano y matrices de impacto versus esfuerzo.
+- *Validación Cruzada:* Revisiones formales por pares e inspecciones de software para detectar tempranamente inconsistencias, ambigüedades u omisiones antes de la fase de diseño.
+- *Gestión Sistemática de Modificaciones:* Registro de Solicitudes de Cambio (RFC) para gobernar las desviaciones respecto a la línea base acordada.
 
-*2. Actividades consideradas estrictamente esenciales:*
-De acuerdo con Pressman y Maxim @pressman2020 y Sommerville @sommerville2011, tres actividades constituyen el núcleo irremplazable para el éxito del proyecto:
-- *Definición Clara y No Ambigua de Requisitos:* Si los requisitos iniciales son defectuosos o ambiguos, cualquier esfuerzo posterior de diseño o codificación amplificará el costo de corrección de forma exponencial.
-- *Gestión y Control Formal de Cambios:* El cambio en los requisitos es inevitable a medida que los clientes maduran su visión del producto @baufest2003. Sin un mecanismo de evaluación de impacto y aprobación previa por un comité (CCB), el proyecto sufre de corrupción de alcance (_scope creep_) y desfase presupuestal.
-- *Trazabilidad Bidireccional:* Permite vincular cada necesidad del negocio con su correspondiente requisito, componente de arquitectura, caso de prueba y commit de código fuente. Garantiza que no existan requerimientos huérfanos ni código superfluo no solicitado @torres2002.
+*2. Actividades Consideradas Estrictamente Esenciales:*
+Siguiendo los fundamentos de Pressman & Maxim @pressman2020 y Sommerville @sommerville2011, tres actividades constituyen el núcleo irremplazable para salvaguardar el éxito de cualquier producto software:
+- *Definición No Ambigua y Verificable de Requerimientos:* Todo requisito debe poseer criterios de aceptación cuantificables y comprobables mediante pruebas. La ambigüedad en etapas tempranas multiplica de forma exponencial el costo de mitigación durante las fases de integración y despliegue @torres2002.
+- *Gobernanza y Control Formal de Cambios:* El cambio es una constante biológica del software provocada por la maduración del entendimiento del cliente @baufest2003. Sin un mecanismo formal de análisis de impacto técnico y aprobación por un Comité de Control de Cambios (CCB), el proyecto sucumbe ante la corrupción de alcance y desbordes presupuestarios.
+- *Trazabilidad Bidireccional Integral:* Capacidad de rastrear un requisito desde su necesidad de negocio de origen hasta su componente arquitectónico, caso de prueba automatizado y confirmación de código fuente (_commit_). Garantiza la detección inmediata de requerimientos huérfanos y elimina código superfluo no autorizado @ieee828.

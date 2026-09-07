@@ -1,20 +1,20 @@
-== I. Descripción del Procedimiento Realizado
+== I. Descripción del Procedimiento Metodológico
 
-El desarrollo de la práctica se centró en la gestión del proyecto de software y la administración controlada de cambios sobre los requerimientos, siguiendo cinco etapas principales:
+La gestión de configuración y el control sistemático de modificaciones constituyen pilares esenciales para mitigar la degradación del alcance (_scope creep_) y asegurar la calidad en proyectos de ingeniería de software @ieee828. En conformidad con las directrices de la guía práctica (Anexo 21), el procedimiento experimental se estructuró en cinco etapas secuenciales:
 
-+ *Configuración de Herramientas de Gestión de Proyecto:*
-  Se habilitaron dos plataformas orientadas a la administración del proyecto:
-  - *i-doit:* Configurada como sistema de inventario y registro de elementos del proyecto (software, módulos y servicios), permitiendo auditar el historial de modificaciones y relaciones entre componentes.
-  - *GitHub Projects:* Configurado dentro de la organización `microuni-unsa` (`cas-lab-turno-e-grupo-gustadev`) para la planificación ágil, asignación de tareas, control de prioridades y visualización del flujo de trabajo en tableros Kanban.
++ *Configuración del Entorno de Gestión y Plataformas Experimentales:*
+  Se implementaron y parametrizaron dos plataformas representativas de paradigmas complementarios de gestión:
+  - *i-doit (ITIL / CMDB):* Desplegada en un entorno contenerizado (Docker Compose con servidor web Apache y base de datos MariaDB) para operar como Base de Datos de Gestión de Configuración (_Configuration Management Database_, CMDB). Se destinó al inventario formal de Elementos de Configuración (_Configuration Items_, CIs), modelado de dependencias entre módulos y registro inmutable en bitácora (_Logbook_).
+  - *GitHub Projects (Gestión Ágil / GitOps):* Configurada dentro de la organización académica `microuni-unsa` (repositorio `cas-lab-turno-e-grupo-gustadev`) para articular la planificación ágil, gobernanza de tareas mediante tableros Kanban interactivos, asignación de responsables y trazabilidad directa hacia confirmaciones de código fuente.
 
-+ *Modelado del Proceso de Gestión de Cambios:*
-  Se formalizó el flujo de trabajo para atender modificaciones en el proyecto (Anexo 21), estableciendo las etapas de revisión por el Comité de Control de Cambios (CCB) y las transiciones de estado permitidas: _Pendiente_ $->$ _En revisión_ $->$ _En desarrollo_ $->$ _En pruebas_ $->$ _Cerrado_.
++ *Formalización del Flujo de Control de Cambios y Ciclo de Vida:*
+  Se modeló el protocolo de gobernanza para procesar cualquier modificación solicitada sobre la línea base documental (_baseline_). El flujo definió los roles del Comité de Control de Cambios (_Change Control Board_, CCB) y la máquina de estados finitos que gobierna la evolución de las tareas: _Pendiente_ $->$ _En revisión_ $->$ _En desarrollo_ $->$ _En pruebas_ $->$ _Cerrado_.
 
-+ *Formulación y Asignación de Solicitudes de Cambio (RFC):*
-  A partir de los requerimientos del Laboratorio 1, se elaboraron 10 solicitudes de cambio (CHG-001 a CHG-010) asignando a cada una su justificación, nivel de prioridad, miembro responsable del equipo y fecha límite de entrega.
++ *Elicitación y Formulación de Solicitudes de Cambio (RFC):*
+  Tomando como base los requerimientos funcionales y no funcionales analizados en el Laboratorio 1, se redactaron diez Solicitudes de Cambio formales (_Requests for Change_, RFC: `CHG-001` a `CHG-010`). Cada RFC incorporó su justificación técnica, requerimiento de origen, criticidad, responsable asignado y fecha límite de entrega.
 
-+ *Seguimiento y Control del Avance:*
-  Se distribuyeron las tareas en el tablero del proyecto y se gestionó la evolución de los estados conforme al avance de cada responsable, verificando que ningún cambio se implemente sin previa evaluación de impacto.
++ *Ejecución, Monitoreo y Auditoría de Estados:*
+  Se ejecutó el seguimiento dinámico de las RFCs distribuidas entre los miembros del equipo. Se verificó el cumplimiento de las políticas de revisión previa, registrando las transiciones de estado empíricas tanto en el tablero Kanban como en la bitácora de auditoría de i-doit.
 
-+ *Evaluación Comparativa de las Herramientas:*
-  Se contrastaron ambas herramientas respecto a su aporte a la gestión del proyecto: facilidad de uso, visualización del avance, control de asignaciones, comunicación del equipo y trazabilidad de los cambios.
++ *Evaluación Comparativa Multicriterio:*
+  Se contrastaron cuantitativa y cualitativamente ambas herramientas en función de su enfoque primario, curva de adopción, granularidad de auditoría, soporte de flujos colaborativos y capacidad de respuesta ante desvíos del cronograma.
