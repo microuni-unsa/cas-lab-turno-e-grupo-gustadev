@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="420" viewBox="0 0 900 420">
+  <defs>
+    <filter id="shadow-gantt" x="-5%" y="-5%" width="110%" height="115%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="1" dy="1" stdDeviation="1.5" flood-color="#000000" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <rect width="900" height="420" fill="#f8f9fa" rx="8"/>
+
+  <!-- Header -->
+  <rect x="20" y="15" width="860" height="45" rx="5" fill="#e9ecef"/>
+  <text x="35" y="42" font-family="sans-serif" font-size="14" fill="#212529" font-weight="bold">Cronograma de Ingeniería de Requisitos (Ciclo de Vida RUP)</text>
+
+  <!-- Timeline Grid Header -->
+  <g transform="translate(320, 70)">
+    <rect width="560" height="30" fill="#dee2e6" rx="4"/>
+    <text x="46" y="20" font-family="sans-serif" font-size="11" fill="#495057" font-weight="bold" text-anchor="middle">Semana 1</text>
+    <text x="140" y="20" font-family="sans-serif" font-size="11" fill="#495057" font-weight="bold" text-anchor="middle">Semana 2</text>
+    <text x="233" y="20" font-family="sans-serif" font-size="11" fill="#495057" font-weight="bold" text-anchor="middle">Semana 3</text>
+    <text x="326" y="20" font-family="sans-serif" font-size="11" fill="#495057" font-weight="bold" text-anchor="middle">Semana 4</text>
+    <text x="420" y="20" font-family="sans-serif" font-size="11" fill="#495057" font-weight="bold" text-anchor="middle">Semana 5</text>
+    <text x="513" y="20" font-family="sans-serif" font-size="11" fill="#495057" font-weight="bold" text-anchor="middle">Semana 6</text>
+  </g>
+
+  <!-- Grid Vertical Lines -->
+  <g stroke="#dee2e6" stroke-width="1" stroke-dasharray="4,4">
+    <line x1="413" y1="105" x2="413" y2="350"/>
+    <line x1="506" y1="105" x2="506" y2="350"/>
+    <line x1="600" y1="105" x2="600" y2="350"/>
+    <line x1="693" y1="105" x2="693" y2="350"/>
+    <line x1="786" y1="105" x2="786" y2="350"/>
+    <line x1="880" y1="105" x2="880" y2="350"/>
+  </g>
+
+  <!-- Task Rows -->
+
+  <!-- Task 1 -->
+  <text x="30" y="132" font-family="sans-serif" font-size="11" fill="#212529" font-weight="bold">1. Elicitación y Descubrimiento</text>
+  <text x="30" y="146" font-family="sans-serif" font-size="9" fill="#868e96">Entrevistas, cuestionarios y necesidades</text>
+  <rect x="320" y="120" width="93" height="26" rx="4" fill="#339af0" filter="url(#shadow-gantt)"/>
+  <text x="366" y="137" font-family="sans-serif" font-size="10" fill="#ffffff" font-weight="bold" text-anchor="middle">100%</text>
+
+  <!-- Task 2 -->
+  <text x="30" y="177" font-family="sans-serif" font-size="11" fill="#212529" font-weight="bold">2. Análisis y Negociación</text>
+  <text x="30" y="191" font-family="sans-serif" font-size="9" fill="#868e96">Objetivos (OBJ), resolución de conflictos</text>
+  <rect x="413" y="165" width="93" height="26" rx="4" fill="#20c997" filter="url(#shadow-gantt)"/>
+  <text x="460" y="182" font-family="sans-serif" font-size="10" fill="#ffffff" font-weight="bold" text-anchor="middle">100%</text>
+
+  <!-- Task 3 -->
+  <text x="30" y="222" font-family="sans-serif" font-size="11" fill="#212529" font-weight="bold">3. Especificación IEEE 830 / REM</text>
+  <text x="30" y="236" font-family="sans-serif" font-size="9" fill="#868e96">Modelado de RF, RNF, RC y Casos de Uso</text>
+  <rect x="506" y="210" width="187" height="26" rx="4" fill="#f59f00" filter="url(#shadow-gantt)"/>
+  <text x="600" y="227" font-family="sans-serif" font-size="10" fill="#ffffff" font-weight="bold" text-anchor="middle">Semanas 3 y 4</text>
+
+  <!-- Task 4 -->
+  <text x="30" y="267" font-family="sans-serif" font-size="11" fill="#212529" font-weight="bold">4. Verificación y Validación (QA)</text>
+  <text x="30" y="281" font-family="sans-serif" font-size="9" fill="#868e96">Matriz de trazabilidad y validación DTD</text>
+  <rect x="693" y="255" width="93" height="26" rx="4" fill="#845ef7" filter="url(#shadow-gantt)"/>
+  <text x="740" y="272" font-family="sans-serif" font-size="10" fill="#ffffff" font-weight="bold" text-anchor="middle">Semana 5</text>
+
+  <!-- Task 5 -->
+  <text x="30" y="312" font-family="sans-serif" font-size="11" fill="#212529" font-weight="bold">5. Control de Cambios y Línea Base</text>
+  <text x="30" y="326" font-family="sans-serif" font-size="9" fill="#868e96">Aprobación formal ERS y versionado</text>
+  <rect x="786" y="300" width="94" height="26" rx="4" fill="#e03131" filter="url(#shadow-gantt)"/>
+  <text x="833" y="317" font-family="sans-serif" font-size="10" fill="#ffffff" font-weight="bold" text-anchor="middle">Semana 6</text>
+
+  <!-- Milestones -->
+  <g transform="translate(30, 365)">
+    <rect width="840" height="40" rx="4" fill="#ffffff" stroke="#dee2e6"/>
+    <text x="15" y="25" font-family="sans-serif" font-size="10" fill="#495057" font-weight="bold">Hitos Clave (Milestones):</text>
+    
+    <polygon points="175,20 183,12 191,20 183,28" fill="#1864ab"/>
+    <text x="198" y="24" font-family="sans-serif" font-size="10" fill="#495057">M1: Aprobación de Objetivos (Fin Sem 2)</text>
+
+    <polygon points="455,20 463,12 471,20 463,28" fill="#f59f00"/>
+    <text x="478" y="24" font-family="sans-serif" font-size="10" fill="#495057">M2: Línea Base ERS en REM (Fin Sem 4)</text>
+
+    <polygon points="715,20 723,12 731,20 723,28" fill="#2b8a3e"/>
+    <text x="738" y="24" font-family="sans-serif" font-size="10" fill="#495057">M3: Validación DTD y Entrega (Fin Sem 6)</text>
+  </g>
+</svg>

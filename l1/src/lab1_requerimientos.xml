@@ -1,0 +1,930 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE rem:requirementsProject SYSTEM "https://cdn.jsdelivr.net/gh/amador-duran-toro/remus/xml/remus.dtd">
+<rem:requirementsProject xmlns:rem="http://rem.lsi.us.es">
+<rem:name>lab1_requerimientos</rem:name>
+<rem:c_requirementsSpecification oid = "CRS-0001">
+<rem:name>Documento ERS - SGARCS</rem:name>
+<rem:version>
+<rem:major>1</rem:major>
+<rem:minor>0</rem:minor>
+<rem:date>
+<rem:year>2026</rem:year>
+<rem:month>9</rem:month>
+<rem:day>1</rem:day>
+</rem:date>
+</rem:version>
+<rem:comments>Especificación de Requisitos del Sistema bajo norma IEEE Std 830-1998</rem:comments>
+<rem:actor oid="ACT-0001">
+<rem:name>ACT-01: Administrador del Sistema</rem:name>
+<rem:version>
+<rem:major>1</rem:major>
+<rem:minor>0</rem:minor>
+<rem:date>
+<rem:year>2026</rem:year>
+<rem:month>9</rem:month>
+<rem:day>1</rem:day>
+</rem:date>
+</rem:version>
+<rem:comments>Administra perfiles, configuraciones y accesos del sistema</rem:comments>
+<rem:actorRole>Administración y Configuración del Sistema</rem:actorRole>
+</rem:actor>
+<rem:constraintRequirement
+ oid="CRQ-0001">
+<rem:name>RC-01: Compatibilidad con Esquema Jet y XML REMUS</rem:name>
+<rem:version>
+<rem:major>1</rem:major>
+<rem:minor>0</rem:minor>
+<rem:date>
+<rem:year>2026</rem:year>
+<rem:month>9</rem:month>
+<rem:day>1</rem:day>
+</rem:date>
+</rem:version>
+<rem:comments>Restricción técnica de arquitectura y persistencia</rem:comments>
+<rem:importance value = "IMV-0002"/>
+<rem:urgency value = "URV-0002"/>
+<rem:status value = "STV-0005"/>
+<rem:stability value = "SBV-0004"/>
+<rem:description>El sistema debe ser 100% compatible con bases de datos Jet/MS Access (.rem) y esquemas XML con validación remus.dtd.</rem:description>
+</rem:constraintRequirement>
+<rem:functionalRequirement oid="FRQ-0001">
+<rem:name>RF-01: Elicitación y Registro de Requerimientos</rem:name>
+<rem:version>
+<rem:major>1</rem:major>
+<rem:minor>0</rem:minor>
+<rem:date>
+<rem:year>2026</rem:year>
+<rem:month>9</rem:month>
+<rem:day>1</rem:day>
+</rem:date>
+</rem:version>
+<rem:comments>Requisito funcional base del sistema</rem:comments>
+<rem:importance value = "IMV-0002"/>
+<rem:urgency value = "URV-0002"/>
+<rem:status value = "STV-0005"/>
+<rem:stability value = "SBV-0004"/>
+<rem:description>El sistema permitirá ingresar nuevos requisitos funcionales y no funcionales asignando identificador unívoco, descripción, prioridad e información de origen.</rem:description>
+</rem:functionalRequirement>
+<rem:informationRequirement oid="IRQ-0001">
+<rem:name>RI-01: Registro de Partes Interesadas</rem:name>
+<rem:version>
+<rem:major>1</rem:major>
+<rem:minor>0</rem:minor>
+<rem:date>
+<rem:year>2026</rem:year>
+<rem:month>9</rem:month>
+<rem:day>1</rem:day>
+</rem:date>
+</rem:version>
+<rem:comments>Información de contacto, responsabilidades y clasificación</rem:comments>
+<rem:importance value = "IMV-0002"/>
+<rem:urgency value = "URV-0002"/>
+<rem:status value = "STV-0005"/>
+<rem:stability value = "SBV-0004"/>
+<rem:relevantConcept>Catálogo de Stakeholders y Actores con roles y tipo de participación</rem:relevantConcept>
+<rem:averageLifeTime>
+<rem:tbd/>
+</rem:averageLifeTime>
+<rem:maximumLifeTime>
+<rem:tbd/>
+</rem:maximumLifeTime>
+<rem:averageOcurrences>
+<rem:tbd/>
+</rem:averageOcurrences>
+<rem:maximumOcurrences>
+<rem:tbd/>
+</rem:maximumOcurrences>
+</rem:informationRequirement>
+<rem:nonFunctionalRequirement oid="NFR-0001">
+<rem:name>RNF-01: Rendimiento y Tiempo de Respuesta</rem:name>
+<rem:version>
+<rem:major>1</rem:major>
+<rem:minor>0</rem:minor>
+<rem:date>
+<rem:year>2026</rem:year>
+<rem:month>9</rem:month>
+<rem:day>1</rem:day>
+</rem:date>
+</rem:version>
+<rem:comments>Eficiencia de desempeño bajo norma ISO/IEC 25010</rem:comments>
+<rem:importance value = "IMV-0003"/>
+<rem:urgency value = "URV-0003"/>
+<rem:status value = "STV-0005"/>
+<rem:stability value = "SBV-0004"/>
+<rem:description>Las consultas sobre el catálogo de requisitos y la generación de matrices de trazabilidad deben completarse en un tiempo no mayor a 2 segundos para proyectos de hasta 10,000 elementos.</rem:description>
+</rem:nonFunctionalRequirement>
+<rem:objective oid="OBJ-0001">
+<rem:name>OBJ-01: Estandarización de Requisitos</rem:name>
+<rem:version>
+<rem:major>1</rem:major>
+<rem:minor>0</rem:minor>
+<rem:date>
+<rem:year>2026</rem:year>
+<rem:month>9</rem:month>
+<rem:day>1</rem:day>
+</rem:date>
+</rem:version>
+<rem:comments>Alineado con los estándares internacionales de ingeniería de software</rem:comments>
+<rem:importance value = "IMV-0002"/>
+<rem:urgency value = "URV-0002"/>
+<rem:status value = "STV-0005"/>
+<rem:stability value = "SBV-0004"/>
+<rem:description>Estandarizar la especificación de requisitos del software bajo la norma IEEE Std 830-1998 e ISO/IEC/IEEE 29148.</rem:description>
+</rem:objective>
+<rem:stakeholder oid="STK-0001">
+<rem:name>STK-01: Docente Instructor</rem:name>
+<rem:version>
+<rem:major>1</rem:major>
+<rem:minor>0</rem:minor>
+<rem:date>
+<rem:year>2026</rem:year>
+<rem:month>9</rem:month>
+<rem:day>1</rem:day>
+</rem:date>
+</rem:version>
+<rem:comments>Docente titular del curso de Calidad de Software</rem:comments>
+<rem:stakeholderRole>Evaluador y Cliente del Sistema</rem:stakeholderRole>
+<rem:isCustomer/>
+</rem:stakeholder>
+<rem:useCase oid="UC-0001">
+<rem:name>CU-01: Registrar y Categorizar Requisito</rem:name>
+<rem:version>
+<rem:major>1</rem:major>
+<rem:minor>0</rem:minor>
+<rem:date>
+<rem:year>2026</rem:year>
+<rem:month>9</rem:month>
+<rem:day>1</rem:day>
+</rem:date>
+</rem:version>
+<rem:comments>Caso de uso principal de elicitación y especificación</rem:comments>
+<rem:importance value = "IMV-0002"/>
+<rem:urgency value = "URV-0002"/>
+<rem:status value = "STV-0005"/>
+<rem:stability value = "SBV-0004"/>
+<rem:triggeringEvent>El analista selecciona la opción Crear Requisito en el menú.</rem:triggeringEvent>
+<rem:precondition>El analista ha iniciado sesión y tiene un proyecto REM abierto.</rem:precondition>
+<rem:postcondition>El requisito queda almacenado en el catálogo del proyecto con versión 1.0.</rem:postcondition>
+<rem:frequency>
+<rem:tbd/>
+</rem:frequency>
+</rem:useCase>
+<rem:actor oid="ACT-0002">
+<rem:name>ACT-02: Ingeniero de Requisitos</rem:name>
+<rem:version>
+<rem:major>1</rem:major>
+<rem:minor>0</rem:minor>
+<rem:date>
+<rem:year>2026</rem:year>
+<rem:month>9</rem:month>
+<rem:day>1</rem:day>
+</rem:date>
+</rem:version>
+<rem:comments>Encargado de la elicitación, especificación y trazabilidad de requisitos</rem:comments>
+<rem:actorRole>Elicitación y Modelado de Requisitos</rem:actorRole>
+</rem:actor>
+<rem:functionalRequirement oid="FRQ-0002">
+<rem:name>RF-02: Clasificación y Categorización según IEEE 830</rem:name>
+<rem:version>
+<rem:major>1</rem:major>
+<rem:minor>0</rem:minor>
+<rem:date>
+<rem:year>2026</rem:year>
+<rem:month>9</rem:month>
+<rem:day>1</rem:day>
+</rem:date>
+</rem:version>
+<rem:comments>Cumplimiento con estructura estándar IEEE 830 / ISO 29148</rem:comments>
+<rem:importance value = "IMV-0002"/>
+<rem:urgency value = "URV-0002"/>
+<rem:status value = "STV-0005"/>
+<rem:stability value = "SBV-0004"/>
+<rem:description>El sistema clasificará los requisitos en funcionales, no funcionales (rendimiento, seguridad, fiabilidad, usabilidad) y restricciones operativas o de diseño.</rem:description>
+</rem:functionalRequirement>
+<rem:informationRequirement oid="IRQ-0002">
+<rem:name>RI-02: Especificación de Requisitos y Atributos</rem:name>
+<rem:version>
+<rem:major>1</rem:major>
+<rem:minor>0</rem:minor>
+<rem:date>
+<rem:year>2026</rem:year>
+<rem:month>9</rem:month>
+<rem:day>1</rem:day>
+</rem:date>
+</rem:version>
+<rem:comments>Estructura completa de atributos IEEE 830</rem:comments>
+<rem:importance value = "IMV-0002"/>
+<rem:urgency value = "URV-0002"/>
+<rem:status value = "STV-0005"/>
+<rem:stability value = "SBV-0004"/>
+<rem:relevantConcept>Ficha Técnica de Requisito con importancia, urgencia, estado y estabilidad</rem:relevantConcept>
+<rem:averageLifeTime>
+<rem:tbd/>
+</rem:averageLifeTime>
+<rem:maximumLifeTime>
+<rem:tbd/>
+</rem:maximumLifeTime>
+<rem:averageOcurrences>
+<rem:tbd/>
+</rem:averageOcurrences>
+<rem:maximumOcurrences>
+<rem:tbd/>
+</rem:maximumOcurrences>
+</rem:informationRequirement>
+<rem:nonFunctionalRequirement oid="NFR-0002">
+<rem:name>RNF-02: Seguridad y Control de Acceso</rem:name>
+<rem:version>
+<rem:major>1</rem:major>
+<rem:minor>0</rem:minor>
+<rem:date>
+<rem:year>2026</rem:year>
+<rem:month>9</rem:month>
+<rem:day>1</rem:day>
+</rem:date>
+</rem:version>
+<rem:comments>Seguridad e integridad de artefactos de requisitos validos</rem:comments>
+<rem:importance value = "IMV-0002"/>
+<rem:urgency value = "URV-0002"/>
+<rem:status value = "STV-0005"/>
+<rem:stability value = "SBV-0004"/>
+<rem:description>El sistema debe implementar control de acceso basado en roles (RBAC) asegurando que solo usuarios autorizados puedan modificar requisitos en estado Validado.</rem:description>
+</rem:nonFunctionalRequirement>
+<rem:objective oid="OBJ-0002">
+<rem:name>OBJ-02: Garantizar Trazabilidad Bidireccional</rem:name>
+<rem:version>
+<rem:major>1</rem:major>
+<rem:minor>0</rem:minor>
+<rem:date>
+<rem:year>2026</rem:year>
+<rem:month>9</rem:month>
+<rem:day>1</rem:day>
+</rem:date>
+</rem:version>
+<rem:comments>Permite el análisis de impacto y la verificación de cobertura</rem:comments>
+<rem:importance value = "IMV-0002"/>
+<rem:urgency value = "URV-0002"/>
+<rem:status value = "STV-0005"/>
+<rem:stability value = "SBV-0004"/>
+<rem:description>Asegurar la trazabilidad total entre objetivos de negocio, requerimientos funcionales, no funcionales y casos de uso.</rem:description>
+</rem:objective>
+<rem:stakeholder oid="STK-0002">
+<rem:name>STK-02: Equipo de Desarrollo y Analistas</rem:name>
+<rem:version>
+<rem:major>1</rem:major>
+<rem:minor>0</rem:minor>
+<rem:date>
+<rem:year>2026</rem:year>
+<rem:month>9</rem:month>
+<rem:day>1</rem:day>
+</rem:date>
+</rem:version>
+<rem:comments>Equipo de estudiantes de ingeniería de software a cargo del análisis</rem:comments>
+<rem:stakeholderRole>Ingenieros de Requerimientos y Desarrolladores</rem:stakeholderRole>
+<rem:isDeveloper/>
+<rem:isUser/>
+</rem:stakeholder>
+<rem:useCase oid="UC-0002">
+<rem:name>CU-02: Establecer Vínculo de Trazabilidad</rem:name>
+<rem:version>
+<rem:major>1</rem:major>
+<rem:minor>0</rem:minor>
+<rem:date>
+<rem:year>2026</rem:year>
+<rem:month>9</rem:month>
+<rem:day>1</rem:day>
+</rem:date>
+</rem:version>
+<rem:comments>Caso de uso de gestión de relaciones y trazabilidad</rem:comments>
+<rem:importance value = "IMV-0002"/>
+<rem:urgency value = "URV-0002"/>
+<rem:status value = "STV-0005"/>
+<rem:stability value = "SBV-0004"/>
+<rem:triggeringEvent>El analista selecciona Añadir Traza en la vista de relaciones.</rem:triggeringEvent>
+<rem:precondition>Existen al menos un requisito y un objetivo/caso de uso registrados.</rem:precondition>
+<rem:postcondition>La matriz de trazabilidad se actualiza reflejando la dependencia establecida.</rem:postcondition>
+<rem:frequency>
+<rem:tbd/>
+</rem:frequency>
+</rem:useCase>
+<rem:actor oid="ACT-0003">
+<rem:name>ACT-03: Auditor de Calidad</rem:name>
+<rem:version>
+<rem:major>1</rem:major>
+<rem:minor>0</rem:minor>
+<rem:date>
+<rem:year>2026</rem:year>
+<rem:month>9</rem:month>
+<rem:day>1</rem:day>
+</rem:date>
+</rem:version>
+<rem:comments>Verifica la conformidad con IEEE 830 y ejecuta la auditoría de calidad</rem:comments>
+<rem:actorRole>Verificación y Auditoría de Calidad</rem:actorRole>
+</rem:actor>
+<rem:functionalRequirement oid="FRQ-0003">
+<rem:name>RF-03: Gestión de Trazabilidad Bidireccional</rem:name>
+<rem:version>
+<rem:major>1</rem:major>
+<rem:minor>0</rem:minor>
+<rem:date>
+<rem:year>2026</rem:year>
+<rem:month>9</rem:month>
+<rem:day>1</rem:day>
+</rem:date>
+</rem:version>
+<rem:comments>Matriz de trazabilidad bidireccional entre artefactos</rem:comments>
+<rem:importance value = "IMV-0002"/>
+<rem:urgency value = "URV-0002"/>
+<rem:status value = "STV-0005"/>
+<rem:stability value = "SBV-0004"/>
+<rem:description>El sistema permitirá vincular requisitos con objetivos, casos de uso y otros requisitos dependientes, visualizando la matriz de trazabilidad y detectando requisitos huérfanos.</rem:description>
+</rem:functionalRequirement>
+<rem:informationRequirement oid="IRQ-0003">
+<rem:name>RI-03: Historial de Cambios y Versionado</rem:name>
+<rem:version>
+<rem:major>1</rem:major>
+<rem:minor>0</rem:minor>
+<rem:date>
+<rem:year>2026</rem:year>
+<rem:month>9</rem:month>
+<rem:day>1</rem:day>
+</rem:date>
+</rem:version>
+<rem:comments>Auditoría de cambios conforme a buenas prácticas de calidad</rem:comments>
+<rem:importance value = "IMV-0003"/>
+<rem:urgency value = "URV-0003"/>
+<rem:status value = "STV-0005"/>
+<rem:stability value = "SBV-0004"/>
+<rem:relevantConcept>Registro de Auditoría, operaciones CUD y solicitudes de cambio</rem:relevantConcept>
+<rem:averageLifeTime>
+<rem:tbd/>
+</rem:averageLifeTime>
+<rem:maximumLifeTime>
+<rem:tbd/>
+</rem:maximumLifeTime>
+<rem:averageOcurrences>
+<rem:tbd/>
+</rem:averageOcurrences>
+<rem:maximumOcurrences>
+<rem:tbd/>
+</rem:maximumOcurrences>
+</rem:informationRequirement>
+<rem:nonFunctionalRequirement oid="NFR-0003">
+<rem:name>RNF-03: Usabilidad y Facilidad de Aprendizaje</rem:name>
+<rem:version>
+<rem:major>1</rem:major>
+<rem:minor>0</rem:minor>
+<rem:date>
+<rem:year>2026</rem:year>
+<rem:month>9</rem:month>
+<rem:day>1</rem:day>
+</rem:date>
+</rem:version>
+<rem:comments>Facilidad de aprendizaje y operación conforme a ISO 9241</rem:comments>
+<rem:importance value = "IMV-0003"/>
+<rem:urgency value = "URV-0004"/>
+<rem:status value = "STV-0005"/>
+<rem:stability value = "SBV-0003"/>
+<rem:description>La interfaz de usuario debe presentar formularios estructurados y mensajes de error descriptivos reduciendo la curva de aprendizaje a menos de 2 horas para nuevos analistas.</rem:description>
+</rem:nonFunctionalRequirement>
+<rem:objective oid="OBJ-0003">
+<rem:name>OBJ-03: Automatización de Informes y Auditoría</rem:name>
+<rem:version>
+<rem:major>1</rem:major>
+<rem:minor>0</rem:minor>
+<rem:date>
+<rem:year>2026</rem:year>
+<rem:month>9</rem:month>
+<rem:day>1</rem:day>
+</rem:date>
+</rem:version>
+<rem:comments>Facilita la entrega de artefactos en formatos estándar XML y HTML</rem:comments>
+<rem:importance value = "IMV-0003"/>
+<rem:urgency value = "URV-0003"/>
+<rem:status value = "STV-0005"/>
+<rem:stability value = "SBV-0003"/>
+<rem:description>Automatizar la generación de matrices de trazabilidad, reportes de conformidad y documentación técnica.</rem:description>
+</rem:objective>
+<rem:stakeholder oid="STK-0003">
+<rem:name>STK-03: Auditor de Calidad (QA Lead)</rem:name>
+<rem:version>
+<rem:major>1</rem:major>
+<rem:minor>0</rem:minor>
+<rem:date>
+<rem:year>2026</rem:year>
+<rem:month>9</rem:month>
+<rem:day>1</rem:day>
+</rem:date>
+</rem:version>
+<rem:comments>Responsable de verificar cumplimiento de normas y calidad de requisitos</rem:comments>
+<rem:stakeholderRole>Auditor y Evaluador de Calidad</rem:stakeholderRole>
+<rem:isUser/>
+</rem:stakeholder>
+<rem:useCase oid="UC-0003">
+<rem:name>CU-03: Exportar Documento ERS IEEE 830</rem:name>
+<rem:version>
+<rem:major>1</rem:major>
+<rem:minor>0</rem:minor>
+<rem:date>
+<rem:year>2026</rem:year>
+<rem:month>9</rem:month>
+<rem:day>1</rem:day>
+</rem:date>
+</rem:version>
+<rem:comments>Generación automática de entregables formales</rem:comments>
+<rem:importance value = "IMV-0003"/>
+<rem:urgency value = "URV-0003"/>
+<rem:status value = "STV-0005"/>
+<rem:stability value = "SBV-0004"/>
+<rem:triggeringEvent>El usuario hace clic en Exportar Documento en la barra de herramientas.</rem:triggeringEvent>
+<rem:precondition>El proyecto pasa las validaciones de consistencia sin errores críticos.</rem:precondition>
+<rem:postcondition>Se genera el archivo de especificación listo para distribución y auditoría.</rem:postcondition>
+<rem:frequency>
+<rem:tbd/>
+</rem:frequency>
+</rem:useCase>
+<rem:functionalRequirement oid="FRQ-0004">
+<rem:name>RF-04: Control de Versiones y Gestión de Cambios</rem:name>
+<rem:version>
+<rem:major>1</rem:major>
+<rem:minor>0</rem:minor>
+<rem:date>
+<rem:year>2026</rem:year>
+<rem:month>9</rem:month>
+<rem:day>1</rem:day>
+</rem:date>
+</rem:version>
+<rem:comments>Permite registrar solicitudes de cambio con impacto y justificación</rem:comments>
+<rem:importance value = "IMV-0003"/>
+<rem:urgency value = "URV-0003"/>
+<rem:status value = "STV-0005"/>
+<rem:stability value = "SBV-0004"/>
+<rem:description>El sistema mantendrá un registro histórico de versiones de cada requisito, permitiendo comparar versiones anteriores y registrar solicitudes de cambio con su justificación e impacto.</rem:description>
+</rem:functionalRequirement>
+<rem:objective oid="OBJ-0004">
+<rem:name>OBJ-04: Gestión de Cambios y Conflictos</rem:name>
+<rem:version>
+<rem:major>1</rem:major>
+<rem:minor>0</rem:minor>
+<rem:date>
+<rem:year>2026</rem:year>
+<rem:month>9</rem:month>
+<rem:day>1</rem:day>
+</rem:date>
+</rem:version>
+<rem:comments>Mantiene el control de versiones y resolución sistemática de discrepancias</rem:comments>
+<rem:importance value = "IMV-0003"/>
+<rem:urgency value = "URV-0003"/>
+<rem:status value = "STV-0005"/>
+<rem:stability value = "SBV-0004"/>
+<rem:description>Facilitar el control de versiones, registro de defectos y resolución de conflictos de requisitos de forma colaborativa.</rem:description>
+</rem:objective>
+<rem:stakeholder oid="STK-0004">
+<rem:name>STK-04: Usuario Final / Operador</rem:name>
+<rem:version>
+<rem:major>1</rem:major>
+<rem:minor>0</rem:minor>
+<rem:date>
+<rem:year>2026</rem:year>
+<rem:month>9</rem:month>
+<rem:day>1</rem:day>
+</rem:date>
+</rem:version>
+<rem:comments>Personal operativo que interactúa directamente con el sistema de software</rem:comments>
+<rem:stakeholderRole>Usuario Operativo del Sistema</rem:stakeholderRole>
+<rem:isUser/>
+</rem:stakeholder>
+<rem:functionalRequirement oid="FRQ-0005">
+<rem:name>RF-05: Validación de Consistencia de Requisitos</rem:name>
+<rem:version>
+<rem:major>1</rem:major>
+<rem:minor>0</rem:minor>
+<rem:date>
+<rem:year>2026</rem:year>
+<rem:month>9</rem:month>
+<rem:day>1</rem:day>
+</rem:date>
+</rem:version>
+<rem:comments>Verificación automática de completitud y consistencia</rem:comments>
+<rem:importance value = "IMV-0003"/>
+<rem:urgency value = "URV-0003"/>
+<rem:status value = "STV-0005"/>
+<rem:stability value = "SBV-0004"/>
+<rem:description>El sistema ejecutará reglas de validación automática para comprobar que ningún requisito carezca de atributos obligatorios, descripción o vínculos de trazabilidad.</rem:description>
+</rem:functionalRequirement>
+<rem:functionalRequirement oid="FRQ-0006">
+<rem:name>RF-06: Exportación de Especificación ERS/SRS</rem:name>
+<rem:version>
+<rem:major>1</rem:major>
+<rem:minor>0</rem:minor>
+<rem:date>
+<rem:year>2026</rem:year>
+<rem:month>9</rem:month>
+<rem:day>1</rem:day>
+</rem:date>
+</rem:version>
+<rem:comments>Generación de especificación formal en XML y HTML navegable</rem:comments>
+<rem:importance value = "IMV-0003"/>
+<rem:urgency value = "URV-0003"/>
+<rem:status value = "STV-0005"/>
+<rem:stability value = "SBV-0004"/>
+<rem:description>El sistema permitirá generar y exportar el documento de Especificación de Requisitos Software (ERS/SRS) en formato XML estandarizado y reportes HTML navegables.</rem:description>
+</rem:functionalRequirement>
+</rem:c_requirementsSpecification>
+<rem:d_requirementsSpecification oid = "DRS-0002">
+<rem:name>Documento de Análisis del Sistema</rem:name>
+<rem:version>
+<rem:major>1</rem:major>
+<rem:minor>0</rem:minor>
+<rem:date>
+<rem:year>2026</rem:year>
+<rem:month>9</rem:month>
+<rem:day>1</rem:day>
+</rem:date>
+</rem:version>
+<rem:comments>Ninguno</rem:comments>
+</rem:d_requirementsSpecification>
+<rem:defectsSpecification oid = "DFS-0003">
+<rem:name>Registro de Defectos</rem:name>
+<rem:version>
+<rem:major>1</rem:major>
+<rem:minor>0</rem:minor>
+<rem:date>
+<rem:year>2026</rem:year>
+<rem:month>9</rem:month>
+<rem:day>1</rem:day>
+</rem:date>
+</rem:version>
+<rem:comments>Ninguno</rem:comments>
+</rem:defectsSpecification>
+<rem:changeRequestsSpecification oid = "CHS-0004">
+<rem:name>Registro de Peticiones de Cambio</rem:name>
+<rem:version>
+<rem:major>1</rem:major>
+<rem:minor>0</rem:minor>
+<rem:date>
+<rem:year>2026</rem:year>
+<rem:month>9</rem:month>
+<rem:day>1</rem:day>
+</rem:date>
+</rem:version>
+<rem:comments>Ninguno</rem:comments>
+</rem:changeRequestsSpecification>
+<rem:trace source="UC-0001"  target="UC-0002" >
+<rem:isChecked/>
+</rem:trace>
+<rem:trace source="UC-0002"  target="UC-0003" >
+<rem:isChecked/>
+</rem:trace>
+<rem:predefinedValueTypes>
+<rem:predefinedValueType oid="PVT-0001">
+<rem:name>Enum Literal</rem:name>
+<rem:version>
+<rem:major>1</rem:major>
+<rem:minor>0</rem:minor>
+<rem:date>
+<rem:year>2020</rem:year>
+<rem:month>10</rem:month>
+<rem:day>11</rem:day>
+</rem:date>
+</rem:version>
+<rem:comments>Predefined OCL type (non-standard)</rem:comments>
+<rem:description>Enumeration literals</rem:description>
+<rem:definition>(null)</rem:definition>
+</rem:predefinedValueType>
+<rem:predefinedValueType oid="PVT-0002">
+<rem:name>Real</rem:name>
+<rem:version>
+<rem:major>1</rem:major>
+<rem:minor>0</rem:minor>
+<rem:date>
+<rem:year>2000</rem:year>
+<rem:month>10</rem:month>
+<rem:day>30</rem:day>
+</rem:date>
+</rem:version>
+<rem:comments>Predefined OCL type</rem:comments>
+<rem:description>Real numbers</rem:description>
+<rem:definition>(null)</rem:definition>
+</rem:predefinedValueType>
+<rem:predefinedValueType oid="PVT-0003">
+<rem:name>Integer</rem:name>
+<rem:version>
+<rem:major>1</rem:major>
+<rem:minor>0</rem:minor>
+<rem:date>
+<rem:year>2000</rem:year>
+<rem:month>10</rem:month>
+<rem:day>30</rem:day>
+</rem:date>
+</rem:version>
+<rem:comments>Predefined OCL type</rem:comments>
+<rem:description>Integer numbers</rem:description>
+<rem:definition>(null)</rem:definition>
+</rem:predefinedValueType>
+<rem:predefinedValueType oid="PVT-0004">
+<rem:name>Natural</rem:name>
+<rem:version>
+<rem:major>1</rem:major>
+<rem:minor>0</rem:minor>
+<rem:date>
+<rem:year>2000</rem:year>
+<rem:month>10</rem:month>
+<rem:day>30</rem:day>
+</rem:date>
+</rem:version>
+<rem:comments>Predefined OCL type</rem:comments>
+<rem:description>Natural numbers</rem:description>
+<rem:definition>(null)</rem:definition>
+</rem:predefinedValueType>
+<rem:predefinedValueType oid="PVT-0005">
+<rem:name>String</rem:name>
+<rem:version>
+<rem:major>1</rem:major>
+<rem:minor>0</rem:minor>
+<rem:date>
+<rem:year>2000</rem:year>
+<rem:month>10</rem:month>
+<rem:day>30</rem:day>
+</rem:date>
+</rem:version>
+<rem:comments>Predefined OCL type</rem:comments>
+<rem:description>Alphanumeric strings</rem:description>
+<rem:definition>(null)</rem:definition>
+</rem:predefinedValueType>
+<rem:predefinedValueType oid="PVT-0006">
+<rem:name>Date</rem:name>
+<rem:version>
+<rem:major>1</rem:major>
+<rem:minor>0</rem:minor>
+<rem:date>
+<rem:year>2000</rem:year>
+<rem:month>10</rem:month>
+<rem:day>30</rem:day>
+</rem:date>
+</rem:version>
+<rem:comments>Predefined OCL type (non-standard)</rem:comments>
+<rem:description>Dates</rem:description>
+<rem:definition>(null)</rem:definition>
+</rem:predefinedValueType>
+<rem:predefinedValueType oid="PVT-0007">
+<rem:name>Time</rem:name>
+<rem:version>
+<rem:major>1</rem:major>
+<rem:minor>0</rem:minor>
+<rem:date>
+<rem:year>2000</rem:year>
+<rem:month>10</rem:month>
+<rem:day>30</rem:day>
+</rem:date>
+</rem:version>
+<rem:comments>Predefined OCL type (non-standard)</rem:comments>
+<rem:description>Hour:minutes:seconds</rem:description>
+<rem:definition>(null)</rem:definition>
+</rem:predefinedValueType>
+</rem:predefinedValueTypes>
+<rem:predefinedValues>
+<rem:changeRequestStatusValue oid = "CRV-0001">
+<rem:name>PD</rem:name>
+</rem:changeRequestStatusValue>
+<rem:changeRequestStatusValue oid = "CRV-0002">
+<rem:name>pendiente de análisis</rem:name>
+</rem:changeRequestStatusValue>
+<rem:changeRequestStatusValue oid = "CRV-0003">
+<rem:name>pendiente de aprobar/rechazar</rem:name>
+</rem:changeRequestStatusValue>
+<rem:changeRequestStatusValue oid = "CRV-0004">
+<rem:name>pendiente de realización</rem:name>
+</rem:changeRequestStatusValue>
+<rem:changeRequestStatusValue oid = "CRV-0005">
+<rem:name>verificado</rem:name>
+</rem:changeRequestStatusValue>
+<rem:changeRequestStatusValue oid = "CRV-0006">
+<rem:name>rechazado</rem:name>
+</rem:changeRequestStatusValue>
+<rem:conflictStatusValue oid = "CSV-0001">
+<rem:name>PD</rem:name>
+</rem:conflictStatusValue>
+<rem:conflictStatusValue oid = "CSV-0002">
+<rem:name>no resuelto</rem:name>
+</rem:conflictStatusValue>
+<rem:conflictStatusValue oid = "CSV-0003">
+<rem:name>en proceso de negociación</rem:name>
+</rem:conflictStatusValue>
+<rem:conflictStatusValue oid = "CSV-0004">
+<rem:name>resuelto</rem:name>
+</rem:conflictStatusValue>
+<rem:defectStatusValue oid = "DSV-0001">
+<rem:name>PD</rem:name>
+</rem:defectStatusValue>
+<rem:defectStatusValue oid = "DSV-0002">
+<rem:name>no eliminado</rem:name>
+</rem:defectStatusValue>
+<rem:defectStatusValue oid = "DSV-0003">
+<rem:name>en proceso de negociación</rem:name>
+</rem:defectStatusValue>
+<rem:defectStatusValue oid = "DSV-0004">
+<rem:name>eliminado</rem:name>
+</rem:defectStatusValue>
+<rem:defectTypeValue oid = "DTV-0001">
+<rem:name>PD</rem:name>
+<rem:description>
+<![CDATA[Por Determinar]]>
+</rem:description>
+</rem:defectTypeValue>
+<rem:defectTypeValue oid = "DTV-0002">
+<rem:name>Ambigüedad</rem:name>
+<rem:description>
+<![CDATA[El requisito o requisitos, aunque comprensibles, tienen más de una interpretación posible]]>
+</rem:description>
+</rem:defectTypeValue>
+<rem:defectTypeValue oid = "DTV-0003">
+<rem:name>No necesidad</rem:name>
+<rem:description>
+<![CDATA[El requisito o requisitos no son necesarios porque no contribuyen a satisfacer ninguna necesidad de clientes o usuarios]]>
+</rem:description>
+</rem:defectTypeValue>
+<rem:defectTypeValue oid = "DTV-0004">
+<rem:name>Incomprensibilidad</rem:name>
+<rem:description>
+<![CDATA[El requisito o requisitos no pueden ser entendidos por algún lector]]>
+</rem:description>
+</rem:defectTypeValue>
+<rem:defectTypeValue oid = "DTV-0005">
+<rem:name>No verificabilidad</rem:name>
+<rem:description>
+<![CDATA[No se puede comprobar que el sistema satisface el requisito o requisitos]]>
+</rem:description>
+</rem:defectTypeValue>
+<rem:defectTypeValue oid = "DTV-0006">
+<rem:name>Inconsistencia</rem:name>
+<rem:description>
+<![CDATA[El requisito o requisitos no son consistentes, es decir, presentan contradicciones internas o entre varios]]>
+</rem:description>
+</rem:defectTypeValue>
+<rem:defectTypeValue oid = "DTV-0007">
+<rem:name>No implementabilidad</rem:name>
+<rem:description>
+<![CDATA[El requisito o requisitos no pueden ser implementados con la tecnología actual o dentro de un coste razonable]]>
+</rem:description>
+</rem:defectTypeValue>
+<rem:defectTypeValue oid = "DTV-0008">
+<rem:name>Verbosidad excesiva</rem:name>
+<rem:description>
+<![CDATA[El requisito o requisitos pueden expresarse de forma más concisa sin alterar su significado]]>
+</rem:description>
+</rem:defectTypeValue>
+<rem:defectTypeValue oid = "DTV-0009">
+<rem:name>Dependiente del diseño</rem:name>
+<rem:description>
+<![CDATA[El requisito o requisitos incluyen elementos dependientes del diseño del sistema]]>
+</rem:description>
+</rem:defectTypeValue>
+<rem:defectTypeValue oid = "DTV-0010">
+<rem:name>Redundancia</rem:name>
+<rem:description>
+<![CDATA[El requisito o requisitos son redundantes o contienen elementos redundantes]]>
+</rem:description>
+</rem:defectTypeValue>
+<rem:defectTypeValue oid = "DTV-0011">
+<rem:name>Imprecisión</rem:name>
+<rem:description>
+<![CDATA[El requisito o requisitos no se expresan de forma precisa, es decir, usando cantidades numéricas siempre que sea posible con el nivel adecuado de precisión]]>
+</rem:description>
+</rem:defectTypeValue>
+<rem:defectTypeValue oid = "DTV-0012">
+<rem:name>Incompleción</rem:name>
+<rem:description>
+<![CDATA[El requisito o requisitos no describen todo lo que el sistema se supone que deberá hacer, no describen las respuestas del sistema a todas las posibles situaciones o incluyen elementos por determinar (PD)]]>
+</rem:description>
+</rem:defectTypeValue>
+<rem:defectTypeValue oid = "DTV-0013">
+<rem:name>Prioridad no establecida</rem:name>
+<rem:description>
+<![CDATA[El requisito o requisitos no tienen establecida su prioridad, es decir, su importancia y su urgencia]]>
+</rem:description>
+</rem:defectTypeValue>
+<rem:defectTypeValue oid = "DTV-0014">
+<rem:name>Estabilidad no establecida</rem:name>
+<rem:description>
+<![CDATA[El requisito o requisitos no tienen estimada su estabilidad]]>
+</rem:description>
+</rem:defectTypeValue>
+<rem:defectTypeValue oid = "DTV-0015">
+<rem:name>Nivel incorrecto de detalle</rem:name>
+<rem:description>
+<![CDATA[El requisito o requisitos no están expresados con el nivel adecuado de detalle, es decir, son demasiado abstractos o demasiado detallados]]>
+</rem:description>
+</rem:defectTypeValue>
+<rem:defectTypeValue oid = "DTV-0016">
+<rem:name>No rastreabilidad</rem:name>
+<rem:description>
+<![CDATA[El requisito o requisitos no están trazados hacia sus orígenes, bien requisitos de nivel superior (objetivos), bien clientes y usuarios]]>
+</rem:description>
+</rem:defectTypeValue>
+<rem:defectTypeValue oid = "DTV-0017">
+<rem:name>Organización incorrecta</rem:name>
+<rem:description>
+<![CDATA[El requisito o requisitos no están organizados correctamente según la normativa aplicada o el documento no contiene las secciones obligatorias]]>
+</rem:description>
+</rem:defectTypeValue>
+<rem:defectTypeValue oid = "DTV-0023">
+<rem:name>Otro</rem:name>
+<rem:description>
+<![CDATA[El requisito o requisitos presentan otro tipo de defecto]]>
+</rem:description>
+</rem:defectTypeValue>
+<rem:importanceValue oid = "IMV-0001">
+<rem:name>PD</rem:name>
+</rem:importanceValue>
+<rem:importanceValue oid = "IMV-0002">
+<rem:name>vital</rem:name>
+</rem:importanceValue>
+<rem:importanceValue oid = "IMV-0003">
+<rem:name>importante</rem:name>
+</rem:importanceValue>
+<rem:importanceValue oid = "IMV-0004">
+<rem:name>quedaría bien</rem:name>
+</rem:importanceValue>
+<rem:stabilityValue oid = "SBV-0001">
+<rem:name>PD</rem:name>
+</rem:stabilityValue>
+<rem:stabilityValue oid = "SBV-0002">
+<rem:name>baja</rem:name>
+</rem:stabilityValue>
+<rem:stabilityValue oid = "SBV-0003">
+<rem:name>media</rem:name>
+</rem:stabilityValue>
+<rem:stabilityValue oid = "SBV-0004">
+<rem:name>alta</rem:name>
+</rem:stabilityValue>
+<rem:statusValue oid = "STV-0001">
+<rem:name>PD</rem:name>
+</rem:statusValue>
+<rem:statusValue oid = "STV-0002">
+<rem:name>en construcción</rem:name>
+</rem:statusValue>
+<rem:statusValue oid = "STV-0003">
+<rem:name>pendiente de verificación</rem:name>
+</rem:statusValue>
+<rem:statusValue oid = "STV-0004">
+<rem:name>pendiente de validación</rem:name>
+</rem:statusValue>
+<rem:statusValue oid = "STV-0005">
+<rem:name>validado</rem:name>
+</rem:statusValue>
+<rem:terminationValue oid = "TEV-0001">
+<rem:name>PD</rem:name>
+</rem:terminationValue>
+<rem:terminationValue oid = "TEV-0002">
+<rem:name>continúa</rem:name>
+</rem:terminationValue>
+<rem:terminationValue oid = "TEV-0003">
+<rem:name>queda sin efecto</rem:name>
+</rem:terminationValue>
+<rem:timeUnitValue oid = "TUV-0001">
+<rem:name>PD</rem:name>
+</rem:timeUnitValue>
+<rem:timeUnitValue oid = "TUV-0002">
+<rem:name>año(s)</rem:name>
+</rem:timeUnitValue>
+<rem:timeUnitValue oid = "TUV-0005">
+<rem:name>mes(es)</rem:name>
+</rem:timeUnitValue>
+<rem:timeUnitValue oid = "TUV-0007">
+<rem:name>semana(s)</rem:name>
+</rem:timeUnitValue>
+<rem:timeUnitValue oid = "TUV-0008">
+<rem:name>día(s)</rem:name>
+</rem:timeUnitValue>
+<rem:timeUnitValue oid = "TUV-0009">
+<rem:name>hora(s)</rem:name>
+</rem:timeUnitValue>
+<rem:timeUnitValue oid = "TUV-0010">
+<rem:name>minuto(s)</rem:name>
+</rem:timeUnitValue>
+<rem:timeUnitValue oid = "TUV-0011">
+<rem:name>segundo(s)</rem:name>
+</rem:timeUnitValue>
+<rem:timeUnitValue oid = "TUV-0012">
+<rem:name>décima(s) de segundo</rem:name>
+</rem:timeUnitValue>
+<rem:timeUnitValue oid = "TUV-0013">
+<rem:name>centésima(s) de segundo</rem:name>
+</rem:timeUnitValue>
+<rem:timeUnitValue oid = "TUV-0014">
+<rem:name>milisegundo(s)</rem:name>
+</rem:timeUnitValue>
+<rem:urgencyValue oid = "URV-0001">
+<rem:name>PD</rem:name>
+</rem:urgencyValue>
+<rem:urgencyValue oid = "URV-0002">
+<rem:name>inmediatamente</rem:name>
+</rem:urgencyValue>
+<rem:urgencyValue oid = "URV-0003">
+<rem:name>hay presión</rem:name>
+</rem:urgencyValue>
+<rem:urgencyValue oid = "URV-0004">
+<rem:name>puede esperar</rem:name>
+</rem:urgencyValue>
+</rem:predefinedValues>
+</rem:requirementsProject>

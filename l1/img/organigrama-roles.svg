@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="850" height="420" viewBox="0 0 850 420">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="1" dy="2" stdDeviation="2" flood-color="#000000" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+
+  <rect width="850" height="420" fill="#f8f9fa" rx="8"/>
+
+  <!-- Level 1: Cliente / Sponsor -->
+  <g transform="translate(325, 20)" filter="url(#shadow)">
+    <rect width="200" height="65" rx="6" fill="#1864ab" stroke="#15aabf" stroke-width="1.5"/>
+    <text x="100" y="26" font-family="sans-serif" font-size="13" fill="#ffffff" font-weight="bold" text-anchor="middle">Docente Instructor</text>
+    <text x="100" y="44" font-family="sans-serif" font-size="11" fill="#e7f5ff" text-anchor="middle">Cliente / Evaluador (STK-01)</text>
+    <text x="100" y="58" font-family="sans-serif" font-size="10" fill="#d0ebff" text-anchor="middle">UNSA - Calidad de Software</text>
+  </g>
+
+  <!-- Line L1 to L2 -->
+  <line x1="425" y1="85" x2="425" y2="115" stroke="#495057" stroke-width="2"/>
+
+  <!-- Level 2: QA Lead / Auditor -->
+  <g transform="translate(325, 115)" filter="url(#shadow)">
+    <rect width="200" height="60" rx="6" fill="#2b8a3e" stroke="#40c057" stroke-width="1.5"/>
+    <text x="100" y="25" font-family="sans-serif" font-size="13" fill="#ffffff" font-weight="bold" text-anchor="middle">Auditor de Calidad (QA)</text>
+    <text x="100" y="43" font-family="sans-serif" font-size="11" fill="#ebfbee" text-anchor="middle">Verificación y Validación (STK-03)</text>
+  </g>
+
+  <!-- Fork lines from L2 to L3 -->
+  <line x1="425" y1="175" x2="425" y2="205" stroke="#495057" stroke-width="2"/>
+  <line x1="140" y1="205" x2="710" y2="205" stroke="#495057" stroke-width="2"/>
+  
+  <line x1="140" y1="205" x2="140" y2="230" stroke="#495057" stroke-width="2"/>
+  <line x1="330" y1="205" x2="330" y2="230" stroke="#495057" stroke-width="2"/>
+  <line x1="520" y1="205" x2="520" y2="230" stroke="#495057" stroke-width="2"/>
+  <line x1="710" y1="205" x2="710" y2="230" stroke="#495057" stroke-width="2"/>
+
+  <!-- Level 3: Roles Operativos y Técnicos -->
+  
+  <!-- Ingeniero de Requisitos -->
+  <g transform="translate(45, 230)" filter="url(#shadow)">
+    <rect width="190" height="70" rx="6" fill="#ffffff" stroke="#ced4da" stroke-width="1.5"/>
+    <rect width="190" height="6" rx="3" fill="#e67700"/>
+    <text x="95" y="28" font-family="sans-serif" font-size="12" fill="#212529" font-weight="bold" text-anchor="middle">Ing. de Requerimientos</text>
+    <text x="95" y="46" font-family="sans-serif" font-size="10" fill="#495057" text-anchor="middle">Elicitación y Modelado</text>
+    <text x="95" y="60" font-family="sans-serif" font-size="10" fill="#868e96" text-anchor="middle">Actor (ACT-02)</text>
+  </g>
+
+  <!-- Equipo de Desarrollo -->
+  <g transform="translate(245, 230)" filter="url(#shadow)">
+    <rect width="180" height="70" rx="6" fill="#ffffff" stroke="#ced4da" stroke-width="1.5"/>
+    <rect width="180" height="6" rx="3" fill="#4c6ef5"/>
+    <text x="90" y="28" font-family="sans-serif" font-size="12" fill="#212529" font-weight="bold" text-anchor="middle">Equipo de Desarrollo</text>
+    <text x="90" y="46" font-family="sans-serif" font-size="10" fill="#495057" text-anchor="middle">Implementación y Pruebas</text>
+    <text x="90" y="60" font-family="sans-serif" font-size="10" fill="#868e96" text-anchor="middle">Stakeholder (STK-02)</text>
+  </g>
+
+  <!-- Usuario Operativo -->
+  <g transform="translate(435, 230)" filter="url(#shadow)">
+    <rect width="180" height="70" rx="6" fill="#ffffff" stroke="#ced4da" stroke-width="1.5"/>
+    <rect width="180" height="6" rx="3" fill="#20c997"/>
+    <text x="90" y="28" font-family="sans-serif" font-size="12" fill="#212529" font-weight="bold" text-anchor="middle">Usuario Operativo</text>
+    <text x="90" y="46" font-family="sans-serif" font-size="10" fill="#495057" text-anchor="middle">Operador de Laboratorio</text>
+    <text x="90" y="60" font-family="sans-serif" font-size="10" fill="#868e96" text-anchor="middle">Stakeholder (STK-04)</text>
+  </g>
+
+  <!-- Administrador del Sistema -->
+  <g transform="translate(625, 230)" filter="url(#shadow)">
+    <rect width="180" height="70" rx="6" fill="#ffffff" stroke="#ced4da" stroke-width="1.5"/>
+    <rect width="180" height="6" rx="3" fill="#845ef7"/>
+    <text x="90" y="28" font-family="sans-serif" font-size="12" fill="#212529" font-weight="bold" text-anchor="middle">Administrador Sist.</text>
+    <text x="90" y="46" font-family="sans-serif" font-size="10" fill="#495057" text-anchor="middle">Gestión y Seguridad RBAC</text>
+    <text x="90" y="60" font-family="sans-serif" font-size="10" fill="#868e96" text-anchor="middle">Actor (ACT-01)</text>
+  </g>
+
+  <!-- Bottom Legend -->
+  <g transform="translate(150, 335)">
+    <rect width="550" height="65" rx="5" fill="#ffffff" stroke="#dee2e6"/>
+    <text x="20" y="22" font-family="sans-serif" font-size="11" fill="#495057" font-weight="bold">Convenciones de Clasificación:</text>
+    <circle cx="30" cy="42" r="6" fill="#1864ab"/>
+    <text x="42" y="46" font-family="sans-serif" font-size="10" fill="#495057">Cliente / Patrocinador</text>
+    <circle cx="160" cy="42" r="6" fill="#2b8a3e"/>
+    <text x="172" y="46" font-family="sans-serif" font-size="10" fill="#495057">Aseguramiento de Calidad (QA)</text>
+    <circle cx="330" cy="42" r="6" fill="#4c6ef5"/>
+    <text x="342" y="46" font-family="sans-serif" font-size="10" fill="#495057">Desarrollo y Análisis</text>
+    <circle cx="460" cy="42" r="6" fill="#20c997"/>
+    <text x="472" y="46" font-family="sans-serif" font-size="10" fill="#495057">Usuario Final</text>
+  </g>
+</svg>

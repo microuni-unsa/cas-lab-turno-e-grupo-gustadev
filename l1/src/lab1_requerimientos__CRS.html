@@ -1,0 +1,1225 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="iso-8859-1" />
+<meta name="generatedBy" content="REMUS" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/amador-duran-toro/remus/assets/stylesheets/remus.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/amador-duran-toro/remus/assets/stylesheets/madeja.css" />
+<title>Proyecto lab1_requerimientos</title>
+<script>
+            // array for user warnings
+            var warnings = new Array();
+        </script>
+</head>
+<body>
+<div id="warning_container" class="ui-widget">
+<span id="warning_title">Avisos</span>
+<div id="warning_messages"></div>
+</div>
+<div id="document_cover">
+<div id="browser_info">
+<script>
+                document.write( navigator.userAgent );
+            </script>
+</div>
+<div id="project_name">Proyecto lab1_requerimientos</div>
+<div id="document_logo">
+<img alt="Universidad de Sevilla" src="https://cdn.jsdelivr.net/gh/amador-duran-toro/rem/assets/images/logo_us.gif" />
+</div>
+<div id="document_name">Documento ERS - SGARCS</div>
+<div id="document_version">Versión 1.0</div>
+<div id="document_date">Fecha 01/09/2026</div>
+<div id="document_prepared_for">Preparado para:<p class="tbd">?</p></div>
+<div id="document_prepared_by">Preparado por:<p class="tbd">?</p></div>
+</div>
+<div class="pagebreak"></div>
+<nav id="toc" role="navigation">
+<h1>Índice</h1>
+<ul class="toc_list toc_list_level_1">
+</ul>
+</nav>
+<div class="pagebreak"></div>
+<div id="ACT-0001">
+<table class="actor remus_table">
+<thead>
+<tr>
+<th>
+<img src="https://cdn.jsdelivr.net/gh/amador-duran-toro/remus/assets/images/icons/actor.png" /> ACT-0001</th>
+<th class="name_column" colspan="1">ACT-01: Administrador del Sistema</th>
+</tr>
+</thead>
+<tr>
+<th>Versión</th>
+<td colspan="1">1.0 (01/09/2026)
+</td>
+</tr>
+<tr>
+<th>Descripción</th>
+<td colspan="1">
+<div id="ACT-0001-actorRole-html" class=""><p>Este actor representa Administración y Configuración del Sistema.</p></div>
+</td>
+</tr>
+<tr>
+<th>Comentarios</th>
+<td colspan="1">
+<div id="ACT-0001-comments-html" class="remus_comments"><p>Administra perfiles, configuraciones y accesos del sistema</p></div>
+</td>
+</tr>
+</table>
+</div>
+<div id="CRQ-0001">
+<table class="constraint_requirement remus_table">
+<thead>
+<tr>
+<th>
+<img src="https://cdn.jsdelivr.net/gh/amador-duran-toro/remus/assets/images/icons/constraintRequirement.png" /> CRQ-0001</th>
+<th class="name_column" colspan="1">RC-01: Compatibilidad con Esquema Jet y XML REMUS</th>
+</tr>
+</thead>
+<tr>
+<th>Versión</th>
+<td colspan="1">1.0 (01/09/2026)
+</td>
+</tr>
+<tr>
+<th>Descripción</th>
+<td colspan="1">
+<div id="CRQ-0001-description-html" class=""><p>El sistema deberá respetar la siguiente regla de negocio o restricción: El sistema debe ser 100% compatible con bases de datos Jet/MS Access (.rem) y esquemas XML con validación remus.dtd..</p></div>
+</td>
+</tr>
+<tr>
+<th>Importancia</th>
+<td colspan="1">vital</td>
+</tr>
+<tr>
+<th>Urgencia</th>
+<td colspan="1">inmediatamente</td>
+</tr>
+<tr>
+<th>Estado</th>
+<td colspan="1">validado</td>
+</tr>
+<tr>
+<th>Estabilidad</th>
+<td colspan="1">alta</td>
+</tr>
+<tr>
+<th>Comentarios</th>
+<td colspan="1">
+<div id="CRQ-0001-comments-html" class="remus_comments"><p>Restricción técnica de arquitectura y persistencia</p></div>
+</td>
+</tr>
+</table>
+</div>
+<div id="FRQ-0001">
+<table class="functional_requirement remus_table">
+<thead>
+<tr>
+<th>
+<img src="https://cdn.jsdelivr.net/gh/amador-duran-toro/remus/assets/images/icons/functionalRequirement.png" /> FRQ-0001</th>
+<th class="name_column" colspan="1">RF-01: Elicitación y Registro de Requerimientos</th>
+</tr>
+</thead>
+<tr>
+<th>Versión</th>
+<td colspan="1">1.0 (01/09/2026)
+</td>
+</tr>
+<tr>
+<th>Descripción</th>
+<td colspan="1">
+<div id="FRQ-0001-description-html" class=""><p>El sistema deberá El sistema permitirá ingresar nuevos requisitos funcionales y no funcionales asignando identificador unívoco, descripción, prioridad e información de origen..</p></div>
+</td>
+</tr>
+<tr>
+<th>Importancia</th>
+<td colspan="1">vital</td>
+</tr>
+<tr>
+<th>Urgencia</th>
+<td colspan="1">inmediatamente</td>
+</tr>
+<tr>
+<th>Estado</th>
+<td colspan="1">validado</td>
+</tr>
+<tr>
+<th>Estabilidad</th>
+<td colspan="1">alta</td>
+</tr>
+<tr>
+<th>Comentarios</th>
+<td colspan="1">
+<div id="FRQ-0001-comments-html" class="remus_comments"><p>Requisito funcional base del sistema</p></div>
+</td>
+</tr>
+</table>
+</div>
+<div id="IRQ-0001">
+<table class="information_requirement remus_table">
+<thead>
+<tr>
+<th>
+<img src="https://cdn.jsdelivr.net/gh/amador-duran-toro/remus/assets/images/icons/informationRequirement.png" /> IRQ-0001</th>
+<th class="name_column" colspan="2">RI-01: Registro de Partes Interesadas</th>
+</tr>
+</thead>
+<tr>
+<th>Versión</th>
+<td colspan="2">1.0 (01/09/2026)
+</td>
+</tr>
+<tr>
+<th>Descripción</th>
+<td colspan="2">
+<div id="IRQ-0001-relevantConcept-html" class="relevant_concept"><p>El sistema deberá almacenar la información correspondiente a Catálogo de Stakeholders y Actores con roles y tipo de participación. En concreto:</p></div>
+</td>
+</tr>
+<tr>
+<th>Datos específicos</th>
+<td colspan="2">
+<span class="tbd">PD</span>
+</td>
+</tr>
+<tr>
+<th>Importancia</th>
+<td colspan="2">vital</td>
+</tr>
+<tr>
+<th>Urgencia</th>
+<td colspan="2">inmediatamente</td>
+</tr>
+<tr>
+<th>Estado</th>
+<td colspan="2">validado</td>
+</tr>
+<tr>
+<th>Estabilidad</th>
+<td colspan="2">alta</td>
+</tr>
+<tr>
+<th>Comentarios</th>
+<td colspan="2">
+<div id="IRQ-0001-comments-html" class="remus_comments"><p>Información de contacto, responsabilidades y clasificación</p></div>
+</td>
+</tr>
+</table>
+</div>
+<div id="NFR-0001">
+<table class="nonfunctional_requirement remus_table">
+<thead>
+<tr>
+<th>
+<img src="https://cdn.jsdelivr.net/gh/amador-duran-toro/remus/assets/images/icons/nonFunctionalRequirement.png" /> NFR-0001</th>
+<th class="name_column" colspan="1">RNF-01: Rendimiento y Tiempo de Respuesta</th>
+</tr>
+</thead>
+<tr>
+<th>Versión</th>
+<td colspan="1">1.0 (01/09/2026)
+</td>
+</tr>
+<tr>
+<th>Descripción</th>
+<td colspan="1">
+<div id="NFR-0001-description-html" class=""><p>El sistema deberá Las consultas sobre el catálogo de requisitos y la generación de matrices de trazabilidad deben completarse en un tiempo no mayor a 2 segundos para proyectos de hasta 10,000 elementos..</p></div>
+</td>
+</tr>
+<tr>
+<th>Importancia</th>
+<td colspan="1">importante</td>
+</tr>
+<tr>
+<th>Urgencia</th>
+<td colspan="1">hay presión</td>
+</tr>
+<tr>
+<th>Estado</th>
+<td colspan="1">validado</td>
+</tr>
+<tr>
+<th>Estabilidad</th>
+<td colspan="1">alta</td>
+</tr>
+<tr>
+<th>Comentarios</th>
+<td colspan="1">
+<div id="NFR-0001-comments-html" class="remus_comments"><p>Eficiencia de desempeño bajo norma ISO/IEC 25010</p></div>
+</td>
+</tr>
+</table>
+</div>
+<div id="OBJ-0001">
+<table class="objective remus_table">
+<thead>
+<tr>
+<th>
+<img src="https://cdn.jsdelivr.net/gh/amador-duran-toro/remus/assets/images/icons/objective.png" /> OBJ-0001</th>
+<th class="name_column" colspan="1">OBJ-01: Estandarización de Requisitos</th>
+</tr>
+</thead>
+<tr>
+<th>Versión</th>
+<td colspan="1">1.0 (01/09/2026)
+</td>
+</tr>
+<tr>
+<th>Descripción</th>
+<td colspan="1">
+<div id="OBJ-0001-description-html" class=""><p>El sistema deberá Estandarizar la especificación de requisitos del software bajo la norma IEEE Std 830-1998 e ISO/IEC/IEEE 29148..</p></div>
+</td>
+</tr>
+<tr>
+<th>Importancia</th>
+<td colspan="1">vital</td>
+</tr>
+<tr>
+<th>Urgencia</th>
+<td colspan="1">inmediatamente</td>
+</tr>
+<tr>
+<th>Estado</th>
+<td colspan="1">validado</td>
+</tr>
+<tr>
+<th>Estabilidad</th>
+<td colspan="1">alta</td>
+</tr>
+<tr>
+<th>Comentarios</th>
+<td colspan="1">
+<div id="OBJ-0001-comments-html" class="remus_comments"><p>Alineado con los estándares internacionales de ingeniería de software</p></div>
+</td>
+</tr>
+</table>
+</div>
+<div id="STK-0001">
+<table class="stakeholder remus_table">
+<thead>
+<tr>
+<th>
+<img src="https://cdn.jsdelivr.net/gh/amador-duran-toro/remus/assets/images/icons/stakeholder.png" /> Participante</th>
+<th class="name_column" colspan="1">STK-01: Docente Instructor</th>
+</tr>
+</thead>
+<tr>
+<th>Organización</th>
+<td>Freelance</td>
+</tr>
+<tr>
+<th>Rol</th>
+<td colspan="1">
+<span id="STK-0001-stakeholderRole-html" class="">Evaluador y Cliente del Sistema                        (es cliente)                    </span>
+</td>
+</tr>
+<tr>
+<th>Comentarios</th>
+<td colspan="1">
+<div id="STK-0001-comments-html" class="remus_comments"><p>Docente titular del curso de Calidad de Software</p></div>
+</td>
+</tr>
+</table>
+</div>
+<div id="UC-0001">
+<table class="use_case remus_table">
+<thead>
+<tr>
+<th>
+<img src="https://cdn.jsdelivr.net/gh/amador-duran-toro/remus/assets/images/icons/useCase.png" /> UC-0001</th>
+<th class="name_column" colspan="2">CU-01: Registrar y Categorizar Requisito </th>
+</tr>
+</thead>
+<tr>
+<th>Versión</th>
+<td colspan="2">1.0 (01/09/2026)
+</td>
+</tr>
+<tr>
+<th>Descripción</th>
+<td colspan="2"><div id="UC-0001--html" class=""><p>El sistema deberá comportarse tal como se describe en el siguiente caso de uso cuando El analista selecciona la opción Crear Requisito en el menú.. </p></div>
+</td>
+</tr>
+<tr>
+<th>Precondición</th>
+<td colspan="2">
+<div id="UC-0001-precondition-html" class=""><p>El analista ha iniciado sesión y tiene un proyecto REM abierto.</p></div>
+</td>
+</tr>
+<tr>
+<th>Postcondición</th>
+<td colspan="2">
+<div id="UC-0001-postcondition-html" class=""><p>El requisito queda almacenado en el catálogo del proyecto con versión 1.0.</p></div>
+</td>
+</tr>
+<tr>
+<th>Importancia</th>
+<td colspan="2">vital</td>
+</tr>
+<tr>
+<th>Urgencia</th>
+<td colspan="2">inmediatamente</td>
+</tr>
+<tr>
+<th>Estado</th>
+<td colspan="2">validado</td>
+</tr>
+<tr>
+<th>Estabilidad</th>
+<td colspan="2">alta</td>
+</tr>
+<tr>
+<th>Comentarios</th>
+<td colspan="2">
+<div id="UC-0001-comments-html" class="remus_comments"><p>Caso de uso principal de elicitación y especificación</p></div>
+</td>
+</tr>
+</table>
+</div>
+<div id="ACT-0002">
+<table class="actor remus_table">
+<thead>
+<tr>
+<th>
+<img src="https://cdn.jsdelivr.net/gh/amador-duran-toro/remus/assets/images/icons/actor.png" /> ACT-0002</th>
+<th class="name_column" colspan="1">ACT-02: Ingeniero de Requisitos</th>
+</tr>
+</thead>
+<tr>
+<th>Versión</th>
+<td colspan="1">1.0 (01/09/2026)
+</td>
+</tr>
+<tr>
+<th>Descripción</th>
+<td colspan="1">
+<div id="ACT-0002-actorRole-html" class=""><p>Este actor representa Elicitación y Modelado de Requisitos.</p></div>
+</td>
+</tr>
+<tr>
+<th>Comentarios</th>
+<td colspan="1">
+<div id="ACT-0002-comments-html" class="remus_comments"><p>Encargado de la elicitación, especificación y trazabilidad de requisitos</p></div>
+</td>
+</tr>
+</table>
+</div>
+<div id="FRQ-0002">
+<table class="functional_requirement remus_table">
+<thead>
+<tr>
+<th>
+<img src="https://cdn.jsdelivr.net/gh/amador-duran-toro/remus/assets/images/icons/functionalRequirement.png" /> FRQ-0002</th>
+<th class="name_column" colspan="1">RF-02: Clasificación y Categorización según IEEE 830</th>
+</tr>
+</thead>
+<tr>
+<th>Versión</th>
+<td colspan="1">1.0 (01/09/2026)
+</td>
+</tr>
+<tr>
+<th>Descripción</th>
+<td colspan="1">
+<div id="FRQ-0002-description-html" class=""><p>El sistema deberá El sistema clasificará los requisitos en funcionales, no funcionales (rendimiento, seguridad, fiabilidad, usabilidad) y restricciones operativas o de diseño..</p></div>
+</td>
+</tr>
+<tr>
+<th>Importancia</th>
+<td colspan="1">vital</td>
+</tr>
+<tr>
+<th>Urgencia</th>
+<td colspan="1">inmediatamente</td>
+</tr>
+<tr>
+<th>Estado</th>
+<td colspan="1">validado</td>
+</tr>
+<tr>
+<th>Estabilidad</th>
+<td colspan="1">alta</td>
+</tr>
+<tr>
+<th>Comentarios</th>
+<td colspan="1">
+<div id="FRQ-0002-comments-html" class="remus_comments"><p>Cumplimiento con estructura estándar IEEE 830 / ISO 29148</p></div>
+</td>
+</tr>
+</table>
+</div>
+<div id="IRQ-0002">
+<table class="information_requirement remus_table">
+<thead>
+<tr>
+<th>
+<img src="https://cdn.jsdelivr.net/gh/amador-duran-toro/remus/assets/images/icons/informationRequirement.png" /> IRQ-0002</th>
+<th class="name_column" colspan="2">RI-02: Especificación de Requisitos y Atributos</th>
+</tr>
+</thead>
+<tr>
+<th>Versión</th>
+<td colspan="2">1.0 (01/09/2026)
+</td>
+</tr>
+<tr>
+<th>Descripción</th>
+<td colspan="2">
+<div id="IRQ-0002-relevantConcept-html" class="relevant_concept"><p>El sistema deberá almacenar la información correspondiente a Ficha Técnica de Requisito con importancia, urgencia, estado y estabilidad. En concreto:</p></div>
+</td>
+</tr>
+<tr>
+<th>Datos específicos</th>
+<td colspan="2">
+<span class="tbd">PD</span>
+</td>
+</tr>
+<tr>
+<th>Importancia</th>
+<td colspan="2">vital</td>
+</tr>
+<tr>
+<th>Urgencia</th>
+<td colspan="2">inmediatamente</td>
+</tr>
+<tr>
+<th>Estado</th>
+<td colspan="2">validado</td>
+</tr>
+<tr>
+<th>Estabilidad</th>
+<td colspan="2">alta</td>
+</tr>
+<tr>
+<th>Comentarios</th>
+<td colspan="2">
+<div id="IRQ-0002-comments-html" class="remus_comments"><p>Estructura completa de atributos IEEE 830</p></div>
+</td>
+</tr>
+</table>
+</div>
+<div id="NFR-0002">
+<table class="nonfunctional_requirement remus_table">
+<thead>
+<tr>
+<th>
+<img src="https://cdn.jsdelivr.net/gh/amador-duran-toro/remus/assets/images/icons/nonFunctionalRequirement.png" /> NFR-0002</th>
+<th class="name_column" colspan="1">RNF-02: Seguridad y Control de Acceso</th>
+</tr>
+</thead>
+<tr>
+<th>Versión</th>
+<td colspan="1">1.0 (01/09/2026)
+</td>
+</tr>
+<tr>
+<th>Descripción</th>
+<td colspan="1">
+<div id="NFR-0002-description-html" class=""><p>El sistema deberá El sistema debe implementar control de acceso basado en roles (RBAC) asegurando que solo usuarios autorizados puedan modificar requisitos en estado Validado..</p></div>
+</td>
+</tr>
+<tr>
+<th>Importancia</th>
+<td colspan="1">vital</td>
+</tr>
+<tr>
+<th>Urgencia</th>
+<td colspan="1">inmediatamente</td>
+</tr>
+<tr>
+<th>Estado</th>
+<td colspan="1">validado</td>
+</tr>
+<tr>
+<th>Estabilidad</th>
+<td colspan="1">alta</td>
+</tr>
+<tr>
+<th>Comentarios</th>
+<td colspan="1">
+<div id="NFR-0002-comments-html" class="remus_comments"><p>Seguridad e integridad de artefactos de requisitos validos</p></div>
+</td>
+</tr>
+</table>
+</div>
+<div id="OBJ-0002">
+<table class="objective remus_table">
+<thead>
+<tr>
+<th>
+<img src="https://cdn.jsdelivr.net/gh/amador-duran-toro/remus/assets/images/icons/objective.png" /> OBJ-0002</th>
+<th class="name_column" colspan="1">OBJ-02: Garantizar Trazabilidad Bidireccional</th>
+</tr>
+</thead>
+<tr>
+<th>Versión</th>
+<td colspan="1">1.0 (01/09/2026)
+</td>
+</tr>
+<tr>
+<th>Descripción</th>
+<td colspan="1">
+<div id="OBJ-0002-description-html" class=""><p>El sistema deberá Asegurar la trazabilidad total entre objetivos de negocio, requerimientos funcionales, no funcionales y casos de uso..</p></div>
+</td>
+</tr>
+<tr>
+<th>Importancia</th>
+<td colspan="1">vital</td>
+</tr>
+<tr>
+<th>Urgencia</th>
+<td colspan="1">inmediatamente</td>
+</tr>
+<tr>
+<th>Estado</th>
+<td colspan="1">validado</td>
+</tr>
+<tr>
+<th>Estabilidad</th>
+<td colspan="1">alta</td>
+</tr>
+<tr>
+<th>Comentarios</th>
+<td colspan="1">
+<div id="OBJ-0002-comments-html" class="remus_comments"><p>Permite el análisis de impacto y la verificación de cobertura</p></div>
+</td>
+</tr>
+</table>
+</div>
+<div id="STK-0002">
+<table class="stakeholder remus_table">
+<thead>
+<tr>
+<th>
+<img src="https://cdn.jsdelivr.net/gh/amador-duran-toro/remus/assets/images/icons/stakeholder.png" /> Participante</th>
+<th class="name_column" colspan="1">STK-02: Equipo de Desarrollo y Analistas</th>
+</tr>
+</thead>
+<tr>
+<th>Organización</th>
+<td>Freelance</td>
+</tr>
+<tr>
+<th>Rol</th>
+<td colspan="1">
+<span id="STK-0002-stakeholderRole-html" class="">Ingenieros de Requerimientos y Desarrolladores                        (es desarrollador, es usuario)                    </span>
+</td>
+</tr>
+<tr>
+<th>Comentarios</th>
+<td colspan="1">
+<div id="STK-0002-comments-html" class="remus_comments"><p>Equipo de estudiantes de ingeniería de software a cargo del análisis</p></div>
+</td>
+</tr>
+</table>
+</div>
+<div id="UC-0002">
+<table class="use_case remus_table">
+<thead>
+<tr>
+<th>
+<img src="https://cdn.jsdelivr.net/gh/amador-duran-toro/remus/assets/images/icons/useCase.png" /> UC-0002</th>
+<th class="name_column" colspan="2">CU-02: Establecer Vínculo de Trazabilidad </th>
+</tr>
+</thead>
+<tr>
+<th>Versión</th>
+<td colspan="2">1.0 (01/09/2026)
+</td>
+</tr>
+<tr>
+<th>Descripción</th>
+<td colspan="2"><div id="UC-0002--html" class=""><p>El sistema deberá comportarse tal como se describe en el siguiente caso de uso cuando El analista selecciona Añadir Traza en la vista de relaciones.. </p></div>
+</td>
+</tr>
+<tr>
+<th>Precondición</th>
+<td colspan="2">
+<div id="UC-0002-precondition-html" class=""><p>Existen al menos un requisito y un objetivo/caso de uso registrados.</p></div>
+</td>
+</tr>
+<tr>
+<th>Postcondición</th>
+<td colspan="2">
+<div id="UC-0002-postcondition-html" class=""><p>La matriz de trazabilidad se actualiza reflejando la dependencia establecida.</p></div>
+</td>
+</tr>
+<tr>
+<th>Importancia</th>
+<td colspan="2">vital</td>
+</tr>
+<tr>
+<th>Urgencia</th>
+<td colspan="2">inmediatamente</td>
+</tr>
+<tr>
+<th>Estado</th>
+<td colspan="2">validado</td>
+</tr>
+<tr>
+<th>Estabilidad</th>
+<td colspan="2">alta</td>
+</tr>
+<tr>
+<th>Comentarios</th>
+<td colspan="2">
+<div id="UC-0002-comments-html" class="remus_comments"><p>Caso de uso de gestión de relaciones y trazabilidad</p></div>
+</td>
+</tr>
+</table>
+</div>
+<div id="ACT-0003">
+<table class="actor remus_table">
+<thead>
+<tr>
+<th>
+<img src="https://cdn.jsdelivr.net/gh/amador-duran-toro/remus/assets/images/icons/actor.png" /> ACT-0003</th>
+<th class="name_column" colspan="1">ACT-03: Auditor de Calidad</th>
+</tr>
+</thead>
+<tr>
+<th>Versión</th>
+<td colspan="1">1.0 (01/09/2026)
+</td>
+</tr>
+<tr>
+<th>Descripción</th>
+<td colspan="1">
+<div id="ACT-0003-actorRole-html" class=""><p>Este actor representa Verificación y Auditoría de Calidad.</p></div>
+</td>
+</tr>
+<tr>
+<th>Comentarios</th>
+<td colspan="1">
+<div id="ACT-0003-comments-html" class="remus_comments"><p>Verifica la conformidad con IEEE 830 y ejecuta la auditoría de calidad</p></div>
+</td>
+</tr>
+</table>
+</div>
+<div id="FRQ-0003">
+<table class="functional_requirement remus_table">
+<thead>
+<tr>
+<th>
+<img src="https://cdn.jsdelivr.net/gh/amador-duran-toro/remus/assets/images/icons/functionalRequirement.png" /> FRQ-0003</th>
+<th class="name_column" colspan="1">RF-03: Gestión de Trazabilidad Bidireccional</th>
+</tr>
+</thead>
+<tr>
+<th>Versión</th>
+<td colspan="1">1.0 (01/09/2026)
+</td>
+</tr>
+<tr>
+<th>Descripción</th>
+<td colspan="1">
+<div id="FRQ-0003-description-html" class=""><p>El sistema deberá El sistema permitirá vincular requisitos con objetivos, casos de uso y otros requisitos dependientes, visualizando la matriz de trazabilidad y detectando requisitos huérfanos..</p></div>
+</td>
+</tr>
+<tr>
+<th>Importancia</th>
+<td colspan="1">vital</td>
+</tr>
+<tr>
+<th>Urgencia</th>
+<td colspan="1">inmediatamente</td>
+</tr>
+<tr>
+<th>Estado</th>
+<td colspan="1">validado</td>
+</tr>
+<tr>
+<th>Estabilidad</th>
+<td colspan="1">alta</td>
+</tr>
+<tr>
+<th>Comentarios</th>
+<td colspan="1">
+<div id="FRQ-0003-comments-html" class="remus_comments"><p>Matriz de trazabilidad bidireccional entre artefactos</p></div>
+</td>
+</tr>
+</table>
+</div>
+<div id="IRQ-0003">
+<table class="information_requirement remus_table">
+<thead>
+<tr>
+<th>
+<img src="https://cdn.jsdelivr.net/gh/amador-duran-toro/remus/assets/images/icons/informationRequirement.png" /> IRQ-0003</th>
+<th class="name_column" colspan="2">RI-03: Historial de Cambios y Versionado</th>
+</tr>
+</thead>
+<tr>
+<th>Versión</th>
+<td colspan="2">1.0 (01/09/2026)
+</td>
+</tr>
+<tr>
+<th>Descripción</th>
+<td colspan="2">
+<div id="IRQ-0003-relevantConcept-html" class="relevant_concept"><p>El sistema deberá almacenar la información correspondiente a Registro de Auditoría, operaciones CUD y solicitudes de cambio. En concreto:</p></div>
+</td>
+</tr>
+<tr>
+<th>Datos específicos</th>
+<td colspan="2">
+<span class="tbd">PD</span>
+</td>
+</tr>
+<tr>
+<th>Importancia</th>
+<td colspan="2">importante</td>
+</tr>
+<tr>
+<th>Urgencia</th>
+<td colspan="2">hay presión</td>
+</tr>
+<tr>
+<th>Estado</th>
+<td colspan="2">validado</td>
+</tr>
+<tr>
+<th>Estabilidad</th>
+<td colspan="2">alta</td>
+</tr>
+<tr>
+<th>Comentarios</th>
+<td colspan="2">
+<div id="IRQ-0003-comments-html" class="remus_comments"><p>Auditoría de cambios conforme a buenas prácticas de calidad</p></div>
+</td>
+</tr>
+</table>
+</div>
+<div id="NFR-0003">
+<table class="nonfunctional_requirement remus_table">
+<thead>
+<tr>
+<th>
+<img src="https://cdn.jsdelivr.net/gh/amador-duran-toro/remus/assets/images/icons/nonFunctionalRequirement.png" /> NFR-0003</th>
+<th class="name_column" colspan="1">RNF-03: Usabilidad y Facilidad de Aprendizaje</th>
+</tr>
+</thead>
+<tr>
+<th>Versión</th>
+<td colspan="1">1.0 (01/09/2026)
+</td>
+</tr>
+<tr>
+<th>Descripción</th>
+<td colspan="1">
+<div id="NFR-0003-description-html" class=""><p>El sistema deberá La interfaz de usuario debe presentar formularios estructurados y mensajes de error descriptivos reduciendo la curva de aprendizaje a menos de 2 horas para nuevos analistas..</p></div>
+</td>
+</tr>
+<tr>
+<th>Importancia</th>
+<td colspan="1">importante</td>
+</tr>
+<tr>
+<th>Urgencia</th>
+<td colspan="1">puede esperar</td>
+</tr>
+<tr>
+<th>Estado</th>
+<td colspan="1">validado</td>
+</tr>
+<tr>
+<th>Estabilidad</th>
+<td colspan="1">media</td>
+</tr>
+<tr>
+<th>Comentarios</th>
+<td colspan="1">
+<div id="NFR-0003-comments-html" class="remus_comments"><p>Facilidad de aprendizaje y operación conforme a ISO 9241</p></div>
+</td>
+</tr>
+</table>
+</div>
+<div id="OBJ-0003">
+<table class="objective remus_table">
+<thead>
+<tr>
+<th>
+<img src="https://cdn.jsdelivr.net/gh/amador-duran-toro/remus/assets/images/icons/objective.png" /> OBJ-0003</th>
+<th class="name_column" colspan="1">OBJ-03: Automatización de Informes y Auditoría</th>
+</tr>
+</thead>
+<tr>
+<th>Versión</th>
+<td colspan="1">1.0 (01/09/2026)
+</td>
+</tr>
+<tr>
+<th>Descripción</th>
+<td colspan="1">
+<div id="OBJ-0003-description-html" class=""><p>El sistema deberá Automatizar la generación de matrices de trazabilidad, reportes de conformidad y documentación técnica..</p></div>
+</td>
+</tr>
+<tr>
+<th>Importancia</th>
+<td colspan="1">importante</td>
+</tr>
+<tr>
+<th>Urgencia</th>
+<td colspan="1">hay presión</td>
+</tr>
+<tr>
+<th>Estado</th>
+<td colspan="1">validado</td>
+</tr>
+<tr>
+<th>Estabilidad</th>
+<td colspan="1">media</td>
+</tr>
+<tr>
+<th>Comentarios</th>
+<td colspan="1">
+<div id="OBJ-0003-comments-html" class="remus_comments"><p>Facilita la entrega de artefactos en formatos estándar XML y HTML</p></div>
+</td>
+</tr>
+</table>
+</div>
+<div id="STK-0003">
+<table class="stakeholder remus_table">
+<thead>
+<tr>
+<th>
+<img src="https://cdn.jsdelivr.net/gh/amador-duran-toro/remus/assets/images/icons/stakeholder.png" /> Participante</th>
+<th class="name_column" colspan="1">STK-03: Auditor de Calidad (QA Lead)</th>
+</tr>
+</thead>
+<tr>
+<th>Organización</th>
+<td>Freelance</td>
+</tr>
+<tr>
+<th>Rol</th>
+<td colspan="1">
+<span id="STK-0003-stakeholderRole-html" class="">Auditor y Evaluador de Calidad                        (es usuario)                    </span>
+</td>
+</tr>
+<tr>
+<th>Comentarios</th>
+<td colspan="1">
+<div id="STK-0003-comments-html" class="remus_comments"><p>Responsable de verificar cumplimiento de normas y calidad de requisitos</p></div>
+</td>
+</tr>
+</table>
+</div>
+<div id="UC-0003">
+<table class="use_case remus_table">
+<thead>
+<tr>
+<th>
+<img src="https://cdn.jsdelivr.net/gh/amador-duran-toro/remus/assets/images/icons/useCase.png" /> UC-0003</th>
+<th class="name_column" colspan="2">CU-03: Exportar Documento ERS IEEE 830 </th>
+</tr>
+</thead>
+<tr>
+<th>Versión</th>
+<td colspan="2">1.0 (01/09/2026)
+</td>
+</tr>
+<tr>
+<th>Descripción</th>
+<td colspan="2"><div id="UC-0003--html" class=""><p>El sistema deberá comportarse tal como se describe en el siguiente caso de uso cuando El usuario hace clic en Exportar Documento en la barra de herramientas.. </p></div>
+</td>
+</tr>
+<tr>
+<th>Precondición</th>
+<td colspan="2">
+<div id="UC-0003-precondition-html" class=""><p>El proyecto pasa las validaciones de consistencia sin errores críticos.</p></div>
+</td>
+</tr>
+<tr>
+<th>Postcondición</th>
+<td colspan="2">
+<div id="UC-0003-postcondition-html" class=""><p>Se genera el archivo de especificación listo para distribución y auditoría.</p></div>
+</td>
+</tr>
+<tr>
+<th>Importancia</th>
+<td colspan="2">importante</td>
+</tr>
+<tr>
+<th>Urgencia</th>
+<td colspan="2">hay presión</td>
+</tr>
+<tr>
+<th>Estado</th>
+<td colspan="2">validado</td>
+</tr>
+<tr>
+<th>Estabilidad</th>
+<td colspan="2">alta</td>
+</tr>
+<tr>
+<th>Comentarios</th>
+<td colspan="2">
+<div id="UC-0003-comments-html" class="remus_comments"><p>Generación automática de entregables formales</p></div>
+</td>
+</tr>
+</table>
+</div>
+<div id="FRQ-0004">
+<table class="functional_requirement remus_table">
+<thead>
+<tr>
+<th>
+<img src="https://cdn.jsdelivr.net/gh/amador-duran-toro/remus/assets/images/icons/functionalRequirement.png" /> FRQ-0004</th>
+<th class="name_column" colspan="1">RF-04: Control de Versiones y Gestión de Cambios</th>
+</tr>
+</thead>
+<tr>
+<th>Versión</th>
+<td colspan="1">1.0 (01/09/2026)
+</td>
+</tr>
+<tr>
+<th>Descripción</th>
+<td colspan="1">
+<div id="FRQ-0004-description-html" class=""><p>El sistema deberá El sistema mantendrá un registro histórico de versiones de cada requisito, permitiendo comparar versiones anteriores y registrar solicitudes de cambio con su justificación e impacto..</p></div>
+</td>
+</tr>
+<tr>
+<th>Importancia</th>
+<td colspan="1">importante</td>
+</tr>
+<tr>
+<th>Urgencia</th>
+<td colspan="1">hay presión</td>
+</tr>
+<tr>
+<th>Estado</th>
+<td colspan="1">validado</td>
+</tr>
+<tr>
+<th>Estabilidad</th>
+<td colspan="1">alta</td>
+</tr>
+<tr>
+<th>Comentarios</th>
+<td colspan="1">
+<div id="FRQ-0004-comments-html" class="remus_comments"><p>Permite registrar solicitudes de cambio con impacto y justificación</p></div>
+</td>
+</tr>
+</table>
+</div>
+<div id="OBJ-0004">
+<table class="objective remus_table">
+<thead>
+<tr>
+<th>
+<img src="https://cdn.jsdelivr.net/gh/amador-duran-toro/remus/assets/images/icons/objective.png" /> OBJ-0004</th>
+<th class="name_column" colspan="1">OBJ-04: Gestión de Cambios y Conflictos</th>
+</tr>
+</thead>
+<tr>
+<th>Versión</th>
+<td colspan="1">1.0 (01/09/2026)
+</td>
+</tr>
+<tr>
+<th>Descripción</th>
+<td colspan="1">
+<div id="OBJ-0004-description-html" class=""><p>El sistema deberá Facilitar el control de versiones, registro de defectos y resolución de conflictos de requisitos de forma colaborativa..</p></div>
+</td>
+</tr>
+<tr>
+<th>Importancia</th>
+<td colspan="1">importante</td>
+</tr>
+<tr>
+<th>Urgencia</th>
+<td colspan="1">hay presión</td>
+</tr>
+<tr>
+<th>Estado</th>
+<td colspan="1">validado</td>
+</tr>
+<tr>
+<th>Estabilidad</th>
+<td colspan="1">alta</td>
+</tr>
+<tr>
+<th>Comentarios</th>
+<td colspan="1">
+<div id="OBJ-0004-comments-html" class="remus_comments"><p>Mantiene el control de versiones y resolución sistemática de discrepancias</p></div>
+</td>
+</tr>
+</table>
+</div>
+<div id="STK-0004">
+<table class="stakeholder remus_table">
+<thead>
+<tr>
+<th>
+<img src="https://cdn.jsdelivr.net/gh/amador-duran-toro/remus/assets/images/icons/stakeholder.png" /> Participante</th>
+<th class="name_column" colspan="1">STK-04: Usuario Final / Operador</th>
+</tr>
+</thead>
+<tr>
+<th>Organización</th>
+<td>Freelance</td>
+</tr>
+<tr>
+<th>Rol</th>
+<td colspan="1">
+<span id="STK-0004-stakeholderRole-html" class="">Usuario Operativo del Sistema                        (es usuario)                    </span>
+</td>
+</tr>
+<tr>
+<th>Comentarios</th>
+<td colspan="1">
+<div id="STK-0004-comments-html" class="remus_comments"><p>Personal operativo que interactúa directamente con el sistema de software</p></div>
+</td>
+</tr>
+</table>
+</div>
+<div id="FRQ-0005">
+<table class="functional_requirement remus_table">
+<thead>
+<tr>
+<th>
+<img src="https://cdn.jsdelivr.net/gh/amador-duran-toro/remus/assets/images/icons/functionalRequirement.png" /> FRQ-0005</th>
+<th class="name_column" colspan="1">RF-05: Validación de Consistencia de Requisitos</th>
+</tr>
+</thead>
+<tr>
+<th>Versión</th>
+<td colspan="1">1.0 (01/09/2026)
+</td>
+</tr>
+<tr>
+<th>Descripción</th>
+<td colspan="1">
+<div id="FRQ-0005-description-html" class=""><p>El sistema deberá El sistema ejecutará reglas de validación automática para comprobar que ningún requisito carezca de atributos obligatorios, descripción o vínculos de trazabilidad..</p></div>
+</td>
+</tr>
+<tr>
+<th>Importancia</th>
+<td colspan="1">importante</td>
+</tr>
+<tr>
+<th>Urgencia</th>
+<td colspan="1">hay presión</td>
+</tr>
+<tr>
+<th>Estado</th>
+<td colspan="1">validado</td>
+</tr>
+<tr>
+<th>Estabilidad</th>
+<td colspan="1">alta</td>
+</tr>
+<tr>
+<th>Comentarios</th>
+<td colspan="1">
+<div id="FRQ-0005-comments-html" class="remus_comments"><p>Verificación automática de completitud y consistencia</p></div>
+</td>
+</tr>
+</table>
+</div>
+<div id="FRQ-0006">
+<table class="functional_requirement remus_table">
+<thead>
+<tr>
+<th>
+<img src="https://cdn.jsdelivr.net/gh/amador-duran-toro/remus/assets/images/icons/functionalRequirement.png" /> FRQ-0006</th>
+<th class="name_column" colspan="1">RF-06: Exportación de Especificación ERS/SRS</th>
+</tr>
+</thead>
+<tr>
+<th>Versión</th>
+<td colspan="1">1.0 (01/09/2026)
+</td>
+</tr>
+<tr>
+<th>Descripción</th>
+<td colspan="1">
+<div id="FRQ-0006-description-html" class=""><p>El sistema deberá El sistema permitirá generar y exportar el documento de Especificación de Requisitos Software (ERS/SRS) en formato XML estandarizado y reportes HTML navegables..</p></div>
+</td>
+</tr>
+<tr>
+<th>Importancia</th>
+<td colspan="1">importante</td>
+</tr>
+<tr>
+<th>Urgencia</th>
+<td colspan="1">hay presión</td>
+</tr>
+<tr>
+<th>Estado</th>
+<td colspan="1">validado</td>
+</tr>
+<tr>
+<th>Estabilidad</th>
+<td colspan="1">alta</td>
+</tr>
+<tr>
+<th>Comentarios</th>
+<td colspan="1">
+<div id="FRQ-0006-comments-html" class="remus_comments"><p>Generación de especificación formal en XML y HTML navegable</p></div>
+</td>
+</tr>
+</table>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+            // set tooltips of rem:ref references to glossary items or class supertypes
+            $( ".rem_ref" ).each( function () {
+                var sharp_position = this.href.lastIndexOf("#");
+                var id_glossary_item = this.href.substring( sharp_position + 1 ) + "-text-html";
+                var id_supertype = this.href.substring( sharp_position + 1 ) + "-description-html";
+
+                // some rem:refs to use cases do not have -text-html elements
+                if ( document.getElementById( id_glossary_item ) )
+                    this.title = document.getElementById( id_glossary_item ).innerText;
+
+                else if ( document.getElementById( id_supertype ) )
+                    this.title = document.getElementById( id_supertype ).innerText;
+            });
+
+            // set tooltips of rem:tbd elements
+            $( ".tbd" ).each( function () {
+                this.title = 'Por determinar';
+            });
+
+            // show warnings (if any)
+            if ( warnings.length ) {
+                var warning_list = $("<ul></ul>");
+                for ( var i = 0; i < warnings.length; i++ ) {
+                    var warning = warnings[ i ];
+                    var warning_link = $('<a href="#' + warning.oid + '">' + warning.oid + '</a>' );
+                    var warning_message = ": " + warning.message;
+                    var warning_item = $("<li></li>").append(warning_link, warning_message);
+
+                    warning_list.append( warning_item );
+                }
+                $("#warning_messages").append( warning_list );
+                $("#warning_container").show();
+            }
+
+            // manage traceability matrices buttons
+            function update_font_size( parent_table, size )
+            {
+                var matrix_columns = parent_table.find( "th.matrix_column" );
+                var font_size = parseInt( matrix_columns.eq(0).css( "font-size" ), 10 );
+
+                matrix_columns.css( "font-size", font_size + size );
+            }
+
+            $( "button.reduce_font" ).click( function() {
+                var parent_table = $(this).parents( "table.traceability_matrix" );
+                update_font_size( parent_table, -1 );
+            });
+
+            $( "button.increase_font" ).click( function() {
+                var parent_table = $(this).parents( "table.traceability_matrix" );
+                update_font_size( parent_table, 1 );
+            });
+        </script>
+<script src="https://cdn.jsdelivr.net/gh/amador-duran-toro/remus/assets/javascripts/ie7-shim-min-width.js"></script>
+<script>
+            fixMinWidthForIE();
+        </script>
+</body>
+</html>

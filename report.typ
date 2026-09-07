@@ -1,13 +1,15 @@
-#import "/lib.typ": unsa-report
-#import "/components/code-block.typ": code-block
+#import "lib.typ": unsa-report
+#import "components/code-block.typ": code-block
 
 #show: unsa-report.with(
-  course_name: "Laboratorio - Calidad de Software",
-  lab_title: "Requerimientos",
+  course_name: "Ingeniería de Software",
+  lab_title: "Título de la Práctica",
   lab_number: "01",
-  instructor_name: "Delgado Bastidas, Jose Rafael",
+  instructor_name: "Nombre del Docente",
   members: (
-    "Sequeiros Condori Luis Gustavo",
+    "Apellidos1 Apellidos1 Nombres1 Nombres1",
+    "Apellidos2 Apellidos2 Nombres2 Nombres2",
+    "Apellidos3 Apellidos3 Nombres3 Nombres3",
   ),
 )
 
