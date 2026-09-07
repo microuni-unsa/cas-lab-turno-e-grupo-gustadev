@@ -23,15 +23,17 @@ A partir de los requerimientos analizados en el Laboratorio 1, se estructuraron 
   caption: [Catálogo estructurado de las 10 Solicitudes de Cambio (RFC) del proyecto.],
 ) <tab-rfcs>
 
-La instrumentación de estas solicitudes en GitHub Projects permitió su monitoreo en dos modalidades de visualización: el tablero Kanban (@fig-kanban-board), que facilita el control visual del flujo de trabajo y la detección temprana de cuellos de botella, y la vista tabular estructurada (@fig-projects-table), orientada a la auditoría masiva de campos, responsables y avance de sub-tareas.
+La instrumentación de estas solicitudes en GitHub Projects permitió su monitoreo bajo dos modalidades complementarias de visualización. En primer lugar, la @fig-kanban-board exhibe el tablero Kanban interactivo, en el cual las tarjetas de cambio transitan dinámicamente a través de columnas de estado, posibilitando el control visual del flujo de valor y la detección temprana de cuellos de botella operativos.
 
 #figure(
-  image("/l2/img/github-projects-board.png", width: 92%),
+  image("/l2/img/github-projects-board.png", width: 72%),
   caption: [Tablero Kanban interactivo en GitHub Projects v2 para la asignación dinámica y gobernanza visual del flujo de valor.],
 ) <fig-kanban-board>
 
+Por otra parte, la @fig-projects-table presenta la vista tabular estructurada, orientada a la auditoría exhaustiva y supervisión técnica. Dicha perspectiva consolida en una matriz ordenada los metadatos clave de cada requerimiento, tales como responsable asignado, prioridad, iteración y avance de sub-tareas.
+
 #figure(
-  image("/l2/img/github-projects-table.png", width: 92%),
+  image("/l2/img/github-projects-table.png", width: 72%),
   caption: [Vista tabular estructurada en GitHub Projects v2 con atributos consolidados de estado, asignación y progreso.],
 ) <fig-projects-table>
 
@@ -40,7 +42,7 @@ La instrumentación de estas solicitudes en GitHub Projects permitió su monitor
 Para garantizar la estabilidad del proyecto y evitar la sobreasignación de tareas al equipo, cada solicitud transitó de manera estricta por el ciclo de vida formal ilustrado en la @fig-estados-cambio:
 
 #figure(
-  image("/l2/img/ciclo-vida-estados.png", width: 68%),
+  image("/l2/img/ciclo-vida-estados.png", width: 88%),
   caption: [Diagrama de transición de estados finitos que gobierna el ciclo de vida de cada cambio en el proyecto (generado en Mermaid).],
 ) <fig-estados-cambio>
 
@@ -72,15 +74,17 @@ El contraste experimental entre ambas plataformas permite identificar la idoneid
   caption: [Comparación metodológica y operativa entre i-doit (CMDB) y GitHub Projects (Ágil).],
 ) <tab-comparativa>
 
-Como se observa en la @fig-idoit-applications, i-doit asegura un inventario formal de los componentes de software desarrollados, mientras que la @fig-idoit-logbook documenta la auditoría histórica de cada modificación efectuada, garantizando el cumplimiento de estándares como ISO/IEC/IEEE 29148 @iso29148 e ITIL 4 @itil4.
+Desde la perspectiva del inventario formal y el gobierno de configuración, la @fig-idoit-applications exhibe el catálogo consolidado de los cinco componentes de software dados de alta como Elementos de Configuración (CIs), permitiendo identificar dependencias e impactos en la infraestructura institucional @itil4.
 
 #figure(
-  image("/l2/img/idoit-applications.png", width: 90%),
+  image("/l2/img/idoit-applications.png", width: 72%),
   caption: [Inventario consolidado de los 5 módulos de software registrados como CIs operativos en la CMDB de i-doit.],
 ) <fig-idoit-applications>
 
+Asimismo, la @fig-idoit-logbook ilustra el registro inmutable de auditoría (_Logbook_) de i-doit, donde cada evento de creación, parametrización o asignación sobre los componentes de software queda consignado cronológicamente con marca de tiempo y autoría, garantizando la trazabilidad histórica exigida por normativas como ISO/IEC/IEEE 29148 @iso29148.
+
 #figure(
-  image("/l2/img/idoit-logbook.png", width: 90%),
+  image("/l2/img/idoit-logbook.png", width: 72%),
   caption: [Registro inmutable de auditoría (Logbook) en i-doit documentando cronológicamente los 10 eventos de configuración generados.],
 ) <fig-idoit-logbook>
 
@@ -110,6 +114,6 @@ En correspondencia con el formato de reporte de seguimiento de la guía práctic
 La trazabilidad bidireccional entre las solicitudes de cambio y el código fuente se constató a través del historial de confirmaciones en GitHub (@fig-gh-commits), donde cada commit referencia explícitamente el identificador de la RFC correspondiente, asegurando que ningún cambio se introduzca sin respaldo documental ni justificación técnica verificable @baufest2003.
 
 #figure(
-  image("/l2/img/github-commits-history.png", width: 90%),
+  image("/l2/img/github-commits-history.png", width: 72%),
   caption: [Historial cronológico de confirmaciones en GitHub que corrobora la trazabilidad directa entre código fuente y Solicitudes de Cambio.],
 ) <fig-gh-commits>

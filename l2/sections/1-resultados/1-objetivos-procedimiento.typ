@@ -1,6 +1,6 @@
 == I. Descripción del Procedimiento Metodológico
 
-La gestión de configuración y el control sistemático de modificaciones constituyen pilares esenciales para mitigar la degradación del alcance (_scope creep_) y asegurar la calidad en proyectos de ingeniería de software @ieee828. En conformidad con las directrices de la guía práctica (Anexo 21), el procedimiento experimental se estructuró en cinco etapas secuenciales:
+La gestión de configuración y el control sistemático de modificaciones constituyen pilares esenciales para mitigar la degradación del alcance (_scope creep_) y asegurar la calidad en proyectos de ingeniería de software @ieee828. El procedimiento experimental se estructuró en cinco etapas secuenciales:
 
 + *Configuración del Entorno de Gestión y Plataformas Experimentales:*
   Se implementaron y parametrizaron dos plataformas representativas de paradigmas complementarios de gestión:
