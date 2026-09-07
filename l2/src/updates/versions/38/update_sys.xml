@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE isys [
+        <!ELEMENT isys (info|queries)*>
+        <!ELEMENT info (title|version|requirement|directory|revision|release)*>
+        <!ELEMENT title (#PCDATA)>
+        <!ELEMENT version (#PCDATA)>
+        <!ELEMENT requirement (revision|version)*>
+        <!ELEMENT revision (#PCDATA)>
+        <!ELEMENT directory (#PCDATA)>
+        <!ELEMENT release (#PCDATA)>
+        <!ELEMENT queries (query)*>
+        <!ELEMENT query (id|title|check|errmsg|sql)*>
+        <!ELEMENT id (#PCDATA)>
+        <!ELEMENT check (#PCDATA)>
+        <!ATTLIST check ident CDATA #REQUIRED>
+        <!ELEMENT errmsg (#PCDATA)>
+        <!ELEMENT sql (exec)*>
+        <!ELEMENT exec (#PCDATA)>
+        <!ATTLIST exec ident CDATA #REQUIRED>
+        ]>
+<isys>
+    <info>
+        <title>i-doit 38</title>
+        <version>38</version>
+        <requirement>
+            <revision>202535000</revision>
+            <version>35</version>
+        </requirement>
+        <directory>38</directory>
+        <revision>202638000</revision>
+        <release>2026-02-01</release>
+    </info>
+    <queries>
+
+    </queries>
+</isys>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE isys [
+        <!ELEMENT isys (info|delete)*>
+        <!ELEMENT info (title|version|requirement|directory|revision|release)*>
+        <!ELEMENT title (#PCDATA)>
+        <!ELEMENT version (#PCDATA)>
+        <!ELEMENT requirement (revision|version)*>
+        <!ELEMENT revision (#PCDATA)>
+        <!ELEMENT directory (#PCDATA)>
+        <!ELEMENT release (#PCDATA)>
+        <!ELEMENT delete (file|dir)*>
+        <!ELEMENT file (#PCDATA)>
+        <!ELEMENT dir (#PCDATA)>
+        ]>
+<isys>
+    <info>
+        <title>i-doit 38</title>
+        <version>38</version>
+        <requirement>
+            <revision>202535000</revision>
+            <version>35</version>
+        </requirement>
+        <directory>38</directory>
+        <revision>202638000</revision>
+        <release>2026-02-01</release>
+    </info>
+    <delete>
+
+        <file>src/classes/modules/system/src/Event/ExtendHelpMenu.php</file>
+        <dir>src/classes/modules/system/src/Event</dir>
+
+        <!-- @see ID-11412 Remove old graphml export -->
+        <file>src/classes/modules/pro/visualization/export/isys_visualization_export_graphml.class.php</file>
+        <file>src/classes/modules/pro/visualization/export/isys_visualization_export.class.php</file>
+        <dir>src/classes/modules/pro/visualization/export</dir>
+
+        <file>src/classes/modules/cmdb/dao/isys_cmdb_dao_objecttype.class.php</file>
+
+        <!-- @see ID-12213 Move all report views -->
+        <file>src/classes/modules/report/templates/view.tpl</file>
+        <file>src/classes/modules/report/templates/view_accounting.tpl</file>
+        <file>src/classes/modules/report/templates/view_cable_connections.tpl</file>
+        <file>src/classes/modules/report/templates/view_cmdb_changes.tpl</file>
+        <file>src/classes/modules/report/templates/view_devices_in_location.tpl</file>
+        <file>src/classes/modules/report/templates/view_devices_in_location_detailed.tpl</file>
+        <file>src/classes/modules/report/templates/view_import_changes.tpl</file>
+        <file>src/classes/modules/report/templates/view_it_service_cmdb_status.tpl</file>
+        <file>src/classes/modules/report/templates/view_layer2_nets.tpl</file>
+        <file>src/classes/modules/report/templates/view_layer3_nets.tpl</file>
+        <file>src/classes/modules/report/templates/view_logbook.tpl</file>
+        <file>src/classes/modules/report/templates/view_network_connections.tpl</file>
+        <file>src/classes/modules/report/templates/view_no_relations.tpl</file>
+        <file>src/classes/modules/report/templates/view_open_cable_connections.tpl</file>
+        <file>src/classes/modules/report/templates/view_rack_connections.tpl</file>
+        <file>src/classes/modules/report/templates/view_relation_it_service.tpl</file>
+        <file>src/classes/modules/report/templates/view_upcoming_status_change.tpl</file>
+        <file>src/classes/modules/report/views/isys_report_view_accounting.class.php</file>
+        <file>src/classes/modules/report/views/isys_report_view_cable_connections.class.php</file>
+        <file>src/classes/modules/report/views/isys_report_view_cmdb_changes.class.php</file>
+        <file>src/classes/modules/report/views/isys_report_view_devices_in_location.class.php</file>
+        <file>src/classes/modules/report/views/isys_report_view_devices_in_location_detailed.class.php</file>
+        <file>src/classes/modules/report/views/isys_report_view_import_changes.class.php</file>
+        <file>src/classes/modules/report/views/isys_report_view_it_service_cmdb_status.class.php</file>
+        <file>src/classes/modules/report/views/isys_report_view_layer2_nets.class.php</file>
+        <file>src/classes/modules/report/views/isys_report_view_layer3_nets.class.php</file>
+        <file>src/classes/modules/report/views/isys_report_view_logbook.class.php</file>
+        <file>src/classes/modules/report/views/isys_report_view_network_connections.class.php</file>
+        <file>src/classes/modules/report/views/isys_report_view_no_relations.class.php</file>
+        <file>src/classes/modules/report/views/isys_report_view_open_cable_connections.class.php</file>
+        <file>src/classes/modules/report/views/isys_report_view_rack_connections.class.php</file>
+        <file>src/classes/modules/report/views/isys_report_view_relation_it_service.class.php</file>
+        <file>src/classes/modules/report/views/isys_report_view_upcoming_status_changes.class.php</file>
+
+        <!-- ID-10674 Remove renamed/unused template -->
+        <file>src/classes/modules/report/templates/listing_group.tpl</file>
+        <file>src/classes/modules/report/templates/report_browser.tpl</file>
+        <file>src/classes/modules/report/templates/report_edit.tpl</file>
+        <file>src/classes/modules/report/templates/report_result.tpl</file>
+        <!-- Moved to assets -->
+        <file>src/classes/modules/report/templates/style.css</file>
+        <file>src/classes/modules/report/templates/report.js</file>
+        <file>src/classes/modules/report/templates/report_condition.js</file>
+        <!-- Moved to templates/popup -->
+        <file>src/classes/modules/report/templates/report_category.tpl</file>
+        <file>src/classes/modules/report/templates/duplicate_report.tpl</file>
+
+        <!-- @see ID-12221 Remove outdated search filter classes -->
+        <file>src/classes/modules/search/isys_module_search_autoload.class.php</file>
+        <file>src/classes/modules/search/filter/isys_search_filter.class.php</file>
+        <file>src/classes/modules/search/filter/isys_search_filter_interface.class.php</file>
+        <file>src/classes/modules/search/filter/isys_search_filter_string.class.php</file>
+        <dir>src/classes/modules/search/filter</dir>
+
+        <!-- @see ID-12186 Remove now unused Main controller -->
+        <file>src/classes/modules/custom_fields/src/Controller/Main.php</file>
+
+        <!-- @see ID-11854 Remove outdated net ajax handler -->
+        <file>src/classes/ajax/handler/isys_ajax_handler_net.class.php</file>
+
+        <!-- @see no-ref Clean up QCW autoloader -->
+        <file>src/classes/modules/quick_configuration_wizard/isys_module_quick_configuration_wizard_autoload.class.php</file>
+
+        <!-- @see no-ref Clean up file category templates -->
+        <file>src/themes/default/smarty/templates/content/bottom/content/cats__file__version.tpl</file>
+        <file>src/themes/default/smarty/templates/content/bottom/content/cats__file__none_uploaded.tpl</file>
+
+        <!-- @see ID-9978 remove outdated files -->
+        <file>src/classes/modules/import/isys_module_import_autoload.class.php</file>
+        <file>src/themes/default/smarty/templates/modules/import/import_fileupload.tpl</file>
+
+        <!-- @see ID-11190 Remove outdated autoloader -->
+        <file>src/classes/modules/notifications/isys_module_notifications_autoload.class.php</file>
+
+    </delete>
+</isys>

@@ -1,0 +1,20 @@
+<div class="p5" style="overflow-x:auto;">
+	<table cellspacing="0" cellpadding="2" class="mainTable">
+		<thead>
+		<tr style="line-height:20px;">
+			<th class="border-bottom">[{isys type="lang" ident="LC__CMDB__LOGBOOK__TITLE"}]</th>
+			<th class="border-bottom">[{isys type="lang" ident="LC__TASK__DETAIL__WORKORDER__CREATION_DATE"}]</th>
+			<th class="border-bottom">[{isys type="lang" ident="LC__UNIVERSAL__DATE_OF_CHANGE"}]</th>
+		</tr>
+		</thead>
+		<tbody>
+		[{foreach from=$tabledata item=row}]
+			<tr class="[{cycle values="CMDBListElementsOdd,CMDBListElementsEven"}]">
+				<td><div class="cmdb-marker mouse-help" style="background:[{$row.cmdb_color}];" title="[{$row.cmdb_title}]"></div>[{$row.title_link}]</td>
+				<td>[{$row.created}]</td>
+				<td>[{$row.updated}]</td>
+			</tr>
+			[{/foreach}]
+		</tbody>
+	</table>
+</div>

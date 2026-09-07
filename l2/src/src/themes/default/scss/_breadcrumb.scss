@@ -1,0 +1,41 @@
+#breadcrumb {
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid $neutral-600;
+  height: $breadcrumbHeight;
+  white-space: nowrap;
+  display: flex;
+  font-size: $breadcrump-font-size;
+  line-height: $breadcrump-line-height;
+
+  li {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    padding: 0 24px 0 10px;
+    height: $breadcrumbHeight;
+    background: url('[{$dir_images}]axialis/user-interface/angle-right-small.svg') no-repeat right;
+
+    a {
+      text-decoration: none;
+      color: $neutral-900;
+      max-width: 200px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    &:first-of-type {
+      padding-left: 20px;
+    }
+
+    &:last-of-type {
+      padding-right: 0;
+      background-image: none;
+    }
+  }
+}

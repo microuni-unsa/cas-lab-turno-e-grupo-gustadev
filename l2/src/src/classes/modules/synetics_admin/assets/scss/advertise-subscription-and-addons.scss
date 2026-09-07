@@ -1,0 +1,22 @@
+#advertise-subscription-and-addons-image-container {
+  background: #EAF1FF;
+  height: 95px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .bubbles-image {
+    position: absolute;
+    opacity: 0.75;
+    right: 0;
+    top: 0;
+    height: 95px;
+  }
+
+  .feature-icon {
+    margin-top: 10px;
+    width: 60px;
+    height: 60px;
+  }
+}

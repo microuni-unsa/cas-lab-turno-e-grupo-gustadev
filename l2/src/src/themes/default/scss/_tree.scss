@@ -1,0 +1,91 @@
+/*!
+ * LF: For future use (when we remove our dtree and etree JS component).
+ * Found here https://codepen.io/khoama/pen/hpljA
+ * By https://codepen.io/khoama/#
+ */
+
+ul {
+  &.css-tree {
+    color: $neutral-900;
+    margin: 0 0 0 20px;
+    list-style: none;
+    line-height: 26.5px;
+
+    .css-tree {
+      margin-top: 1px;
+      margin-bottom: -1px;
+    }
+
+    li {
+      position: relative;
+
+      .tree-inner {
+        position: relative;
+        margin-left: 4px;
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+      }
+
+      &.root {
+        margin: 0 0 0 -25px;
+
+        .child-toggle {
+          display: none;
+        }
+
+        &:before {
+          display: none;
+        }
+
+        &:after {
+          display: none;
+        }
+      }
+
+      &:before {
+        position: absolute;
+        left: -15px;
+        top: 3px;
+        content: '';
+        display: block;
+        border-left: 1px solid $neutral-600;
+        height: 1em;
+        border-bottom: 1px solid $neutral-600;
+        width: 14px;
+      }
+
+      &:after {
+        position: absolute;
+        left: -15px;
+        bottom: -7px;
+        content: '';
+        display: block;
+        border-left: 1px solid $neutral-600;
+        height: 100%;
+      }
+
+      &:last-child:after {
+        display: none;
+      }
+    }
+  }
+}
+
+/**
+ * i-doit specific styles for "toggle" button and displaying images (icons) inside the tree.
+ */
+ul.css-tree li .child-toggle {
+  position: absolute;
+  top: 9px;
+  left: -19px;
+  z-index: 50;
+  cursor: pointer;
+}
+
+ul.css-tree li img:not(.child-toggle) {
+  max-width: 16px;
+  max-height: 16px;
+  vertical-align: middle;
+  margin-left: -1px;
+}

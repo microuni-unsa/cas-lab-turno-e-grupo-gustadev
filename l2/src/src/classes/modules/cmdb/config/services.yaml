@@ -1,0 +1,29 @@
+services:
+  idoit.cmdb.search.index.category_collector:
+    class: idoit\Module\Cmdb\Search\Index\Data\CategoryCollector
+    arguments:
+      - '@database'
+      - []
+      - []
+    tags:
+      - 'idoit.search.index.data.collector'
+  idoit\Module\Cmdb\Event\CiObject\CiObjectSubscriber:
+    tags:
+      - { name: kernel.event_subscriber, event: idoit\Module\Cmdb\Event\CiObject\Created::NAME }
+      - { name: kernel.event_subscriber, event: idoit\Module\Cmdb\Event\CiObject\Updated::NAME }
+      - { name: kernel.event_subscriber, event: idoit\Module\Cmdb\Event\CiObject\Ranked::NAME }
+      - { name: kernel.event_subscriber, event: idoit\Module\Cmdb\Event\CiObject\Purged::NAME }
+  idoit\Module\Cmdb\Event\Category\CategorySubscriber:
+    tags:
+      - { name: kernel.event_subscriber, event: idoit\Module\Cmdb\Event\Category\Created::NAME }
+      - { name: kernel.event_subscriber, event: idoit\Module\Cmdb\Event\Category\Updated::NAME }
+      - { name: kernel.event_subscriber, event: idoit\Module\Cmdb\Event\Category\Ranked::NAME }
+      - { name: kernel.event_subscriber, event: idoit\Module\Cmdb\Event\Category\Purged::NAME }
+  idoit.cmdb.object-browser-second-list.property-provider:
+    class: idoit\Module\Cmdb\Model\Ci\Category\BrowserSecondListPropertyProvider
+    factory: ['idoit\Module\Cmdb\Model\Ci\Category\BrowserSecondListPropertyFacade', 'getService']
+    public: true
+  idoit.cmdb.category-changes.type.property-provider:
+    class: idoit\Module\Cmdb\Component\CategoryChanges\Type\Property\PropertyType
+    factory: ['idoit\Module\Cmdb\Component\CategoryChanges\Type\Property\PropertyTypeFacade', 'getService']
+    public: true

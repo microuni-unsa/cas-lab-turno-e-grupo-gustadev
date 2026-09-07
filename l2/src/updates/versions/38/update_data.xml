@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE isys [
+        <!ELEMENT isys (info|queries)*>
+        <!ELEMENT info (title|version|requirement|directory|revision|release)*>
+        <!ELEMENT title (#PCDATA)>
+        <!ELEMENT version (#PCDATA)>
+        <!ELEMENT requirement (revision|version)*>
+        <!ELEMENT revision (#PCDATA)>
+        <!ELEMENT directory (#PCDATA)>
+        <!ELEMENT release (#PCDATA)>
+        <!ELEMENT queries (query)*>
+        <!ELEMENT query (id|title|check|errmsg|sql)*>
+        <!ELEMENT id (#PCDATA)>
+        <!ELEMENT check (#PCDATA)>
+        <!ATTLIST check ident CDATA #REQUIRED>
+        <!ELEMENT errmsg (#PCDATA)>
+        <!ELEMENT sql (exec)*>
+        <!ELEMENT exec (#PCDATA)>
+        <!ATTLIST exec ident CDATA #REQUIRED>
+        ]>
+<isys>
+    <info>
+        <title>i-doit 38</title>
+        <version>38</version>
+        <requirement>
+            <revision>202535000</revision>
+            <version>35</version>
+        </requirement>
+        <directory>38</directory>
+        <revision>202638000</revision>
+        <release>2026-02-01</release>
+    </info>
+    <queries>
+
+        <!-- @see ID-11920 -->
+        <query>
+            <title>Add TLS certificate field to LDAP server</title>
+            <check ident="C_ADD_FIELD">isys_ldap, isys_ldap__tls_certificate</check>
+            <sql>
+                <exec ident="false">
+                    ALTER TABLE `isys_ldap` ADD `isys_ldap__tls_certificate` int(10) unsigned DEFAULT NULL;
+                    ALTER TABLE `isys_ldap` ADD CONSTRAINT `isys_ldap__tls_certificate` FOREIGN KEY (`isys_ldap__tls_certificate`) REFERENCES `isys_obj` (`isys_obj__id`) ON DELETE SET NULL ON UPDATE CASCADE;
+                </exec>
+            </sql>
+        </query>
+
+        <!-- @see ID-11920 -->
+        <query>
+            <title>Add TLS certificate check strategy field to LDAP server</title>
+            <check ident="C_ADD_FIELD">isys_ldap, isys_ldap__tls_certificate_check_strategy</check>
+            <sql>
+                <exec ident="false">
+                    ALTER TABLE `isys_ldap` ADD `isys_ldap__tls_certificate_check_strategy` VARCHAR(16) NOT NULL DEFAULT 'demand';
+                </exec>
+            </sql>
+        </query>
+
+        <!-- @see ID-7300 -->
+        <query>
+            <title>Add field for using ssl-encryption in monitoring_hosts table</title>
+            <check ident="C_ADD_FIELD">isys_monitoring_hosts, isys_monitoring_hosts__ssl</check>
+            <sql>
+                <exec ident="false">
+                    ALTER TABLE `isys_monitoring_hosts` ADD `isys_monitoring_hosts__ssl` TINYINT(1) NOT NULL DEFAULT 0;
+                </exec>
+            </sql>
+        </query>
+
+        <!-- @see ID-12163 -->
+        <query>
+            <title>Set all unset object type sort fields to 65535</title>
+            <check ident="C_EXECUTE">SELECT * FROM isys_obj_type WHERE isys_obj_type__sort IS NULL;</check>
+            <sql>
+                <exec ident="true">
+                    UPDATE isys_obj_type SET isys_obj_type__sort = 65535 WHERE isys_obj_type__sort IS NULL;
+                </exec>
+            </sql>
+        </query>
+        <query>
+            <title>Set sort default to 65535</title>
+            <check ident="C_ADD_FIELD">isys_obj_type, isys_obj_type__sort</check>
+            <sql>
+                <exec ident="true">
+                    ALTER TABLE isys_obj_type MODIFY isys_obj_type__sort INT(10) unsigned NOT NULL DEFAULT 65535;
+                </exec>
+            </sql>
+        </query>
+
+        <!-- @see ID-12163 -->
+        <query>
+            <title>Set all unset object type group sort fields to 65535</title>
+            <check ident="C_EXECUTE">SELECT * FROM isys_obj_type_group WHERE isys_obj_type_group__sort IS NULL;</check>
+            <sql>
+                <exec ident="true">
+                    UPDATE isys_obj_type_group SET isys_obj_type_group__sort = 65535 WHERE isys_obj_type_group__sort IS NULL;
+                </exec>
+            </sql>
+        </query>
+        <query>
+            <title>Set sort default to 65535</title>
+            <check ident="C_ADD_FIELD">isys_obj_type_group, isys_obj_type_group__sort</check>
+            <sql>
+                <exec ident="true">
+                    ALTER TABLE isys_obj_type_group MODIFY isys_obj_type_group__sort INT(10) unsigned NOT NULL DEFAULT 65535;
+                </exec>
+            </sql>
+        </query>
+
+        <!-- @see ID-11886 -->
+        <query>
+            <title>Add default value to isys_catg_file_list__link</title>
+            <check ident="C_ADD_FIELD">isys_catg_file_list, isys_catg_file_list__link</check>
+            <sql>
+                <exec ident="true">
+                    ALTER TABLE `isys_catg_file_list`
+                    MODIFY COLUMN `isys_catg_file_list__link` varchar(512) NOT NULL DEFAULT '';
+                </exec>
+            </sql>
+        </query>
+        <query>
+            <title>Add default value to isys_catg_net_zone_options_list__color</title>
+            <check ident="C_ADD_FIELD">isys_catg_net_zone_options_list, isys_catg_net_zone_options_list__color</check>
+            <sql>
+                <exec ident="true">
+                    ALTER TABLE `isys_catg_net_zone_options_list`
+                    MODIFY COLUMN `isys_catg_net_zone_options_list__color` varchar(7) NOT NULL DEFAULT '#ffffff';
+                </exec>
+            </sql>
+        </query>
+        <query>
+            <title>Add default value to isys_catg_share_access_list__mountpoint</title>
+            <check ident="C_ADD_FIELD">isys_catg_share_access_list, isys_catg_share_access_list__mountpoint</check>
+            <sql>
+                <exec ident="true">
+                    ALTER TABLE `isys_catg_share_access_list`
+                    MODIFY COLUMN `isys_catg_share_access_list__mountpoint` varchar(255) NOT NULL DEFAULT '';
+                </exec>
+            </sql>
+        </query>
+        <query>
+            <title>Add default value to isys_catg_virtual_device_list__disk_image_location</title>
+            <check ident="C_ADD_FIELD">isys_catg_virtual_device_list, isys_catg_virtual_device_list__disk_image_location</check>
+            <sql>
+                <exec ident="true">
+                    ALTER TABLE `isys_catg_virtual_device_list`
+                    MODIFY COLUMN `isys_catg_virtual_device_list__disk_image_location` varchar(255) NOT NULL DEFAULT '';
+                </exec>
+            </sql>
+        </query>
+        <query>
+            <title>Add default value to isys_catg_virtual_device_list__network_label</title>
+            <check ident="C_ADD_FIELD">isys_catg_virtual_device_list, isys_catg_virtual_device_list__network_label</check>
+            <sql>
+                <exec ident="true">
+                    ALTER TABLE `isys_catg_virtual_device_list`
+                    MODIFY COLUMN `isys_catg_virtual_device_list__network_label` varchar(255) NOT NULL DEFAULT '';
+                </exec>
+            </sql>
+        </query>
+        <query>
+            <title>Add default value to isys_catg_virtual_machine_list__config_file</title>
+            <check ident="C_ADD_FIELD">isys_catg_virtual_machine_list, isys_catg_virtual_machine_list__config_file</check>
+            <sql>
+                <exec ident="true">
+                    ALTER TABLE `isys_catg_virtual_machine_list`
+                    MODIFY COLUMN `isys_catg_virtual_machine_list__config_file` varchar(255) NOT NULL DEFAULT '';
+                </exec>
+            </sql>
+        </query>
+        <query>
+            <title>Add default value to isys_catg_voip_phone_line_list__description2</title>
+            <check ident="C_ADD_FIELD">isys_catg_voip_phone_line_list, isys_catg_voip_phone_line_list__description2</check>
+            <sql>
+                <exec ident="true">
+                    ALTER TABLE `isys_catg_voip_phone_line_list`
+                    MODIFY COLUMN `isys_catg_voip_phone_line_list__description2` varchar(255) NOT NULL DEFAULT '';
+                </exec>
+            </sql>
+        </query>
+        <query>
+            <title>Add default value to isys_cats_access_point_list__key</title>
+            <check ident="C_ADD_FIELD">isys_cats_access_point_list, isys_cats_access_point_list__key</check>
+            <sql>
+                <exec ident="true">
+                    ALTER TABLE `isys_cats_access_point_list`
+                    MODIFY COLUMN `isys_cats_access_point_list__key` varchar(255) NOT NULL DEFAULT '';
+                </exec>
+            </sql>
+        </query>
+        <query>
+            <title>Add default value to isys_cats_client_list__keyboard_layout</title>
+            <check ident="C_ADD_FIELD">isys_cats_client_list, isys_cats_client_list__keyboard_layout</check>
+            <sql>
+                <exec ident="true">
+                    ALTER TABLE `isys_cats_client_list`
+                    MODIFY COLUMN `isys_cats_client_list__keyboard_layout` varchar(255) NOT NULL DEFAULT '';
+                </exec>
+            </sql>
+        </query>
+        <query>
+            <title>Add default value to isys_cats_cp_contract_list__tc_card_number</title>
+            <check ident="C_ADD_FIELD">isys_cats_cp_contract_list, isys_cats_cp_contract_list__tc_card_number</check>
+            <sql>
+                <exec ident="true">
+                    ALTER TABLE `isys_cats_cp_contract_list`
+                    MODIFY COLUMN `isys_cats_cp_contract_list__tc_card_number` varchar(255) NOT NULL DEFAULT '';
+                </exec>
+            </sql>
+        </query>
+        <query>
+            <title>Add default value to isys_cats_person_group_list__ldap_group</title>
+            <check ident="C_ADD_FIELD">isys_cats_person_group_list, isys_cats_person_group_list__ldap_group</check>
+            <sql>
+                <exec ident="true">
+                    ALTER TABLE `isys_cats_person_group_list`
+                    MODIFY COLUMN `isys_cats_person_group_list__ldap_group` varchar(255) NOT NULL DEFAULT '';
+                </exec>
+            </sql>
+        </query>
+        <query>
+            <title>Add default value to isys_cats_person_list__ldap_dn</title>
+            <check ident="C_ADD_FIELD">isys_cats_person_list, isys_cats_person_list__ldap_dn</check>
+            <sql>
+                <exec ident="true">
+                    ALTER TABLE `isys_cats_person_list`
+                    MODIFY COLUMN `isys_cats_person_list__ldap_dn` varchar(255) NOT NULL DEFAULT '';
+                </exec>
+            </sql>
+        </query>
+        <query>
+            <title>Add default value to isys_cats_person_list__personnel_number</title>
+            <check ident="C_ADD_FIELD">isys_cats_person_list, isys_cats_person_list__personnel_number</check>
+            <sql>
+                <exec ident="true">
+                    ALTER TABLE `isys_cats_person_list`
+                    MODIFY COLUMN `isys_cats_person_list__personnel_number` varchar(255) NOT NULL DEFAULT '';
+                </exec>
+            </sql>
+        </query>
+        <query>
+            <title>Remove old foreign key</title>
+            <check ident="C_DROP_FOREIGN_KEY">isys_custom_properties,isys_custom_properties__isysgui_catg__id</check>
+            <sql>
+                <exec ident="true">
+                    ALTER TABLE isys_custom_properties DROP FOREIGN KEY `%KEY_NAME%`;
+                </exec>
+            </sql>
+        </query>
+
+        <!-- @see ID-11927 -->
+        <query>
+            <title>Add TLS certificate field to TTS configuration</title>
+            <check ident="C_ADD_FIELD">isys_tts_config, isys_tts_config__tls_certificate</check>
+            <sql>
+                <exec ident="false">
+                    ALTER TABLE `isys_tts_config` ADD `isys_tts_config__tls_certificate` int(10) unsigned DEFAULT NULL;
+                    ALTER TABLE `isys_tts_config` ADD CONSTRAINT `isys_tts_config__tls_certificate` FOREIGN KEY (`isys_tts_config__tls_certificate`) REFERENCES `isys_obj` (`isys_obj__id`) ON DELETE SET NULL ON UPDATE CASCADE;
+                </exec>
+            </sql>
+        </query>
+
+        <!-- @see ID-12242 -->
+        <query>
+            <title>Add icon field for custom categories</title>
+            <check ident="C_ADD_FIELD">isysgui_catg_custom, isysgui_catg_custom__icon</check>
+            <sql>
+                <exec ident="false">
+                    ALTER TABLE `isysgui_catg_custom` ADD `isysgui_catg_custom__icon` varchar(255) DEFAULT NULL;
+                </exec>
+            </sql>
+        </query>
+
+    </queries>
+</isys>

@@ -1,0 +1,56 @@
+#navBar {
+  border-bottom: 1px solid $neutral-600;
+  display: flex;
+  position: relative;
+  align-items: center;
+  background-color: $white;
+  padding: 14px 20px;
+  height: $navbarHeight;
+  white-space: nowrap;
+
+  h2 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-right: 40px;
+    line-height: 2;
+  }
+
+  #cSpanRecFilter {
+    margin-left: auto;
+  }
+
+  > .btn,
+  > .btn-group {
+    margin-right: 16px;
+    // Prevent buttons from shrinking.
+    flex-shrink: 0;
+  }
+
+  .new-overlay {
+    position: absolute;
+    top: 50px;
+    left: 5px;
+    z-index: 9999;
+  }
+
+  .pager-results {
+    display: flex;
+    align-items: center;
+  }
+
+  .fileUpload {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .fileUpload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+  }
+}

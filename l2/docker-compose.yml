@@ -1,0 +1,48 @@
+services:
+  idoit-app:
+    build:
+      context: ./docker
+      dockerfile: Dockerfile
+    container_name: idoit-app
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    volumes:
+      - ./src:/var/www/html
+    depends_on:
+      idoit-db:
+        condition: service_healthy
+    environment:
+      - APACHE_RUN_USER=www-data
+      - APACHE_RUN_GROUP=www-data
+
+  idoit-db:
+    image: mariadb:10.11
+    container_name: idoit-db
+    restart: unless-stopped
+    command:
+      - --max_allowed_packet=128M
+      - --innodb_buffer_pool_size=512M
+      - --sort_buffer_size=32M
+      - --innodb_sort_buffer_size=64M
+      - --sql_mode=
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+      - --innodb_default_row_format=DYNAMIC
+    environment:
+      MYSQL_ROOT_PASSWORD: idoitroot
+      MYSQL_USER: idoit
+      MYSQL_PASSWORD: idoitpass
+    ports:
+      - "3306:3306"
+    volumes:
+      - idoit_db_data:/var/lib/mysql
+      - ./docker/init-db.sql:/docker-entrypoint-initdb.d/init-db.sql:ro
+    healthcheck:
+      test: ["CMD", "mariadb-admin", "ping", "-h", "localhost", "-u", "root", "-pidoitroot"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  idoit_db_data:

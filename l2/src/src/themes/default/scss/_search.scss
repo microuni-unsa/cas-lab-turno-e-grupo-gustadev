@@ -1,0 +1,15 @@
+.highlightSearch {
+  background-color: $searchHighlight;
+  border-radius: 5px;
+}
+
+.search-bar {
+  position: relative;
+  margin-bottom: 10px;
+
+  img {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+  }
+}

@@ -1,0 +1,162 @@
+#file-browser {
+  .modal-content {
+    display: flex;
+
+    .loading-indicator, .empty-indicator {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: rgba(255, 255, 255, 50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 5;
+    }
+
+    .left-panel {
+      position: relative;
+      padding: 40px 0 0 20px;
+      min-width: 245px;
+      width: 245px;
+
+      .search-bar {
+        padding-right: 20px;
+
+        img {
+          right: 30px;
+        }
+      }
+
+      .category-list {
+        overflow-y: scroll;
+        height: calc(100% - 42px);
+        padding-right: 20px;
+
+        ul.category-list-content {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+
+          li {
+            &:hover {
+              background-color: $neutral-200;
+            }
+
+            &.selected {
+              background-color: rgba($table-accent, 50%);
+              color: $blue-dark;
+              font-weight: $font-weight-bold;
+            }
+
+            div {
+              padding: 14px 16px;
+              display: flex;
+              align-items: center;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+
+    .separator {
+      width: 1px;
+      background-color: $neutral-400;
+    }
+
+    .right-panel {
+      position: relative;
+      padding: 40px 20px 0;
+      flex-grow: 1;
+
+      > div:not(.loading-indicator, .file-table) {
+        position: relative;
+      }
+
+      .search-bar {
+        flex-grow: 1;
+      }
+
+      .file-table {
+        position: absolute;
+        top: 145px;
+        left: 20px;
+        right: 20px;
+        bottom: 0;
+        overflow-y: scroll;
+
+        table {
+          thead {
+            position: sticky;
+            top: 0;
+            z-index: 2;
+            background: $white;
+
+            th {
+              cursor: pointer;
+
+              &.ordered span {
+                width: calc(100% - 20px);
+              }
+            }
+          }
+
+          tbody {
+            td {
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+#file-upload {
+  .droppable-overlay {
+    position: absolute;
+    top: 40px;
+    right: 60px;
+    bottom: 40px;
+    left: 60px;
+    background-color: $neutral-200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    #file-upload-field {
+      width: auto;
+
+      > .btn {
+        display: none
+      }
+
+      .qq-uploader {
+        .qq-upload-drop-area {
+          top: -115px;
+          left: -80px;
+          right: -80px;
+          width: auto;
+          height: 260px;
+        }
+
+        .qq-upload-list {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .form {
+    .contentTable {
+      td {
+        &.key {
+          width: 100px;
+        }
+      }
+    }
+  }
+}

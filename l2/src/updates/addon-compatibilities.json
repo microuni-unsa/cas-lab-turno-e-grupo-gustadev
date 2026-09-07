@@ -1,0 +1,68 @@
+{
+    "analytics": {
+        "incompatibleBelow": "1.5"
+    },
+    "api": {
+        "incompatibleBelow": "2.3"
+    },
+    "cabling": {
+        "incompatibleBelow": "1.5"
+    },
+    "document": {
+        "incompatibleBelow": "1.10"
+    },
+    "donamic_disposal": {
+        "incompatibleBelow": "1.2.9"
+    },
+    "donamic_inheritance": {
+        "incompatibleBelow": "1.3.7"
+    },
+    "events": {
+        "incompatibleBelow": "1.3"
+    },
+    "floorplan": {
+        "incompatibleBelow": "1.9"
+    },
+    "iso27001": {
+        "incompatibleBelow": "1.6.3"
+    },
+    "isms": {
+        "incompatibleBelow": "1.5.2"
+    },
+    "maintenance": {
+        "incompatibleBelow": "1.2.2"
+    },
+    "nagios": {
+        "incompatibleBelow": "1.3"
+    },
+    "packager": {
+        "incompatibleBelow": "1.2.1"
+    },
+    "privacy": {
+        "incompatibleBelow": "2.1.1"
+    },
+    "relocate_ci": {
+        "incompatibleBelow": "1.5"
+    },
+    "scanit": {
+        "incompatibleBelow": "2.0.1"
+    },
+    "swapci": {
+        "incompatibleBelow": "1.6"
+    },
+    "viva2": {
+        "incompatibleBelow": "3.2.5"
+    },
+    "workflow": {
+        "incompatibleBelow": "1.5"
+    },
+    "sectornord_snagview": {
+        "incompatibleBelow": "1.2.5"
+    },
+    "shd_smview_connect": {
+        "incompatibleBelow": "2025.1.1.2751"
+    },
+    "synetics_flows": {
+        "incompatibleBelow": "1.2.0"
+    }
+}

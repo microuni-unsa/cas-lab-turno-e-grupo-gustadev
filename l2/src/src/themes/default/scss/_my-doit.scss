@@ -1,0 +1,58 @@
+#mydoitArea {
+  background-color: $white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 235px;
+  overflow: auto;
+  border: 1px solid $neutral-600;
+  border-left: 0;
+  margin-right: 5px;
+  z-index: 999;
+
+  table {
+    width: 100%;
+
+    th.navigation {
+      padding: 1px;
+
+      td.bookmarkButton {
+        background-color: $neutral-400;
+        border: 1px solid $neutral-600;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $neutral-200;
+          border: 1px solid $neutral-600;
+        }
+      }
+    }
+  }
+
+  .status-headline {
+    border-top: 1px solid $neutral-600;
+    border-bottom: 1px solid $neutral-600;
+  }
+}
+
+#tasks {
+  ul {
+    list-style-type: none;
+    display: block;
+    margin: 10px 0 10px 20px;
+    padding: 0;
+  }
+
+  :link, :visited {
+    color: #5e594d;
+    text-decoration: none;
+    border-bottom: 1px dotted $neutral-400;
+    padding-bottom: 1px;
+
+    &:hover {
+      color: $brand-color-hover;
+      border-bottom: 1px solid $brand-color-hover;
+    }
+  }
+}

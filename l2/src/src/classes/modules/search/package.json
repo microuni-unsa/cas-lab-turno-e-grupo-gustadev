@@ -1,0 +1,21 @@
+{
+    "name": "Search",
+    "identifier": "search",
+    "author": "synetics GmbH",
+    "version": "-",
+    "description": "Search module",
+    "type": "core",
+    "icon": "images/icons/silk/database.png",
+    "files": [],
+    "sql-tables": [
+        "isys_search_idx"
+    ],
+    "requirements": {
+        "core": ">= 1.11"
+    },
+    "dependencies": {
+        "apache": [
+            "mod_rewrite"
+        ]
+    }
+}

@@ -1,0 +1,146 @@
+.tooltip {
+  position: absolute;
+  box-shadow: 0 2px 6px -1px rgba(0, 0, 0, .5);
+
+  * {
+    position: relative;
+    box-sizing: border-box;
+  }
+
+  .pointer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    div {
+      position: absolute;
+      border: 5px solid transparent;
+      width: 0;
+      height: 0;
+    }
+
+    .lefttop,
+    .topleft {
+      border-bottom-color: $neutral-600;
+      border-left-color: $neutral-600;
+      top: -10px;
+      left: 0;
+    }
+
+    .topmiddle {
+      border-width: 10px;
+      border-bottom-color: $neutral-600;
+      top: -20px;
+      left: 50%;
+    }
+
+    .topright,
+    .righttop {
+      border-bottom-color: $neutral-600;
+      border-right-color: $neutral-600;
+      top: -10px;
+      right: 0;
+    }
+
+    .rightmiddle {
+      border-width: 10px;
+      border-left-color: $neutral-600;
+      top: 50%;
+      right: -20px;
+    }
+
+    .rightbottom,
+    .bottomright {
+      border-top-color: $neutral-600;
+      border-right-color: $neutral-600;
+      bottom: -10px;
+      right: 0;
+    }
+
+    .bottommiddle {
+      border-width: 10px;
+      border-top-color: $neutral-600;
+      bottom: -20px;
+      left: 50%;
+    }
+
+    .bottomleft,
+    .leftbottom {
+      border-top-color: $neutral-600;
+      border-left-color: $neutral-600;
+      bottom: -10px;
+      left: 0;
+    }
+
+    .leftmiddle {
+      border-width: 10px;
+      border-right-color: $neutral-600;
+      top: 50%;
+      left: -20px;
+    }
+  }
+
+  .objectinfo {
+    border: 1px solid $neutral-600;
+    background: $white;
+    width: 350px;
+
+    .header {
+      border-bottom: 1px solid $neutral-600;
+      background: $neutral-200;
+      display: flex;
+      align-items: center;
+      padding: 5px;
+
+      img {
+        float: left;
+        margin-right: 5px;
+        height: 30px;
+        width: auto;
+      }
+
+      .cmdb-marker {
+        float: right;
+        height: 15px;
+        width: 10px;
+        margin: 5px;
+      }
+    }
+
+    h2 {
+      padding: 5px;
+      background-color: $neutral-200;
+      border-top: 1px solid $neutral-400;
+      border-bottom: 1px solid $neutral-400;
+
+      &:first-of-type {
+        border-top: none;
+      }
+    }
+
+    table {
+      width: 100%;
+      padding: 2px;
+      margin-bottom: 5px;
+
+      td.key {
+        font-weight: $font-weight-bold;
+      }
+    }
+  }
+
+  &.darkgrey {
+    font-size: 11px;
+    color: $white;
+    background-color: $neutral-800;
+    padding: 2px 4px;
+    border-radius: 2px;
+
+    .content {
+      padding: 3px;
+      color: $white;
+      line-height: 15px;
+      max-width: 500px;
+    }
+  }
+}

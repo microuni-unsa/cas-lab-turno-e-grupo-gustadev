@@ -1,0 +1,4 @@
+services:
+  idoit.report.container:
+    public: true
+    class: idoit\Module\Report\Container\ReportContainer

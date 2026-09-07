@@ -1,0 +1,129 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: $font-size-root;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: $base-font-family;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  color: $black;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+}
+
+ul, ol {
+  margin: 15px;
+
+  &.list-style-none {
+    list-style: none;
+  }
+}
+
+h1, .h1 {
+  font-size: $h1-font-size;
+  line-height: $h1-line-height;
+  font-weight: 700;
+}
+
+h2, .h2 {
+  font-size: $h2-font-size;
+  line-height: $h2-line-height;
+  font-weight: 700;
+}
+
+h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  font-weight: 700;
+}
+
+a, a:active {
+  color: $neutral-800;
+  text-decoration: none;
+}
+
+a:hover {
+  color: $black;
+}
+
+img {
+  border: 0 none;
+}
+
+pre, code {
+  font-family: $base-monospace-font-family;
+}
+
+code {
+  color: green;
+}
+
+legend {
+  background-color: $white;
+  cursor: default;
+}
+
+hr {
+  border: 0;
+  border-bottom: 1px solid $neutral-400;
+  height: 1px;
+}
+
+acronym {
+  border-bottom: 1px dashed $black;
+}
+
+#contentArea {
+  background-color: $white;
+  border-right: 0;
+  border-left: 1px solid $neutral-600;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 237px;
+  right: 0;
+
+  .contentTitle {
+    padding: 5px;
+    background-color: $neutral-200;
+    border: 1px solid $neutral-600;
+    margin: 5px 5px 0 5px;
+  }
+}
+
+#menuTreeOn {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  width: 235px;
+  margin-right: 5px;
+  overflow: auto;
+  border-left: 0;
+
+  table {
+    background-color: $white;
+    padding-bottom: 15px;
+  }
+}
+
+#treeTop {
+  min-width: 230px;
+  white-space: nowrap;
+  margin: 0 20px;
+
+  a {
+    margin-right: 10px;
+  }
+}

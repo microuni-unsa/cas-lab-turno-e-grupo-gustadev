@@ -1,0 +1,103 @@
+/*--------------------------------------------------|
+| dTree 2.05 | www.destroydrop.com/javascript/tree/ |
+|---------------------------------------------------|
+| Copyright (c) 2002-2003 Geir Landrü               |
+|--------------------------------------------------*/
+
+.dtree {
+  white-space: nowrap;
+  color: $neutral-900;
+
+  > .node {
+    margin-bottom: 5px;
+  }
+
+  img {
+    border: 0;
+    vertical-align: middle;
+    cursor: pointer;
+
+    &.nodeIcon {
+      width: 16px;
+      height: 16px;
+      margin: 0 4px;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    cursor: pointer;
+
+    &.node,
+    &.rootNode,
+    &.nodeSel {
+      white-space: nowrap;
+      line-height: 16px;
+      vertical-align: middle;
+
+      display: inline-block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    &.nodeSel {
+      font-weight: bold;
+    }
+
+    &.nodeDisabled {
+      white-space: nowrap;
+      padding-left: 5px;
+      line-height: 16px;
+      vertical-align: middle;
+      color: $neutral-900;
+      opacity: 0.5;
+      cursor: default;
+    }
+
+    &.rootNode {
+      color: $neutral-900;
+      display: inline-block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+
+  span {
+    &.noentries {
+      color: $neutral-600;
+    }
+  }
+
+  .clip {
+    overflow: visible;
+  }
+
+  div.node {
+    display: flex;
+    align-items: center;
+
+    a {
+      span {
+        padding-left: 0 !important;
+      }
+    }
+
+    span {
+      white-space: nowrap;
+      line-height: 16px;
+      vertical-align: middle;
+    }
+  }
+}
+
+#nodeVisibilityIcon {
+  position: absolute;
+  right: 30px;
+  z-index: 301;
+}

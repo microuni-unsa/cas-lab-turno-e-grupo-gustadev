@@ -1,0 +1,149 @@
+.btn {
+  padding: 7px;
+  background: $white;
+  border: 1px solid $neutral-600;
+  border-radius: $input-border-radius;
+  color: $neutral-800;
+  cursor: pointer;
+  min-height: $input-height;
+  min-width: $input-height;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+  // This is used for A-tag buttons.
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: all $base-transition-speed;
+  outline: 0;
+
+  &:focus-inner {
+    border: 0;
+  }
+
+  &.btn-secondary {
+    background: transparent;
+    border-color: transparent;
+  }
+
+  &:hover,
+  &.hover {
+    background: rgba($neutral-900, 12%);
+  }
+
+  // Special style for "pressed" toggle buttons.
+  &:active,
+  &.active,
+  &.pressed {
+    border-color: $neutral-800;
+    color: $neutral-900;
+    background: rgba($neutral-900, 30%);
+
+    &.btn-secondary {
+      border-color: transparent;
+    }
+  }
+
+  &:focus,
+  &.focus {
+    border-color: $form-accent;
+    outline: 2px solid $form-accent;
+    box-shadow: 0px 0px 10px rgba($form-accent, 30%);
+  }
+
+  &.disabled,
+  &[disabled] {
+    color: $neutral-600;
+    border-color: $neutral-400;
+    background: rgba($neutral-900, 8%);
+    filter: grayscale(1);
+  }
+
+  img {
+    max-height: 16px;
+    max-width: 16px;
+
+    + span {
+      margin-left: 4px;
+    }
+  }
+
+  /* @deprecated The class .btn-mini will be removed in the future */
+  &.btn-mini {
+    padding: 3px;
+    min-height: 24px;
+    min-width: 24px;
+  }
+
+  &.btn-small {
+    padding: 4px;
+    min-height: 28px;
+    min-width: 28px;
+  }
+
+  &.btn-block {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* @deprecated The class .btn-green will be removed in the future */
+  &.btn-green {
+    background-color: $green-light;
+    border-color: $green-dark;
+    color: $green-dark;
+  }
+
+  /* @deprecated The class .btn-blue will be removed in the future */
+  &.btn-blue {
+    background-color: $blue-light;
+    border-color: $blue-dark;
+    color: $blue-dark;
+  }
+
+  /* @deprecated The class .btn-red will be removed in the future */
+  &.btn-red {
+    background-color: $red-light;
+    border-color: $red-dark;
+    color: $red-dark;
+  }
+
+  /* @deprecated The class .btn-yellow will be removed in the future */
+  &.btn-yellow {
+    background-color: $yellow-light;
+    border-color: $yellow-dark;
+    color: $yellow-dark;
+  }
+}
+
+.btn-group {
+  display: inline-flex;
+  align-items: center;
+
+  > .btn {
+    &.btn-secondary:not(:first-child) {
+      border-left: 1px solid $neutral-600;
+    }
+
+    &:not(:first-child) {
+      margin-left: -1px;
+    }
+
+    &:not(:last-child) {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    & + .btn {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+
+    &:not(:first-child) {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+}

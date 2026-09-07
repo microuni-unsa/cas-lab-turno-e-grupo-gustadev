@@ -1,0 +1,41 @@
+.suggestion-container {
+  position: relative;
+
+  input {
+    width: 100% !important;
+  }
+
+  .suggestion-choices {
+    position: absolute;
+    background: $white;
+    border: 1px solid $neutral-600;
+    border-top: none;
+    z-index: 1000;
+    box-shadow: $box-shadow;
+    overflow-y: auto;
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        padding: 5px;
+        display: flex;
+        overflow: hidden;
+        cursor: pointer;
+
+        &.selected {
+          background: $input-focus-color;
+          color: $white;
+        }
+      }
+    }
+  }
+
+  .suggestion-indicator {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+  }
+}

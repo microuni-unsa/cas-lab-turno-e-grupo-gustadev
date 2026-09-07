@@ -1,0 +1,174 @@
+services:
+  idoit.feature.logbook-archive.command:
+    class: idoit\Component\FeatureManager\Feature
+    arguments:
+      - 'logbook-archive-command'
+      - 'Command to archive logbook'
+      - false
+    tags: [ 'idoit.component.features' ]
+
+  idoit.feature.logbook-archive.ui:
+    class: idoit\Component\FeatureManager\Feature
+    arguments:
+      - 'logbook-archive-ui'
+      - 'UI configuration for archive logbook command'
+      - false
+    tags: [ 'idoit.component.features' ]
+
+  idoit.feature.logbook-restore.ui:
+    class: idoit\Component\FeatureManager\Feature
+    arguments:
+      - 'logbook-restore-ui'
+      - 'UI configuration for restore logbook'
+      - false
+    tags: [ 'idoit.component.features' ]
+
+  idoit.feature.monitoring.settings:
+    class: idoit\Component\FeatureManager\Feature
+    arguments:
+      - 'monitoring-settings'
+      - 'UI for monitoring settings.'
+      - true
+    tags: [ 'idoit.component.features' ]
+
+  idoit.feature.tts.settings:
+    class: idoit\Component\FeatureManager\Feature
+    arguments:
+      - 'tts-settings'
+      - 'UI for the TTS settings.'
+      - true
+    tags: [ 'idoit.component.features' ]
+
+  idoit.feature.tts.category:
+    class: idoit\Component\FeatureManager\Feature
+    arguments:
+      - 'tts-category'
+      - 'UI for the TTS category.'
+      - true
+    tags: [ 'idoit.component.features' ]
+
+  idoit.feature.jdisc.settings:
+    class: idoit\Component\FeatureManager\Feature
+    arguments:
+      - 'jdisc-settings'
+      - 'JDisc server/profile configuration'
+      - true
+    tags: [ 'idoit.component.features' ]
+
+  idoit.feature.jdisc.import:
+    class: idoit\Component\FeatureManager\Feature
+    arguments:
+      - 'jdisc-import'
+      - 'JDisc import command/ui'
+      - true
+    tags: [ 'idoit.component.features' ]
+
+  idoit.feature.jdisc.categories:
+    class: idoit\Component\FeatureManager\Feature
+    arguments:
+      - 'jdisc-category'
+      - 'JDisc categories'
+      - true
+    tags: [ 'idoit.component.features' ]
+
+  idoit.feature.notification.settings:
+    class: idoit\Component\FeatureManager\Feature
+    arguments:
+      - 'notification-settings'
+      - 'Notification settings'
+      - true
+    tags: [ 'idoit.component.features' ]
+
+  idoit.feature.notification.command:
+    class: idoit\Component\FeatureManager\Feature
+    arguments:
+      - 'notification-command'
+      - 'Notification command'
+      - true
+    tags: [ 'idoit.component.features' ]
+
+  idoit.feature.ip.ping:
+    class: idoit\Component\FeatureManager\Feature
+    arguments:
+      - 'ip-ping'
+      - 'Function to ping and nslookup IPs'
+      - false
+    tags: [ 'idoit.component.features' ]
+
+  idoit.feature.smtp.settings:
+    class: idoit\Component\FeatureManager\Feature
+    arguments:
+      - 'smtp-settings'
+      - 'SMTP configuration (e-mail) settings.'
+      - false
+    tags: [ 'idoit.component.features' ]
+
+  idoit.feature.ldap.settings:
+    class: idoit\Component\FeatureManager\Feature
+    arguments:
+      - 'ldap-settings'
+      - 'LDAP Configuration pages'
+      - true
+    tags: [ 'idoit.component.features' ]
+
+  idoit.feature.ldap.login:
+    class: idoit\Component\FeatureManager\Feature
+    arguments:
+      - 'ldap-login'
+      - 'LDAP login process'
+      - true
+    tags: [ 'idoit.component.features' ]
+
+  idoit.feature.ldap.command:
+    class: idoit\Component\FeatureManager\Feature
+    arguments:
+      - 'ldap-command'
+      - 'LDAP command'
+      - true
+    tags: [ 'idoit.component.features' ]
+
+  idoit.feature.monitoring.category:
+    class: idoit\Component\FeatureManager\Feature
+    arguments:
+      - 'monitoring-category'
+      - 'UI for the monitoring category'
+      - true
+    tags: [ 'idoit.component.features' ]
+
+  idoit.feature.system-settings.ui:
+    class: idoit\Component\FeatureManager\Feature
+    arguments:
+      - 'system-settings'
+      - 'Show UI for system settings'
+      - false
+    tags: [ 'idoit.component.features' ]
+
+  idoit.feature.tenant-settings.default-url:
+    class: idoit\Component\FeatureManager\Feature
+    arguments:
+      - 'tenant-settings-default-url'
+      - 'UI for tenant setting default url.'
+      - false
+    tags: [ 'idoit.component.features' ]
+
+  idoit.feature.update.gui:
+    class: idoit\Component\FeatureManager\Feature
+    arguments:
+      - 'update-gui'
+      - 'i-doit Update GUI'
+      - false
+    tags: [ 'idoit.component.features' ]
+
+  idoit.feature.expert-settings:
+    class: idoit\Component\FeatureManager\Feature
+    arguments:
+      - 'expert-settings'
+      - 'i-doit Expert settings'
+      - false
+    tags: [ 'idoit.component.features' ]
+
+  idoit.component.feature-manager:
+    public: true
+    class: idoit\Component\FeatureManager\FeatureManager
+    arguments:
+      - !tagged 'idoit.component.features'

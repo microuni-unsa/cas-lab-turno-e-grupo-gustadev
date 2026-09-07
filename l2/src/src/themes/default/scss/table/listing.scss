@@ -1,0 +1,52 @@
+&.listing {
+  clear: both;
+  border-bottom: 1px solid $neutral-400;
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  background: $white;
+
+  thead, tfoot {
+    background: $neutral-200;
+  }
+
+  thead {
+    tr {
+      border-bottom: 1px solid $neutral-400;
+      font-weight: bold;
+    }
+  }
+
+  tbody {
+    tr {
+      border-bottom: 1px solid $neutral-400;
+
+      &:last-of-type {
+        border-bottom: none;
+      }
+    }
+  }
+
+  tfoot {
+    tr {
+      border-top: 1px solid $neutral-400;
+      font-weight: bold;
+    }
+  }
+
+  tr {
+    &.even, &.alt, &:nth-of-type(even) {
+      background: $neutral-200;
+    }
+  }
+
+  th, td {
+    text-align: left;
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  &.hover tbody tr:hover:not(.no-hover) {
+    background-color: $neutral-200;
+  }
+}

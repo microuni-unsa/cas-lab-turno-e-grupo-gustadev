@@ -1,0 +1,118 @@
+.autocomplete {
+  background: $white;
+  cursor: default;
+  overflow: auto;
+  margin-top: -1px;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: 100;
+  max-height: 250px;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, .3);
+  border: 1px solid $input-focus-color;
+  border-top: none;
+  outline: 0;
+  z-index: 1000;
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      list-style-type: none;
+      display: block;
+      margin: 0;
+      padding: 4px;
+      height: 22px;
+      cursor: pointer;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      -o-text-overflow: ellipsis;
+      -ms-text-overflow: ellipsis;
+
+      &.text-rtl {
+        direction: rtl;
+        unicode-bidi: normal;
+      }
+
+      span {
+        font-weight: bold;
+        padding: 7px 0 7px 0;
+      }
+
+      div.type {
+        float: right;
+        color: $neutral-600;
+        padding: 0 6px 7px 6px;
+        text-align: right;
+        width: 75px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+
+      &.selected {
+        color: $white;
+        background-color: $input-focus-color;
+      }
+    }
+  }
+
+  &.global-search {
+    ul {
+      li {
+        font-size: 9px;
+
+        div {
+          white-space: nowrap;
+
+          &.search-for {
+            color: $neutral-600 !important;
+          }
+
+          &.title {
+            width: 165px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            display: inline-block;
+          }
+
+          &.type {
+            font-size: 8px;
+          }
+        }
+
+        &.selected {
+          div {
+            &.search-for, &.type {
+              color: $neutral-200 !important;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.main-search {
+    ul {
+      li {
+        div {
+          &.search-for {
+            color: $neutral-600 !important;
+          }
+
+          &.title {
+            width: 75%;
+            text-overflow: ellipsis;
+            overflow: hidden;
+          }
+
+          &.type {
+            width: 20%;
+            font-size: 8px;
+          }
+        }
+      }
+    }
+  }
+}

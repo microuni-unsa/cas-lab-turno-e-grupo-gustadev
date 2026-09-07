@@ -1,0 +1,91 @@
+div.datepicker {
+  position: absolute;
+  text-align: center;
+  border: 1px solid #aaaaaa;
+  background: $white;
+  padding: 0;
+
+  table {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-size: 9px;
+
+    thead tr th {
+      /* The rest will be done by the ".btn" class */
+      display: table-cell;
+    }
+
+    tbody tr {
+      border: 1px solid $white;
+      margin: 0;
+      padding: 0;
+
+      td {
+        border: 1px solid $neutral-200;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        width: 35px;
+        line-height: 15px;
+        cursor: pointer;
+
+        &.wday {
+          border: 1px solid $white;
+          cursor: default;
+        }
+
+        &.outbound {
+          background: $neutral-200;
+
+          &:hover {
+            border: 1px solid #aaaaaa;
+          }
+        }
+
+        &.today {
+          border: 1px solid $brand-color-hover;
+          background: $white;
+          color: $brand-color-hover;
+
+          &:hover {
+            border: 1px solid #aaaaaa;
+            background: #fbfbfb;
+          }
+        }
+
+        &.nclick, &.nclick_outbound {
+          cursor: default;
+          color: #aaaaaa;
+
+          &:hover {
+            border: 1px solid $neutral-200;
+            background: $white;
+          }
+        }
+
+        &.nclick_outbound {
+          background: $neutral-200;
+
+          &:hover {
+            background: $neutral-200;
+          }
+        }
+
+        &:hover {
+          border: 1px solid #aaaaaa;
+          background: #fbfbfb;
+        }
+      }
+    }
+
+    tfoot {
+      padding: 0;
+
+      td {
+        /* The rest will be done by the ".btn" class */
+        display: table-cell;
+      }
+    }
+  }
+}

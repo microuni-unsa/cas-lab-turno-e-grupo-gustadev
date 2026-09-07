@@ -1,0 +1,59 @@
+// Main 'build' file for the i-doit styles.
+
+// Configuration.
+@import "variables";
+
+// Define the base and some utilities.
+@import "base";
+@import "classes";
+
+// Layout and components.
+@import "animations";
+@import "autocomplete";
+@import "breadcrumb";
+@import "browser";
+@import "buttons";
+@import "chassis";
+@import "colors";
+@import "content-areas";
+@import "datepicker";
+@import "dialog-plus";
+@import "dropdown";
+@import "exception";
+@import "fieldset";
+@import "file-browser";
+@import "form";
+@import "info-box";
+@import "list";
+@import "login";
+@import "mainmenu";
+@import "modal";
+@import "my-doit";
+@import "navbar";
+@import "notify";
+@import "popups";
+@import "property-selector";
+@import "quick-configuration-wizard";
+@import "search";
+@import "suggestion";
+@import "sys-message";
+@import "tabs";
+@import "text";
+@import "tooltip";
+@import "tree";
+@import "wysiwyg";
+
+// Also add unrefactored files (this list will get smaller).
+@import "unrefactored/chosen";
+@import "unrefactored/coloris"; // ID-10343
+@import "unrefactored/dtree";
+@import "unrefactored/fileuploader";
+@import "unrefactored/forms";
+@import "unrefactored/forms-file";
+@import "unrefactored/forms-file-ajax";
+@import "unrefactored/input-group";
+@import "unrefactored/ip-list";
+@import "unrefactored/matrix";
+@import "unrefactored/object-ng";
+@import "unrefactored/rack";
+@import "unrefactored/responsive";

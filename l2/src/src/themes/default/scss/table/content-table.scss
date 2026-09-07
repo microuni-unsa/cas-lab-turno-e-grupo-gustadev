@@ -1,0 +1,38 @@
+&.contentTable {
+  width: 100%;
+  padding: 5px 0 5px 0;
+  border-spacing: 0;
+  border-collapse: separate;
+  color: $neutral-800;
+
+  td {
+    padding: 8px 0;
+    vertical-align: middle;
+    height: 48px;
+
+    &.key {
+      text-align: right;
+      width: 205px;
+      font-weight: bold;
+      padding-left: 10px;
+
+      &.vat {
+        padding-top: 17px;
+      }
+    }
+
+    &.value {
+      vertical-align: middle;
+      font-weight: normal;
+
+      input, select {
+        font-weight: normal;
+      }
+    }
+
+    hr {
+      margin: 0;
+      border-color: #dddddd;
+    }
+  }
+}

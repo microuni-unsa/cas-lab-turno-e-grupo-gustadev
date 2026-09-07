@@ -1,0 +1,39 @@
+#infoBox {
+  border-top: 1px solid $neutral-600;
+  height: 22px;
+  line-height: 21px;
+  background: $neutral-200;
+  position: fixed;
+  left: 236px;
+  bottom: 0;
+  right: 0;
+  overflow: hidden;
+  padding: 0 3px 0 3px;
+  z-index: 990;
+
+  .message {
+    position: relative;
+
+    img {
+      margin-top: 3px;
+      width: 16px;
+      height: 16px;
+    }
+
+    span {
+      position: absolute;
+      left: 20px;
+      right: 100px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+  }
+
+  .version {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    color: darken($neutral-400, 7.5%);
+  }
+}

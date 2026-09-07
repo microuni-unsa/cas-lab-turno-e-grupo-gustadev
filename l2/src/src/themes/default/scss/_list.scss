@@ -1,0 +1,402 @@
+.table-container {
+  height: 100%;
+  overflow-x: auto;
+  min-height: 300px;
+  border-bottom: $tableFooterHeight solid white;
+  box-sizing: border-box;
+
+  .table {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-top: $tableToolbarHeight solid white;
+    box-sizing: border-box;
+
+    .table-header {
+      background-color: $white;
+      overflow: hidden;
+      height: $tableHeaderHeight;
+
+      .mainTable {
+        border-bottom: 0;
+      }
+    }
+
+    .table-body-container {
+      position: relative;
+      height: calc(100% - #{$tableFooterHeight});
+      border-bottom: $tableFooterHeight solid white;
+
+      .table-body {
+        overflow: auto;
+
+        .mainTable {
+          border-top: none;
+          border-bottom: none;
+          margin-bottom: 2px;
+        }
+      }
+    }
+
+    .table-footer {
+      background: $white;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      position: absolute;
+      z-index: 1;
+      height: $tableFooterHeight;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+
+      .table-footer-pager {
+        display: flex;
+        align-items: center;
+
+        > * {
+          margin-right: 4px;
+
+          &:first-child {
+            margin-right: 16px;
+          }
+
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+table {
+  // ============= Content Info Tables
+  @import "table/content-info-table";
+
+  // ============= Content Tables
+  @import "table/content-table";
+
+  // ============= Listing Tables
+  @import "table/listing";
+
+  // ============= Main Tables
+  @import "table/main-table";
+}
+
+input {
+  &.txtfilter, &.btnfilter {
+    border: 1px solid $neutral-200;
+    background-color: $white;
+
+    &:focus {
+      border: 1px solid $neutral-400;
+      background-color: $neutral-200;
+    }
+  }
+
+  &.btnfilter:hover {
+    border: 1px solid $neutral-400;
+    background-color: $neutral-200;
+  }
+}
+
+// For having different colours for each row
+.CMDBListElementsEven {
+  cursor: pointer;
+  background-color: $white !important;
+
+  &:hover {
+    background-color: $neutral-200 !important;
+  }
+}
+
+.CMDBListElementsOdd {
+  cursor: pointer;
+  background-color: #f4f4f4 !important;
+
+  &:hover {
+    background-color: $neutral-200 !important;
+  }
+}
+
+.LogbookListElement0 {
+  color: $blue;
+  font-weight: bold;
+}
+
+.LogbookListElement1 {
+  color: $green;
+  font-weight: bold;
+}
+
+.LogbookListElement2 {
+  color: $yellow;
+  font-weight: bold;
+}
+
+.LogbookListElement3 {
+  color: $red;
+  font-weight: bold;
+}
+
+.sup_infotext {
+  font-size: 1em;
+  padding: 6px;
+}
+
+td {
+  .mouseOver {
+    background-color: $white;
+    cursor: pointer;
+  }
+
+  .mouseOut {
+    background-color: #f2fcfd;
+  }
+}
+
+div.mainTable-pager {
+  user-select: none;
+  padding-left: 5px;
+  white-space: nowrap;
+
+  .currentpage {
+    padding-left: 5px;
+    padding-right: 5px;
+    font-weight: bold;
+    width: 40px;
+  }
+
+  .totalpages {
+    padding: 0;
+  }
+}
+
+
+div.mainTable-options {
+  float: right;
+  margin-right: 5px;
+
+  input {
+    padding: 2px 0 1px 3px;
+    vertical-align: bottom;
+  }
+
+  input, select {
+    margin: 0 0 5px 5px;
+  }
+}
+
+
+#data-grid-mainList {
+  border-top: 1px solid $neutral-600;
+}
+
+#scroller #mainList {
+  margin-top: 5px;
+}
+
+#scroller img.listConfigureIcon {
+  float: right;
+  margin: 10px 5px 5px 0;
+}
+
+#mainList table {
+  margin-top: 5px;
+}
+
+.mainTableFilterInput {
+  width: 200px;
+  height: 24px;
+  margin: 4px 10px 0 0;
+  line-height: 24px;
+}
+
+.search {
+  width: 250px;
+}
+
+.advanced-filters-header {
+  height: $tableToolbarHeight;
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .advanced-filters-tools {
+    margin-right: 20px;
+
+    .btn {
+      margin-left: 16px;
+    }
+  }
+}
+
+.advanced-filters-container {
+  width: 500px;
+  height: $tableToolbarHeight;
+  padding: 0 10px;
+  position: relative;
+}
+
+.advanced-filters-search {
+  flex-grow: 1;
+
+  &:before {
+    content: '';
+    display: inline-block;
+    background-image: url("[{$dir_images}]axialis/basic/symbol-cancel.svg");
+    cursor: pointer;
+    width: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: $input-height;
+    position: absolute;
+  }
+
+  input {
+    padding-left: 30px;
+  }
+}
+
+.advanced-filters {
+  background: $white;
+  border: 1px solid $neutral-400;
+  border-radius: $input-border-radius;
+  position: absolute;
+  height: auto;
+  z-index: 100;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin-top: 10px;
+  padding: 4px;
+  position: relative;
+
+  &.collapsed {
+    border-color: transparent;
+    height: $tableToolbarHeight;
+    overflow: hidden;
+
+    tr {
+      display: none;
+
+      &.default-field {
+        display: table-row;
+
+        td {
+          > .empty_value_checkbox {
+            margin-left: -30px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.advanced-filters-table {
+  width: 375px;
+  display: flex;
+  align-items: center;
+
+  > table td > label.fr {
+    max-width: 95%;
+    text-overflow: ellipsis;
+    overflow-x: hidden;
+    white-space: nowrap;
+  }
+
+  .input-size-normal {
+    width: 100%;
+  }
+}
+
+.advanced-filters {
+  label {
+    margin-right: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    text-align: right;
+  }
+
+  table {
+    table-layout: fixed;
+    width: 100%;
+
+    td:first-child {
+      width: 200px;
+    }
+  }
+}
+
+.mainTableDragContainer .handle {
+  position: absolute;
+  top: 0;
+  bottom: 30px;
+  width: 11px;
+  cursor: ew-resize;
+  z-index: 8;
+
+  &:hover {
+    > div {
+      width: 2px;
+      height: $tableHeaderHeight;
+      background-color: $form-accent;
+      margin: 0 auto;
+    }
+  }
+}
+
+.mainTableDragger {
+  width: 0;
+  background: $white;
+  border: 1px dotted $black;
+  z-index: 900;
+}
+
+td.searchResult, td.searchResult * {
+  color: $green;
+}
+
+th.no-drag label.mainTableCheckbox input {
+  margin-left: 11px;
+}
+
+.mainTableCheckbox {
+  display: block;
+  height: 100%;
+  text-align: center;
+  cursor: pointer;
+}
+
+.mainTableDragGhost {
+  position: absolute;
+  width: 90px;
+  padding: 4px;
+  border-radius: 3px;
+  z-index: 100;
+
+  * {
+    vertical-align: middle;
+  }
+}
+
+.mainListContainer {
+  position: relative;
+  height: calc(100% - 200px);
+}
+
+.additionalListContainer {
+  position: relative;
+  overflow: scroll;
+  max-height: 195px !important;
+}

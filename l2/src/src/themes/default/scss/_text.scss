@@ -1,0 +1,47 @@
+// Text reset
+.text-reset {
+  color: $black;
+  font-family: $base-font-family;
+  font-size: $font-size-base;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: $line-height-base;
+}
+
+// Styles
+.text-normal {
+  font-weight: normal !important;
+}
+
+.text-bold {
+  font-weight: bold !important;
+}
+
+.text-underline {
+  text-decoration: underline !important;
+}
+
+.text-strike {
+  text-decoration: line-through !important;
+}
+
+.text-left {
+  text-align: left !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+.text-justify {
+  text-align: justify !important;
+}
+
+.text-monospace, .font-monospace {
+  font-family: $base-monospace-font-family;
+}

@@ -1,0 +1,320 @@
+parameters:
+    app.app_path: './'
+    app.www_path: '/'
+    service.title: 'i-doit'
+    log.path: '/log/exception.log'
+    language: 'en'
+imports:
+    - { resource: ./idoit/Component/*/config/services.yaml}
+services:
+    event_dispatcher:
+        class: Symfony\Component\EventDispatcher\EventDispatcher
+        public: true
+    request:
+        class: Symfony\Component\HttpFoundation\Request
+        factory: ['Symfony\Component\HttpFoundation\Request', createFromGlobals]
+        lazy: true
+        public: true
+    routes:
+        class: Symfony\Component\Routing\RouteCollection
+        public: true
+    request_context:
+        class: Symfony\Component\Routing\RequestContext
+        arguments: ['%app.www_path%']
+    Symfony\Component\HttpFoundation\RequestStack: ~
+    route_generator:
+        class: idoit\Component\UrlGenerator
+        arguments: ['@routes', '@request_context']
+        public: true
+    Symfony\Component\Routing\Matcher\UrlMatcher:
+        arguments:
+            - '@routes'
+            - '@request_context'
+    Symfony\Component\HttpKernel\EventListener\RouterListener:
+        arguments:
+            - '@Symfony\Component\Routing\Matcher\UrlMatcher'
+            - '@Symfony\Component\HttpFoundation\RequestStack'
+            - '@request_context'
+            - '@logger'
+            - '%app.app_path%'
+            - false
+        tags: ['kernel.event_subscriber']
+    Symfony\Component\HttpKernel\Controller\ControllerResolver: ~
+    Symfony\Component\HttpKernel\Controller\ArgumentResolver: ~
+    kernel:
+        class: Symfony\Component\HttpKernel\HttpKernel
+        arguments:
+            - '@event_dispatcher'
+            - '@Symfony\Component\HttpKernel\Controller\ControllerResolver'
+            - '@Symfony\Component\HttpFoundation\RequestStack'
+            - '@Symfony\Component\HttpKernel\Controller\ArgumentResolver'
+        public: true
+    signals:
+        class: isys_component_signalcollection
+        factory: ['isys_component_signalcollection', get_instance]
+        lazy:  true
+        public: true
+    database_system:
+        class: isys_component_database_proxy
+        public: true
+    database:
+        class: isys_component_database_proxy
+        public: true
+    cmdb_dao:
+        class: isys_cmdb_dao
+        arguments: ['@database']
+        lazy: true
+        public: true
+    breadcrumb:
+        class: idoit\Component\Breadcrumb\Breadcrumb
+        public: true
+        lazy: true
+    constant_manager:
+        class: idoit\Component\ConstantManager
+        factory: ['idoit\Component\ConstantManager', instance]
+        arguments: ['@database_system', '@database', '@session']
+        public: true
+    settingsDbSystem:
+        class: idoit\Component\Settings\DbSystem
+        factory: ['idoit\Component\Settings\DbSystem', factory]
+        public: true
+    settingsSystem:
+        class: idoit\Component\Settings\System
+        factory: ['idoit\Component\Settings\System', factory]
+        arguments: ['@database_system']
+        lazy: true
+        public: true
+    settingsTenant:
+        class: idoit\Component\Settings\Tenant
+        factory: ['idoit\Component\Settings\Tenant', factory]
+        arguments: ['@database_system', '@session']
+        lazy: true
+        public: true
+    settingsUser:
+        class: idoit\Component\Settings\User
+        factory: ['idoit\Component\Settings\User', factory]
+        arguments: ['@database', '@session']
+        lazy: true
+        public: true
+    session:
+        class: isys_component_session
+        factory: ['isys_component_session', instance]
+        lazy: true
+        public: true
+    template:
+        class: isys_component_template
+        factory: ['isys_component_template', instance]
+        lazy: true
+        public: true
+    notify:
+        class: idoit\Component\Notify\NotificationCenter
+        factory: [ 'idoit\Component\Notify\NotificationCenter', factory ]
+        lazy:  true
+        public: true
+        calls:
+            - [addHandler, ['@notify.SmartyHandler']]
+            - [addHandler, ['@notify.HeaderHandler']]
+    locales:
+        class: isys_locale
+        factory: ['isys_locale', 'instance']
+        arguments: ['@database', '@session']
+        public: true
+    moduleManager:
+        class: isys_module_manager
+        arguments: ['@database']
+        lazy: true
+        public: true
+    logger:
+        class: idoit\Component\Logger
+        factory: ['idoit\Component\Logger', factory]
+        arguments: ['%service.title%', '%log.path%']
+        lazy: true
+        public: true
+    notify.SmartyHandler:
+        class: idoit\Component\Notify\Handler\SmartyHandler
+        arguments: ['@template']
+        lazy: true
+    notify.HeaderHandler:
+        class: idoit\Component\Notify\Handler\HeaderHandler
+        lazy: true
+    language:
+        class: isys_component_template_language_manager
+        arguments: ['%language%']
+        public: true
+    components.registry:
+        class: idoit\Component\Registry\Registry
+        public: true
+    # Basic HTML Purifier configuration to clean HTML strings.
+    htmlpurifier_config:
+        class: HTMLPurifier_Config
+        factory: ['HTMLPurifier_Config', createDefault]
+        calls:
+            - [set, ['Core.Encoding', 'UTF-8']]
+            # @see ID-9181 Allow certain frame targets to solve the issue.
+            - [set, ['Attr.AllowedFrameTargets', ['_blank', '_self', '_parent', '_top']]]
+            # @see ID-9435 Allow 'data' scheme for copy & paste images (additionally to all the defauls schemes).
+            - [set, ['URI.AllowedSchemes', { "data": true,  "http": true, "https": true, "mailto": true, "ftp": true, "nntp": true, "news": true, "tel": true }]]
+            # @see ID-9435 Fix the issue by removing the configuration. If we need to implement a 'strict' set of allowed elements + attributes:
+            # - [set, ['HTML.Allowed', 'a[href|rel|title|target|style|id],abbr[title],acronym[title],b,blockquote[cite],br,caption,cite,code,dd,del,dfn,div,dl,dt,em,i,img[src|alt|title|class],ins,kbd,li,ol,p,pre,s,strike,strong,sub,sup,table,tbody,td,tfoot,th,thead,tr,tt,u,ul,var,*[class|style]']]
+        lazy:  true
+    htmlpurifier:
+        class: HTMLPurifier
+        arguments: ['@htmlpurifier_config']
+        public: true
+    # @see ID-11146 Special HTML Purifier configuration to remove any HTML from strings.
+    htmlremover_config:
+        class: HTMLPurifier_Config
+        factory: ['HTMLPurifier_Config', createDefault]
+        calls:
+            - [set, ['Core.Encoding', 'UTF-8']]
+            - [set, ['HTML.Allowed', '']]
+        lazy:  true
+    htmlremover:
+        class: HTMLPurifier
+        arguments: ['@htmlremover_config']
+        public: true
+    download:
+        class: idoit\Component\Download\Download
+        public: true
+    upload:
+        class: idoit\Component\Upload\Upload
+        public: true
+    tree_filter:
+        class: idoit\Component\Tree\Filter
+        public: true
+    http_client:
+        class: idoit\Component\HttpClient
+        arguments: ['@settingsSystem']
+        public: true
+    idoit.cmdb.normalizer.shape.custom-dialog:
+        public: true
+        class: idoit\Module\Cmdb\Component\SyncNormalizer\DataShapes\CustomDialogShape
+        tags: [ 'idoit.cmdb.normalizer.shape' ]
+    idoit.cmdb.normalizer.shape.object-browser:
+        public: true
+        class: idoit\Module\Cmdb\Component\SyncNormalizer\DataShapes\ObjectBrowserShape
+        tags: [ 'idoit.cmdb.normalizer.shape' ]
+    idoit.cmdb.normalizer.shape.second-select-object-browser:
+        public: true
+        class: idoit\Module\Cmdb\Component\SyncNormalizer\DataShapes\SecondSelectObjectBrowserShape
+        tags: [ 'idoit.cmdb.normalizer.shape' ]
+    idoit.cmdb.normalizer.shape.connector-browser:
+        public: true
+        class: idoit\Module\Cmdb\Component\SyncNormalizer\DataShapes\ConnectorBrowserShape
+        tags: [ 'idoit.cmdb.normalizer.shape' ]
+    idoit.cmdb.normalizer.shape.array:
+        public: true
+        class: idoit\Module\Cmdb\Component\SyncNormalizer\DataShapes\ListShape
+        tags: [ 'idoit.cmdb.normalizer.shape' ]
+    idoit.cmdb.normalizer.shape.float:
+        public: true
+        class: idoit\Module\Cmdb\Component\SyncNormalizer\DataShapes\FloatShape
+        tags: [ 'idoit.cmdb.normalizer.shape' ]
+    idoit.cmdb.normalizer.shape.integer:
+        public: true
+        class: idoit\Module\Cmdb\Component\SyncNormalizer\DataShapes\IntegerShape
+        tags: ['idoit.cmdb.normalizer.shape']
+    idoit.cmdb.normalizer.shape.string:
+        public: true
+        class: idoit\Module\Cmdb\Component\SyncNormalizer\DataShapes\StringShape
+        tags: [ 'idoit.cmdb.normalizer.shape' ]
+    idoit.cmdb.normalizer.shape.dialog:
+        public: true
+        class: idoit\Module\Cmdb\Component\SyncNormalizer\DataShapes\DialogShape
+        tags: [ 'idoit.cmdb.normalizer.shape' ]
+    idoit.cmdb.normalizer.shape_provider:
+        public: true
+        class: idoit\Module\Cmdb\Component\SyncNormalizer\DataShapes\ShapeProvider
+        arguments:
+            - !tagged 'idoit.cmdb.normalizer.shape'
+    tfa:
+        public: true
+        class: idoit\Module\UserSettings\TfaService
+        arguments:
+            - '@language'
+            - '@database'
+            - '@session'
+    api.endpoints:
+        public: true
+        class: idoit\Api\EndpointContainer
+        arguments:
+            - !tagged 'api.endpoint'
+
+    idoit.cmdb.locationpath:
+        public: true
+        class: idoit\Component\Location\LocationPath
+        arguments:
+            - '@database'
+            - '@settingsTenant'
+
+    addon.checker:
+        public: true
+        class: idoit\AddOn\AddonVerify
+
+    addon.manager.manage-package:
+        public: true
+        class: idoit\Addon\Manager\ManagePackage
+        arguments:
+            - '%app.app_path%src/classes/modules/'
+
+    addon.manager.manage-tenant:
+        public: true
+        class: idoit\Addon\Manager\ManageTenant
+        arguments:
+            - '@database'
+            - '%app.app_path%src/classes/modules/'
+
+    addon.manager.manage-candidates:
+        public: true
+        class: idoit\Addon\Manager\ManageCandidates
+        arguments:
+            - '@database'
+            - '%app.app_path%src/classes/modules/'
+
+    addon.manager.downloader:
+        public: true
+        class: idoit\Addon\Manager\Downloader
+
+    reset_password:
+        public: true
+        class: idoit\Component\PasswordReset\PasswordResetService
+        factory: [ idoit\Component\PasswordReset\PasswordResetService, instance ]
+        arguments:
+            - '@database_system'
+
+    cmdb.factory:
+        class: idoit\Component\Factory\CmdbFactory
+        arguments:
+            - '@cmdb_dao'
+            - '@language'
+            - '@route_generator'
+            - '@cmdb.category.taggedFactory'
+            - '@cmdb.category.collectionFactory'
+        public: true
+
+    cmdb.category.taggedFactory:
+        class: idoit\Component\Factory\Category\TaggedFactory
+        arguments:
+            - !tagged 'idoit.cmdb.category.processor'
+
+    cmdb.category.virtualFactory:
+        class: idoit\Component\Factory\Category\VirtualFactory
+        arguments:
+            - '@cmdb_dao'
+
+    cmdb.category.genericFactory:
+        class: idoit\Component\Factory\Category\GenericFactory
+        arguments:
+            - '@cmdb_dao'
+            - '@database'
+
+    cmdb.category.customFactory:
+        class: idoit\Component\Factory\Category\CustomFactory
+        arguments:
+            - '@cmdb_dao'
+            - '@database'
+
+    cmdb.category.collectionFactory:
+        class: idoit\Component\Factory\Category\CollectionFactory
+        arguments:
+            - ['@cmdb.category.virtualFactory', '@cmdb.category.genericFactory', '@cmdb.category.customFactory']

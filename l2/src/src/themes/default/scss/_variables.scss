@@ -1,0 +1,99 @@
+// ============= Base styles
+$base-font-family: Tahoma, Verdana, Segoe, sans-serif;
+$base-monospace-font-family: Courier New, Lucida Console, Monospace, Monaco, sans-serif, serif;
+
+// ============= Fonts
+// We use 10px so that the "rem" units will be easier to calculate.
+$font-size-root: 10px;
+$font-size-base: 1.2rem;
+// Line height.
+$line-height-base: 1.4rem;
+// Font Weight.
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+
+// ============= Headlines
+$h1-font-size: 1.6rem;
+$h1-line-height: 1;
+$h2-font-size: 1.4rem;
+$h2-line-height: 1;
+
+// ============= Specifics
+$breadcrump-font-size: $font-size-base;
+$breadcrump-line-height: $line-height-base;
+
+// ============= Sizes
+$sizes: 0, 5, 10, 15, 20;
+
+// ============= Colors
+$main-navigation: #262626;
+$black: #000000;
+$white: #ffffff;
+$brand-color: #e3000f;
+$brand-color-hover: #ff3341;
+$brand-color-press: #a3000b;
+$searchHighlight: #d6dde5;
+$form-accent: #096480;
+$table-accent: #92cbee;
+
+// Red
+$red-light: #f3b8b8;
+$red: #e42d2c;
+$red-dark: #7b0000;
+// Purple
+$purple-light: #f4ebf2;
+$purple: #a0519f;
+$purple-dark: #591a5b;
+// Yellow
+$yellow-light: #fbeecc;
+$yellow: #f7da8e;
+$yellow-dark: #e57428;
+// Green
+$green-light: #acd8b1;
+$green: #0ba04a;
+$green-dark: #056312;
+// Blue
+$blue-light: #92cbee;
+$blue: #0964b0;
+$blue-dark: #05356c;
+
+// ============= Neutrals
+$neutral-900: #181818;
+$neutral-800: #383838;
+$neutral-600: #787979;
+$neutral-400: #c8c9c9;
+$neutral-200: #e6e7e7;
+
+// ============= Shadows
+$box-shadow-sm: 0 2px 3px rgba(0, 0, 0, 0.08), 0 0 1px rgba(0, 0, 0, 0.1);
+$box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1), 0px 8px 16px rgba(0, 0, 0, 0.05);
+$box-shadow-lg: 0 16px 24px rgba(0, 0, 0, 0.16), 0 16px 32px rgba(0, 0, 0, 0.16), 0 0 24px rgba(0, 0, 0, 0.08);
+
+// ============= Inputs
+$input-font-size: 1.3rem;
+$input-line-height: 13 / 24;
+$input-background-color: #fbfbfb;
+$input-focus-color: #5897fb;
+$input-height: 32px;
+$input-size-quarter: 100px;
+
+$input-border-radius: 2px;
+
+// ============= Transitions
+$base-transition-speed: 250ms;
+
+// ============= Layout styling
+$topMenuHeight: 48px;
+$breadcrumbHeight: 40px;
+$navbarHeight: 60px;
+$tabsHeight: 35px;
+
+// ============= Tables
+$tableToolbarHeight: 60px;
+$tableHeaderHeight: 40px;
+$rowHeight: 40px;
+$tableFooterHeight: 40px;
+
+// ============= Popups
+$popup-header-height: $input-height + 10 + 1;
+$popup-footer-height: $input-height + 10 + 1;

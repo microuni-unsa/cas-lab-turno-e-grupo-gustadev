@@ -1,0 +1,17 @@
+{
+  "title": "Multiedit",
+  "name": "LC__MODULE__MULTIEDIT",
+  "identifier": "multiedit",
+  "author": "synetics GmbH",
+  "version": "1.0",
+  "description": "Listedit for i-doit.",
+  "type": "core",
+  "icon": "images/icons/silk/table_edit.png",
+  "files": [],
+  "sql-tables": [],
+  "dependencies": {
+    "apache": [
+      "mod_rewrite"
+    ]
+  }
+}

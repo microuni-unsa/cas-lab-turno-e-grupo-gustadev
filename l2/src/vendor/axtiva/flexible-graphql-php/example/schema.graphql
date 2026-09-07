@@ -1,0 +1,53 @@
+"CAPITALIZE ALL LETTERS IN STRING"
+directive @uppercase on FIELD | FIELD_DEFINITION
+scalar FieldSet
+directive @plusX(x: Int!) on FIELD | FIELD_DEFINITION
+directive @key(fields: FieldSet!, resolvable: Boolean = true) repeatable on OBJECT | INTERFACE
+
+type Query {
+    account(id: ID!): Account
+    sum: Int @plusX(x: 7)
+    dynamicSum(x: Int!, y: Int!): Int @plusX(x: 4)
+    addHour(date: DateTime!): DateTime
+}
+
+interface Node {
+    id: ID!
+}
+
+type Account implements Node @key(fields: "id") {
+    id: ID!
+    number: String! @uppercase
+    currency: Currency!
+    transactions: [Transaction!]!
+}
+
+type Transaction implements Node @key(fields: "id") {
+    id: ID!
+    amount: Int!
+    ups: String
+    createdAt: DateTime
+    status: TransactionStatus!
+}
+
+type NamedCurrency implements Node {
+    id: ID!
+    name: String!
+}
+
+type CodedCurrency implements Node {
+    id: ID!
+    code: Int!
+}
+
+union Currency = NamedCurrency | CodedCurrency
+
+"TRANSACTION STATUS DOC"
+enum TransactionStatus {
+    NEW
+    "SUCCESS DOC"
+    SUCCESS
+    FAIL
+}
+scalar DateTime
+scalar HelloWorld

@@ -1,0 +1,13 @@
+{
+    "name": "OPEN",
+    "identifier": "open",
+    "author": "synetics GmbH",
+    "version": "-",
+    "description": "i-doit open module",
+    "type": "core",
+    "files": [],
+    "sql-tables": [],
+    "requirements": {
+        "core": ">= 1.11"
+    }
+}

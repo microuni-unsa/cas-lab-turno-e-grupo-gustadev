@@ -1,0 +1,27 @@
+.sys-message {
+    margin: 20px;
+    padding: 10px;
+    color: $green-dark;
+    border: 1px solid $green-dark;
+    background: $green-light;
+}
+.sys-message_info,
+.sys-message_warning,
+.sys-message_error {
+  padding-left: 35px;
+}
+.sys-message_info {
+    color: $blue-dark;
+    border-color: $blue-dark;
+    background: $blue-light url('[{$dir_images}]axialis/basic/button-info.svg') no-repeat 10px center;
+}
+.sys-message_warning {
+    color: $yellow-dark;
+    border-color: $yellow-dark;
+    background: $yellow-light url('[{$dir_images}]axialis/basic/warning.svg') no-repeat 10px center;
+}
+.sys-message_error {
+    color: $red-dark;
+    border-color: $red-dark;
+    background: $red-light url('[{$dir_images}]axialis/basic/warning-red.svg') no-repeat 10px center;
+}

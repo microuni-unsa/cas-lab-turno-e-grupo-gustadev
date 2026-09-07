@@ -1,0 +1,17 @@
+{
+  "title": "Templates",
+  "name": "LC__UNIVERSAL__TEMPLATE",
+  "identifier": "templates",
+  "author": "synetics GmbH",
+  "version": "-",
+  "description": "",
+  "type": "core",
+  "files": [],
+  "sql-tables": [],
+  "requirements": {
+    "core": ">= 1.11"
+  },
+  "dependencies": {
+    "php": []
+  }
+}

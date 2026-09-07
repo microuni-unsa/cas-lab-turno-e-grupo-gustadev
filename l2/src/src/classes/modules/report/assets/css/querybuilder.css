@@ -1,0 +1,71 @@
+div.constraintDiv {
+    background: #eeeeee;
+    position: relative;
+    margin: 15px 0;
+    min-width: 800px;
+    width: 80%;
+}
+
+div.constraintDiv span.remove,
+div.constraintSubDiv span.subremove,
+div.constraintSubDiv span.subsubremove-condition,
+div.constraintDiv span.subremove-condition,
+div.constraintSubDiv span.subremove-condition,
+div.constraintSubDiv span.subsubremove-condition {
+    position: absolute;
+    background: url('[{$dirs.images}]axialis/basic/button-cancel.svg');
+    right: 10px;
+    top: 10px;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+div.constraintDiv span.add, div.constraintSubDiv span.subadd {
+    position: absolute;
+    background: url('[{$dirs.images}]axialis/basic/button-add.svg');
+    right: 30px;
+    top: 10px;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+label.reportLabel {
+    width: 50px;
+    display: block;
+    text-align: right;
+    margin-right: 10px;
+}
+
+select.reportDialog, select.reportDialog2, input.reportInput, textarea.reportTextarea {
+    border: 1px solid #888888;
+}
+
+select.reportDialog2 {
+    margin-right: 10px;
+}
+
+select.reportBlockOperator {
+    position: relative;
+    left: 370px;
+}
+
+div.constraintSubDiv {
+    background-color: rgba(204, 204, 255, 0.4);
+    min-width: 750px;
+    position: relative;
+}
+
+table.reportCondtionsTable {
+    margin-top: 15px;
+}
+
+table.reportCondtionsTable,
+table.reportCondtionsSubTable {
+    width: 100%;
+}
+
+.report-query-builder .contentTable .key {
+    width: 120px;
+}

@@ -1,0 +1,27 @@
+#Notify .item {
+  position: relative;
+  float: right;
+  clear: right;
+  margin: 0 0 10px;
+  width: 226px;
+  overflow: hidden;
+  padding: 10px;
+  line-height: 18px;
+  font-size: 11px;
+  color: $black;
+  border: 1px solid;
+
+  .head {
+    font-size: 13px;
+    font-weight: bold;
+  }
+
+  .exit {
+    position: absolute;
+    top: 2px;
+    right: 5px;
+    font-weight: bold;
+    font-size: 12px;
+    cursor: pointer;
+  }
+}

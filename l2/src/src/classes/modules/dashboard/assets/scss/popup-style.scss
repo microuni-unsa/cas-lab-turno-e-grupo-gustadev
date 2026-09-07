@@ -1,0 +1,48 @@
+@import "variables";
+
+#widget-popup {
+  position: relative;
+  display: block;
+  height: 100%;
+  width: 100%;
+
+  #widget-popup-config-container {
+    table.contentTable td.key {
+      width: 150px;
+
+      .chosen-container .chosen-results {
+        max-height: 150px;
+      }
+    }
+  }
+}
+
+// Some special rules for the configuration popup.
+#widget-popup
+#widget-config-popup,
+#widget-config-popup ul#widget-config-list {
+  position: relative;
+}
+
+#widget-config-popup {
+  ul#widget-config-list {
+    list-style: none;
+    margin: 0;
+    height: 200px;
+    overflow: hidden;
+    overflow-y: scroll;
+
+    li {
+      border-bottom: 1px solid $neutral-400;
+      padding: 5px;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .handle {
+    background: url('[{$dir_images}]icons/hatch.gif');
+    cursor: ns-resize;
+    margin-right: 5px;
+  }
+}

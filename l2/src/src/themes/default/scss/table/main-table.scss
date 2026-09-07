@@ -1,0 +1,233 @@
+&.mainTable {
+  table-layout: fixed;
+  white-space: nowrap;
+  text-align: left;
+  border-spacing: 0;
+  user-select: none;
+  min-width: 100%;
+  color: $neutral-800;
+  backface-visibility: hidden; // @see ID-10881
+
+  thead {
+    th {
+      cursor: default;
+      border-right: 2px solid transparent;
+      border-bottom: 1px solid $neutral-400;
+      padding: 13px 0 12px 10px;
+      overflow: hidden;
+      text-align: left;
+      font-weight: normal;
+      position: relative;
+      text-overflow: ellipsis;
+      overflow-x: hidden;
+      height: $rowHeight;
+
+      &:last-child {
+        border-right: 0;
+      }
+
+      .sort-arrow {
+        position: absolute;
+        top: 12px;
+        right: 6px;
+        opacity: 0;
+        transition: all $base-transition-speed;
+      }
+
+      &.ordered {
+        font-weight: $font-weight-bold;
+
+        .sort-arrow {
+          opacity: 1;
+          right: 10px;
+        }
+      }
+
+      &:hover {
+        // border-right-color: $table-accent;
+
+        .sort-arrow {
+          opacity: 1;
+          right: 10px;
+        }
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      position: relative;
+
+      td {
+        border-bottom: 1px solid $neutral-400;
+        padding: 12px 0 12px 10px;
+        vertical-align: top;
+        text-align: left;
+        position: relative;
+        text-overflow: ellipsis;
+        overflow-x: hidden;
+        height: $rowHeight;
+
+        &[data-property="contact_tag"],
+        &[data-property="contact_primary"],
+        &[data-property="showports"] {
+          padding-top: 4px;
+          padding-bottom: 4px;
+        }
+
+        &:first-child {
+          border-left: 2px solid transparent;
+        }
+
+        &:last-child {
+          border-right: 2px solid transparent;
+        }
+      }
+
+      .drag-handle {
+        background: url('[{$dir_images}]icons/hatch.gif');
+        width: 10px;
+        height: 14px;
+        display: block;
+        float: left;
+        cursor: move;
+      }
+
+      &.on {
+        background-color: $neutral-200;
+        cursor: pointer;
+      }
+
+      // We use this for later - we'll use the border to signal the row highlight.
+      &:first-of-type {
+        td {
+          border-top: 2px solid transparent;
+        }
+      }
+
+      &:nth-child(2n+1) {
+        background-color: $neutral-200;
+      }
+
+      &.tr-selected {
+        background-color: $table-accent;
+        cursor: pointer;
+      }
+    }
+
+    &.mainTableHover, .mainTableHover {
+      tr {
+        &.tr-selected:hover {
+          background-color: $table-accent;
+        }
+
+        &:hover {
+          background-color: $neutral-200;
+        }
+
+        &.highlightLine {
+          outline: 2px solid $form-accent;
+          z-index: 5;
+
+          td {
+            &:first-child {
+              border-left: 2px solid $form-accent;
+            }
+
+            &:last-child {
+              border-right: 2px solid $form-accent;
+            }
+          }
+
+          // We use this, because the top "outline" will not be shown.
+          &:first-of-type {
+            td {
+              border-top: 2px solid $form-accent;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  th, td {
+    .overflowable {
+      width: 100%;
+      display: block;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+
+  .cmdb-marker {
+    height: 9px;
+  }
+
+  .link-marker:before,
+  .email-marker:before {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+    vertical-align: middle;
+  }
+
+  .link-marker:before {
+    background: url('[{$dir_images}]axialis/basic/link.svg');
+  }
+
+  .email-marker:before {
+    background: url('[{$dir_images}]axialis/web-email/mail-back.svg');
+  }
+
+  &.is-loading, .is-loading {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    // height: 100%; // This makes the table 'jump' in categories
+
+    &:before {
+      content: '';
+      display: block;
+      left: 0;
+      right: 0;
+      position: absolute;
+      background: rgba(255, 255, 255, 0.7);
+      top: 0;
+      bottom: 0;
+      z-index: 10000;
+    }
+  }
+
+  &:before {
+    content: '';
+    transition: background 300ms ease;
+  }
+
+  input {
+    margin: 0 2px 0 2px;
+  }
+
+  ul, ol,
+  td[data-property*="__description"][data-property*="custom_fields"] ul,
+  td[data-property*="__f_wysiwyg"][data-property*="custom_fields"] ul {
+    margin: 0;
+    list-style: none;
+  }
+
+  td[data-property*="__description"] ul,
+  td[data-property*="__f_wysiwyg"] ul,
+  td[data-property*="__description"] ol,
+  td[data-property*="__f_wysiwyg"] ol,
+  td[data-property*="__description"][data-property*="custom_fields"] li > ul,
+  td[data-property*="__f_wysiwyg"][data-property*="custom_fields"] li > ul {
+    margin: 0 15px;
+    list-style: revert;
+  }
+
+  col:last-child {
+    width: inherit !important;
+  }
+}

@@ -1,0 +1,72 @@
+// based on table/content-table
+.form {
+  width: 100%;
+  padding: 5px 0 5px 0;
+
+  color: #383838;
+
+  .form__items,
+  .form__items__field {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+  }
+
+  .form__items {
+    .form__items__field {
+      display: flex;
+
+      width: 100%;
+      min-height: 48px;
+      padding: 8px 0;
+
+      align-items: center;
+
+      .form__items__field__label {
+        font-weight: bold;
+
+        display: inline-block;
+
+        width: 205px;
+        margin-right: 20px;
+
+        text-align: right;
+      }
+
+      .form__items__field__btn {
+        margin: 0 5px;
+
+        &:first-child {
+          margin-left: 225px;
+        }
+      }
+      .form__items__field__btn_icon::before {
+        display: inline-block;
+
+        width: 16px;
+        height: 16px;
+        margin-right: 4px;
+
+        content: '';
+
+        background-size: cover;
+      }
+      .form__items__field__btn_icon_update::before {
+        background-image: url('[{$dir_images}]axialis/basic/symbol-update.svg');
+      }
+      .form__items__field__btn_icon_update--loading::before {
+        animation: 1s linear infinite rotate360;
+      }
+      .form__items__field__btn_icon_delete::before {
+        background-image: url("[{$dir_images}]axialis/industry-manufacturing/waste-bin.svg");
+      }
+    }
+  }
+}
+
+@keyframes rotate360 {
+  to {
+    transform: rotate(360deg);
+  }
+}

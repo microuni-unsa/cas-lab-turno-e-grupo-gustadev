@@ -1,0 +1,79 @@
+fieldset {
+  margin-top: 1.4em;
+  padding: 0.8em;
+
+  // Remove top border for overview fieldsets.
+  &.border-top-none legend > span {
+    border-top: none !important;
+  }
+
+  &.overview {
+    position: relative;
+    margin: 0;
+    padding: 16px 0 0;
+    border: 0;
+    color: $neutral-600;
+
+    legend {
+      display: block;
+      width: 100%;
+
+      background: $neutral-200;
+      border-top: 1px solid $neutral-600;
+      border-bottom: 1px solid $neutral-600;
+      min-height: 40px;
+      padding: 13px 20px;
+    }
+
+    table {
+      border: 0;
+      background: none;
+      box-shadow: none;
+    }
+
+    .mainTable {
+      .CMDBListElementsOdd,
+      .CMDBListElementsEven {
+        background-color: $white;
+      }
+
+      tr:hover {
+        background-color: $neutral-200;
+      }
+
+      tr:first-child:hover {
+        background-color: transparent !important;
+      }
+
+      td, th {
+        padding-left: 7px;
+        background: transparent !important;
+      }
+
+      td {
+        border: 0;
+      }
+
+      th {
+        border-color: $neutral-200;
+        line-height: 15px;
+
+        &.desc {
+          background: transparent url('[{$dir_images}]list/desc.gif') no-repeat right center !important;;
+        }
+
+        &.asc {
+          background: transparent url('[{$dir_images}]list/asc.gif') no-repeat right center !important;
+        }
+
+        &:last-child {
+          border-right: 0;
+        }
+      }
+    }
+
+    div.list {
+      position: relative;
+    }
+  }
+}

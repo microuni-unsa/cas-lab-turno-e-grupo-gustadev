@@ -1,0 +1,21 @@
+# Operating System
+.DS_Store
+Thumbs.db
+
+# i-doit runtime cache and logs
+l2/src/temp/*
+!l2/src/temp/.gitkeep
+l2/src/log/*
+!l2/src/log/.gitkeep
+
+# i-doit uploaded files and backups
+l2/src/upload/files/*
+!l2/src/upload/files/.gitkeep
+
+# Typst output
+*.pdf
+!l1/report.pdf
+!l1/report-1.pdf
+!l2/report-1.pdf
+!l2/guide/enunciado.pdf
+!l2/guide/anexo.pdf

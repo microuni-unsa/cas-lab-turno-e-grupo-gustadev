@@ -1,0 +1,60 @@
+services:
+    idoit.component.placeholder.timestamp:
+        class: idoit\Component\PlaceholderReplacer\Placeholder\TimeStamp
+        tags: [ 'idoit.component.placeholder' ]
+    idoit.component.placeholder.sysid:
+        class: idoit\Component\PlaceholderReplacer\Placeholder\SysId
+        tags: [ 'idoit.component.placeholder' ]
+    idoit.component.placeholder.object-type-id:
+        class: idoit\Component\PlaceholderReplacer\Placeholder\ObjectTypeId
+        tags: [ 'idoit.component.placeholder' ]
+    idoit.component.placeholder.object-title:
+        class: idoit\Component\PlaceholderReplacer\Placeholder\ObjectTitle
+        tags: [ 'idoit.component.placeholder' ]
+    idoit.component.placeholder.object-id:
+        class: idoit\Component\PlaceholderReplacer\Placeholder\ObjectId
+        tags: [ 'idoit.component.placeholder' ]
+    idoit.component.placeholder.datetime-year:
+        class: idoit\Component\PlaceholderReplacer\Placeholder\DateTime\Year
+        tags: [ 'idoit.component.placeholder' ]
+    idoit.component.placeholder.datetime-year-abbreviated:
+        class: idoit\Component\PlaceholderReplacer\Placeholder\DateTime\YearAbbreviated
+        tags: [ 'idoit.component.placeholder' ]
+    idoit.component.placeholder.datetime-second:
+        class: idoit\Component\PlaceholderReplacer\Placeholder\DateTime\Second
+        tags: [ 'idoit.component.placeholder' ]
+    idoit.component.placeholder.datetime-month:
+        class: idoit\Component\PlaceholderReplacer\Placeholder\DateTime\Month
+        tags: [ 'idoit.component.placeholder' ]
+    idoit.component.placeholder.datetime-minute:
+        class: idoit\Component\PlaceholderReplacer\Placeholder\DateTime\Minute
+        tags: [ 'idoit.component.placeholder' ]
+    idoit.component.placeholder.datetime-hour:
+        class: idoit\Component\PlaceholderReplacer\Placeholder\DateTime\Hour
+        tags: [ 'idoit.component.placeholder' ]
+    idoit.component.placeholder.datetime-hour-small:
+        class: idoit\Component\PlaceholderReplacer\Placeholder\DateTime\HourSmall
+        tags: [ 'idoit.component.placeholder' ]
+    idoit.component.placeholder.datetime-day:
+        class: idoit\Component\PlaceholderReplacer\Placeholder\DateTime\Day
+        tags: [ 'idoit.component.placeholder' ]
+    idoit.component.placeholder.datetime-meridiem:
+        class: idoit\Component\PlaceholderReplacer\Placeholder\DateTime\Meridiem
+        tags: [ 'idoit.component.placeholder' ]
+    idoit.component.placeholder.default-counter:
+        class: idoit\Component\PlaceholderReplacer\Placeholder\Counter\DefaultCounter
+        tags: [ 'idoit.component.placeholder' ]
+    idoit.component.placeholder.custom-counter:
+        class: idoit\Component\PlaceholderReplacer\Placeholder\Counter\CustomCounter
+        tags: [ 'idoit.component.placeholder' ]
+    idoit.component.placeholder.counter-with-start:
+        class: idoit\Component\PlaceholderReplacer\Placeholder\Counter\CounterNwithStart
+        tags: [ 'idoit.component.placeholder' ]
+    idoit.component.placeholder.counter-n:
+        class: idoit\Component\PlaceholderReplacer\Placeholder\Counter\CounterN
+        tags: [ 'idoit.component.placeholder' ]
+    idoit.component.placeholder-replacer:
+        public: true
+        class: idoit\Component\PlaceholderReplacer\PlaceholderReplacer
+        arguments:
+            - !tagged 'idoit.component.placeholder'

@@ -1,0 +1,532 @@
+/* Classes for floating */
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.cl {
+  clear: left;
+}
+
+.cr {
+  clear: right;
+}
+
+.cb {
+  clear: both;
+}
+
+/* Classes for margin */
+@each $size in $sizes {
+  .m#{$size} {
+    margin: #{$size}px !important;
+  }
+
+  .mx#{$size} {
+    margin-right: #{$size}px !important;
+    margin-left: #{$size}px !important;
+  }
+
+  .my#{$size} {
+    margin-top: #{$size}px !important;
+    margin-bottom: #{$size}px !important;
+  }
+
+  .mt#{$size} {
+    margin-top: #{$size}px !important;
+  }
+
+  .mr#{$size} {
+    margin-right: #{$size}px !important;
+  }
+
+  .mb#{$size} {
+    margin-bottom: #{$size}px !important;
+  }
+
+  .ml#{$size} {
+    margin-left: #{$size}px !important;
+  }
+}
+
+.mt-auto {
+  margin-top: auto !important;
+}
+
+.mr-auto {
+  margin-right: auto !important;
+}
+
+.mb-auto {
+  margin-bottom: auto !important;
+}
+
+.ml-auto {
+  margin-left: auto !important;
+}
+
+/* Classes for padding */
+@each $size in $sizes {
+  .p#{$size} {
+    padding: #{$size}px !important;
+  }
+
+  .px#{$size} {
+    padding-right: #{$size}px !important;
+    padding-left: #{$size}px !important;
+  }
+
+  .py#{$size} {
+    padding-top: #{$size}px !important;
+    padding-bottom: #{$size}px !important;
+  }
+
+  .pt#{$size} {
+    padding-top: #{$size}px !important;
+  }
+
+  .pr#{$size} {
+    padding-right: #{$size}px !important;
+  }
+
+  .pb#{$size} {
+    padding-bottom: #{$size}px !important;
+  }
+
+  .pl#{$size} {
+    padding-left: #{$size}px !important;
+  }
+}
+
+.display-block {
+  display: block;
+}
+
+.display-inline {
+  display: inline;
+}
+
+.display-flex {
+  display: flex;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.justify-content-around {
+  justify-content: space-around;
+}
+
+.justify-content-evenly {
+  justify-content: space-evenly;
+}
+
+.align-items-start {
+  align-items: flex-start;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.align-items-end {
+  align-items: flex-end;
+}
+
+.align-self-start {
+  align-self: flex-start;
+}
+
+.align-self-center {
+  align-self: center;
+}
+
+.align-self-end {
+  align-self: flex-end;
+}
+
+.display-none, .hide {
+  display: none !important;
+}
+
+/* Classes for scrolling */
+.overflow-auto {
+  overflow: auto;
+}
+
+.overflow-scroll {
+  overflow: scroll;
+}
+
+// Classes for alignment.
+.vat {
+  vertical-align: top !important;
+}
+
+.vam {
+  vertical-align: middle;
+  margin-top: -2px;
+}
+
+.vab {
+  vertical-align: bottom;
+}
+
+// Classes for element flipping
+.flip-horizontally {
+  transform: scaleX(-1);
+}
+
+.flip-vertically {
+  transform: scaleY(-1);
+}
+
+// Classes for tables with two, three, four or five columns.
+table {
+  &.two-col {
+    th, td {
+      width: 50%;
+    }
+  }
+
+  &.three-col {
+    th, td {
+      width: 33%;
+    }
+  }
+
+  &.four-col {
+    th, td {
+      width: 25%;
+    }
+  }
+
+  &.five-col {
+    th, td {
+      width: 20%;
+    }
+  }
+
+  &.layout-fixed {
+    table-layout: fixed;
+  }
+}
+
+.w100 {
+  width: 100%;
+}
+
+.h100 {
+  height: 100%;
+}
+
+table.padding td {
+  padding: 2px;
+}
+
+table.no-border-spacing {
+  border-spacing: 0;
+}
+
+.box {
+  border: 1px solid $neutral-400;
+  background: $white;
+
+  * {
+    vertical-align: middle;
+  }
+}
+
+.toolbar {
+  a {
+    padding: 5px 3px 5px 3px;
+    border: 1px solid $neutral-400;
+    background: $neutral-200;
+    border-radius: 2px;
+    color: $black;
+
+    &.inactive {
+      cursor: default;
+      opacity: 0.5;
+    }
+
+    &:hover,
+    &:active {
+      border: 1px solid $neutral-400;
+      background: $neutral-200;
+      color: $blue-dark
+    }
+  }
+}
+
+.no-user-select {
+  user-select: none;
+}
+
+.user-selectable {
+  user-select: text !important;
+}
+
+/* @deprecated The CSS class .gradient is deprecated and will be removed soon */
+.gradient {
+  background: $neutral-200;
+}
+
+.shadow-sm {
+  box-shadow: $box-shadow-sm !important;
+}
+
+.shadow {
+  box-shadow: $box-shadow !important;
+}
+
+.shadow-lg {
+  box-shadow: $box-shadow-lg !important;
+}
+
+.shadow-none {
+  box-shadow: none !important;
+}
+
+div.node .hover {
+  font-weight: bold;
+  color: $black;
+}
+
+.border {
+  border: 1px solid $neutral-600;
+
+  &-none {
+    border: none !important;
+  }
+}
+
+.border-left {
+  border-left: 1px solid $neutral-600;
+
+  &-none {
+    border-left: none !important;
+  }
+}
+
+.border-bottom {
+  border-bottom: 1px solid $neutral-600;
+
+  &-none {
+    border-bottom: none !important;
+  }
+}
+
+.border-top {
+  border-top: 1px solid $neutral-600;
+
+  &-none {
+    border-top: none !important;
+  }
+}
+
+
+.border-right {
+  border-right: 1px solid $neutral-600;
+
+  &-none {
+    border-right: none !important;
+  }
+}
+
+.header {
+  border-bottom: 1px solid $neutral-600;
+}
+
+div.commentary {
+  margin: 0 15px 0 20px;
+}
+
+.mouse-pointer {
+  cursor: pointer !important;
+}
+
+.mouse-default {
+  cursor: default !important;
+}
+
+.mouse-move {
+  cursor: move !important;
+}
+
+.mouse-move-vertically {
+  cursor: ns-resize !important;
+}
+
+.mouse-move-horizontally {
+  cursor: ew-resize !important;
+}
+
+.mouse-move-n {
+  cursor: n-resize !important;
+}
+
+.mouse-move-ne {
+  cursor: ne-resize !important;
+}
+
+.mouse-move-e {
+  cursor: e-resize !important;
+}
+
+.mouse-move-se {
+  cursor: se-resize !important;
+}
+
+.mouse-move-s {
+  cursor: s-resize !important;
+}
+
+.mouse-move-sw {
+  cursor: sw-resize !important;
+}
+
+.mouse-move-w {
+  cursor: w-resize !important;
+}
+
+.mouse-move-nw {
+  cursor: nw-resize !important;
+}
+
+.mouse-crosshair {
+  cursor: crosshair !important;
+}
+
+.mouse-help {
+  cursor: help !important;
+}
+
+/* This marker can be used to highlight certain stuff like numbers */
+.marker {
+  border-radius: 50%;
+  border: 2px solid $red;
+}
+
+.bullet-marker {
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  margin: 4px;
+  padding: 0;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.cmdb-marker {
+  width: 8px;
+  height: 12px;
+  display: block;
+  float: left;
+  margin: 2px 5px 2px 0;
+  border-radius: 2px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+/* Here we alter the cmdb-marker for a few different views */
+.room-view .cmdb-marker,
+.tooltip .cmdb-marker {
+  height: 7px;
+  margin: 1px 5px 1px 0;
+}
+
+.greyscale {
+  filter: grayscale(1);
+
+  &:hover,
+  &.disabled {
+    filter: grayscale(0);
+  }
+}
+
+.opacity-100 {
+  opacity: 1;
+}
+
+.opacity-70 {
+  opacity: .7;
+}
+
+.opacity-50 {
+  opacity: .5;
+}
+
+.opacity-30 {
+  opacity: .3;
+}
+
+.opacity-0 {
+  opacity: 0;
+}
+
+.strcut {
+  display: block;
+  width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.nowrap {
+  white-space: nowrap !important;
+}
+
+.allow-wrap {
+  white-space: normal !important;
+}
+
+.progress {
+  border: 1px solid $neutral-600;
+  height: 10px;
+  border-radius: 2px;
+  background: $neutral-600;
+
+  .progress-bar {
+    background: $white;
+    height: 8px;
+  }
+}
+
+.non-clickable {
+  pointer-events: none !important;
+}
+
+
+.flex {
+  flex: 1;
+}
+
+.w25 {
+  width: 25%;
+}
+
+.w50 {
+  width: 50%;
+}
+
+.w75 {
+  width: 75%;
+}
+
+.mw25 {
+  max-width: 525%;
+}
+
+.mw50 {
+  max-width: 50%;
+}
+
+.mw75 {
+  max-width: 75%;
+}

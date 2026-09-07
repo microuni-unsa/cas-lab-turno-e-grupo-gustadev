@@ -1,0 +1,120 @@
+/*
+ * This CSS file contains multiple color definitions. Please try to avoid names like "error", "notice" or "info" and use color names instead.
+ * There are styles for following purposes:
+ *
+ * text-*    For text colors only (see text.css).
+ * border-*  For border colors only.
+ * box-*     This style should contain border, background and text color definitions.
+ * bg-*      For backgrounds only.
+ */
+
+$colorMap:
+  "white" $white $black $white,
+  "neutral-200" $neutral-200 $black $neutral-200,
+  "neutral-400" $neutral-400 $black $neutral-400,
+  "neutral-600" $neutral-600 $white $neutral-600,
+  "black" $black $white $black,
+  "red" $red-light $red-dark $red,
+  "purple" $purple-light $purple-dark $purple,
+  "yellow" $yellow-light $yellow-dark $yellow-dark,
+  "green" $green-light $green-dark $green,
+  "blue" $blue-light $blue-dark $blue;
+
+$deprecatedColorMap:
+  "lightgrey" $neutral-200 $black $neutral-200,
+  "grey" $neutral-400 $black $neutral-400,
+  "darkgrey" $neutral-600 $white $neutral-600;
+
+.border-transparent, /* Deprecated */
+.border-black-transparent {
+  border-color: rgba(0, 0, 0, 0.3);
+}
+
+.bg-light-blue {
+  background-color: #eaf1ff;
+}
+
+.bg-light-turquois {
+  background-color: #bee2e5;
+}
+
+.colorpicker-pill {
+  padding: 4px 8px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 3px;
+}
+
+.input-group-addon > .colorpicker-pill {
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+  display: block;
+  border-radius: 2px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+@each $name, $background, $boxTextColor, $base in $colorMap {
+  .box-#{$name} {
+    background-color: $background !important;
+    border: 1px solid $base !important;
+    color: $boxTextColor !important;
+
+    a:not(.btn) {
+      color: $boxTextColor !important;
+      border-bottom: 1px dotted $boxTextColor !important;
+    }
+  }
+
+  .border-#{$name} {
+    border-color: $base;
+  }
+
+  .bg-#{$name} {
+    background-color: $background;
+  }
+
+  .text-#{$name} {
+    color: $base;
+
+    a {
+      color: $base !important;
+      border-bottom: 1px dotted $base !important;
+    }
+  }
+}
+
+@each $name, $background, $boxTextColor, $base in $deprecatedColorMap {
+  /* @deprecated Please use 'neutrals' for this */
+  .box-#{$name} {
+    background-color: $background !important;
+    border: 1px solid $base !important;
+    color: $boxTextColor !important;
+
+    /* @deprecated Please use 'neutrals' for this */
+    a {
+      color: $boxTextColor !important;
+      border-bottom: 1px dotted $boxTextColor !important;
+    }
+  }
+
+  /* @deprecated Please use 'neutrals' for this */
+  .border-#{$name} {
+    border-color: $base;
+  }
+
+  /* @deprecated Please use 'neutrals' for this */
+  .bg-#{$name} {
+    background-color: $background;
+  }
+
+  /* @deprecated Please use 'neutrals' for this */
+  .text-#{$name} {
+    color: $base;
+
+    /* @deprecated Please use 'neutrals' for this */
+    a {
+      color: $base !important;
+      border-bottom: 1px dotted $base !important;
+    }
+  }
+}

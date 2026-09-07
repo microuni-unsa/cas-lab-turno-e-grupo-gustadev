@@ -1,0 +1,30 @@
+&.contentInfoTable {
+  thead {
+    td, th {
+      font-weight: bold;
+      border-bottom: 1px solid #898989;
+    }
+  }
+
+  tbody {
+    tr {
+      &:hover {
+        background: #ecedff;
+      }
+    }
+  }
+
+  tr {
+    background: $white;
+  }
+
+  td {
+    padding: .33em .5em;
+    vertical-align: top;
+    border-bottom: 1px solid $neutral-400;
+
+    &.value {
+      color: #676767;
+    }
+  }
+}

@@ -1,0 +1,55 @@
+// Slide-down animation
+.slideDown {
+  animation-name: slideDown;
+  animation-duration: 500ms;
+  animation-timing-function: ease-out;
+  visibility: visible !important;
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-10%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+// Slide-up animation
+.slideUp {
+  animation-name: slideUp;
+  animation-duration: 500ms;
+  animation-timing-function: ease-in;
+  animation-fill-mode: both;
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(10%);
+    opacity: 0;
+  }
+}
+
+// Rotation animation.
+.animation-rotate {
+  animation-name: animateRotation;
+  animation-duration: 750ms;
+  animation-timing-function: ease-out;
+  animation-iteration-count: infinite;
+  visibility: visible !important;
+}
+
+@keyframes animateRotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,80 @@
+@keyframes propertySelected {
+  0% {
+    background: $neutral-200;
+  }
+  50% {
+    background: $input-focus-color;
+    color: $white;
+  }
+  100% {
+    background: $neutral-200;
+  }
+}
+
+.property-selector {
+  table {
+    td {
+      vertical-align: top;
+
+      .category-field, .selected-field {
+        padding: 5px;
+        margin-top: 5px;
+        position: relative;
+        font-weight: normal;
+        min-height: 15px;
+
+        &:hover {
+          background: $neutral-200;
+        }
+      }
+
+      .category-field {
+        span.plus {
+          background: url('[{$dirs.images}]axialis/basic/button-add.svg');
+          width: 16px;
+          height: 16px;
+          position: absolute;
+          top: 3px;
+          right: 3px;
+          cursor: pointer;
+        }
+      }
+
+      .draggable .selected-field {
+        cursor: ns-resize;
+      }
+
+      .selected-field {
+
+        &.selected-field-focus {
+          animation: propertySelected 3s infinite;
+        }
+
+        div {
+          padding: 2px;
+          position: relative;
+        }
+
+        span.minus {
+          background: url('[{$dirs.images}]axialis/basic/button-cancel.svg');
+          width: 16px;
+          height: 16px;
+          position: absolute;
+          top: 3px;
+          right: 3px;
+          cursor: pointer;
+        }
+      }
+
+      .reference {
+        background: url('[{$dirs.images}]axialis/basic/zoom.svg');
+        width: 16px;
+        height: 16px;
+        position: absolute;
+        top: 3px;
+        right: 18px;
+        cursor: pointer;
+      }
+    }
+  }
+}

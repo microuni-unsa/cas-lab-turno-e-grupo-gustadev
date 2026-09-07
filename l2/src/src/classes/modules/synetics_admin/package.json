@@ -1,0 +1,21 @@
+{
+    "name": "LC__SYNETICS_ADMIN",
+    "title": "Add-on & Subscription Center",
+    "identifier": "synetics_admin",
+    "author": "synetics GmbH",
+    "icon": "src/classes/modules/synetics_admin/templates/img/subscription-and-add-ons.svg",
+    "version": "1.0",
+    "description": "",
+    "type": "core",
+    "files": [],
+    "sql-tables": [],
+    "requirements": {
+        "core": ">= 30"
+    },
+    "dependencies": {
+        "php": [
+            "json",
+            "mysqli"
+        ]
+    }
+}

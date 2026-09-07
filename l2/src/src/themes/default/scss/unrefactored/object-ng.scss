@@ -1,0 +1,262 @@
+div.browserContent {
+  height: 100%;
+  overflow: auto;
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* ---------------------------------- */
+/* Taborder styles */
+/* ---------------------------------- */
+
+.prototools-table {
+  width: 100%;
+  text-align: left;
+  border-spacing: 0;
+  margin-top: 5px;
+  user-select: none;
+  table-layout: fixed;
+
+  th {
+    border-bottom: 1px solid $neutral-400;
+    cursor: default;
+
+    &.desc {
+      background: url('images/list/desc.gif') no-repeat right center;
+    }
+
+    &.asc {
+      background: url('images/list/asc.gif') no-repeat right center;
+    }
+  }
+
+  td,
+  th {
+    padding: 5px;
+    white-space: nowrap;
+    position: relative; /* ID-1110 */
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  tr {
+    &:nth-of-type(even) {
+      background: $neutral-200;
+    }
+
+    &.on {
+      background-color: #eeeeee;
+      cursor: pointer;
+    }
+
+    &.selected {
+      background-color: #dddddd;
+      cursor: pointer;
+
+      td {
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+div.prototools-pager {
+  margin: 0 10px 10px;
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+div.prototools-pager .currentpage {
+  padding-left: 5px;
+  padding-right: 5px;
+  font-weight: bold;
+}
+
+div.prototools-pager .totalpages {
+  padding: 0;
+}
+
+div.prototools-pager a {
+  margin: 0 3px;
+  cursor: default;
+  padding: 2px 4px 2px 4px;
+}
+
+/* @todo  Remove these ASAP, they are currently used for the object browser filters */
+div.prototools-options {
+  float: right;
+  margin-right: 10px;
+}
+
+/* @deprecated Is this still being used? */
+div.prototools-options input,
+div.prototools-options select {
+  border: 1px solid #cccccc;
+  margin: 0 0 5px 5px;
+  padding: 2px;
+}
+
+/* ---------------------------------- */
+
+td.toolbar a {
+  font-weight: bold;
+  display: block;
+  padding: 0;
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#browser-content .overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+#leftPane {
+  h3 {
+    margin: 0;
+    border-bottom: 1px;
+    background-color: #ffffff;
+    cursor: default;
+    width: 185px;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 185px;
+
+    li {
+      padding: 8px 0 8px 20px;
+      cursor: pointer;
+      margin-bottom: 4px;
+
+      &:hover {
+        background-color: $neutral-200;
+      }
+
+      &.selected {
+        background-color: $neutral-200;
+      }
+
+      &.selected-objects {
+        position: absolute;
+        bottom: 0;
+        width: 185px;
+      }
+    }
+  }
+
+  > div {
+    position: absolute;
+    top: 0;
+    bottom: 35px;
+    width: 185px;
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+}
+
+#rightPane {
+  padding-left: 10px;
+}
+
+#preselectionLoader {
+  text-align: center;
+  padding-top: 270px;
+}
+
+#selectionTab {
+  float: right;
+  margin-right: 10px;
+}
+
+#ajaxLoader {
+  position: absolute;
+  top: 13px;
+  right: 45px;
+  z-index: 20;
+}
+
+#latestLog {
+  width: 680px;
+  overflow: hidden;
+  text-align: right;
+  margin-right: 10px;
+  margin-top: 3px;
+}
+
+#new-object,
+#new-objectgroup {
+  position: absolute;
+  z-index: 9999;
+  width: 400px;
+  height: 200px;
+  background-color: $white;
+  border: 1px solid $neutral-600;
+}
+
+.browserContent .groups {
+  padding: 7px 0 6px 10px;
+}
+
+.browserContent table tr td span.quickinfo {
+  display: none;
+  /* Below: Changes for ID-1110 */
+  position: absolute;
+  right: 3px;
+  top: 4px;
+}
+
+.browserContent table tr:hover td span.quickinfo {
+  display: block;
+}
+
+.browserContent div.toolbar {
+  margin: 12px 6px;
+}
+
+#objectSearch {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  top: 36px;
+  bottom: 0;
+}
+
+.emptyPageMessage {
+  text-align: center;
+  margin-top: 180px;
+  font-size: 22px;
+  font-weight: bold;
+  width: 60%;
+  margin-left: 20%;
+}
+
+#rightsError {
+  position: absolute;
+  z-index: 9999;
+  width: 350px;
+  left: 50%;
+  margin-left: -175px;
+  top: 70px;
+}
+
+.object-browser-content-area {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+}

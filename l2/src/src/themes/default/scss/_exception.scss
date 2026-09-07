@@ -1,0 +1,22 @@
+#exception-container {
+  position: absolute;
+  top: 20%;
+  left: 25%;
+  right: 25%;
+  bottom: 20%;
+  z-index: 9999;
+  overflow: auto;
+
+  > a {
+    position: absolute;
+    top: 7px;
+    right: 7px;
+  }
+
+  > h2 {
+    background-color: $red-light;
+    border-bottom: 1px solid $red;
+    margin: 0;
+    padding: 5px;
+  }
+}

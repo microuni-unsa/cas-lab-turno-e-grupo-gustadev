@@ -1,0 +1,285 @@
+#qcw {
+  table {
+    width: 100%;
+    max-width: 990px;
+
+    td {
+      vertical-align: top;
+      width: 310px;
+      position: relative;
+
+      &.spacer {
+        width: 20px;
+      }
+
+      &.rsaquo {
+        width: 60px;
+        padding: 200px 10px;
+        text-align: center;
+      }
+
+      #object-type-hider, #category-hider {
+        position: absolute;
+        background: $white;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 20;
+
+        div {
+          position: absolute;
+          top: 45%;
+          text-align: center;
+          margin: 0 40px;
+        }
+      }
+
+      .container {
+        background: $white;
+        border: 1px solid $neutral-400;
+        width: 290px;
+
+        h2 {
+          padding: 10px;
+          background-color: $neutral-200;
+          border-bottom: $neutral-400 1px solid;
+
+          img {
+            float: right;
+          }
+        }
+
+        #objtypegroup_name, #objtype_name {
+          display: inline-block;
+          max-width: 170px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          vertical-align: middle;
+          white-space: nowrap;
+        }
+
+        ul {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          height: 438px;
+          position: relative;
+          overflow-y: auto;
+
+          &#obj_type_list, &#obj_type_group_list {
+            li {
+              cursor: pointer;
+            }
+          }
+
+          li {
+            position: relative;
+            border-radius: $input-border-radius;
+            padding: 5px;
+            height: 40px;
+            margin-top: 5px;
+            display: flex;
+            align-items: center;
+
+            &.filtered {
+              display: none;
+            }
+
+            &.selfdefined span.title {
+              font-style: italic;
+            }
+
+            &:hover {
+              background: $neutral-200;
+
+              span.counter {
+                background: $neutral-200;
+                // This will simulate a gradient.
+                box-shadow: -5px 0 4px $neutral-200;
+              }
+
+              button {
+                opacity: 1;
+              }
+            }
+
+            &.active {
+              background: $neutral-200;
+              font-weight: bold;
+
+              &:hover {
+                span.counter {
+                  background: $neutral-200;
+                  font-weight: bold;
+                  // This will simulate a gradient.
+                  box-shadow: -5px 0 4px $neutral-200;
+                }
+              }
+            }
+
+            .handle {
+              background: transparent url('[{$dir_images}]icons/hatch.gif');
+              width: 8px;
+              height: 18px;
+              float: left;
+              cursor: ns-resize;
+              margin-right: 4px;
+            }
+
+            button {
+              opacity: 0.2;
+              margin-left: auto;
+            }
+
+            span {
+              display: inline-block;
+              vertical-align: middle;
+
+              &.title {
+                width: 205px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+              }
+
+              &.counter {
+                position: absolute;
+                right: 35px;
+                top: 8px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  hr {
+    margin: 20px 0;
+  }
+}
+
+// === POPUP STYLES ===
+#popup-qcw {
+  * {
+    box-sizing: border-box;
+  }
+
+  label {
+    height: auto;
+  }
+
+  .list {
+    width: 60%;
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      overflow-x: hidden;
+      overflow-y: scroll;
+
+      li {
+        position: relative;
+        border-radius: $input-border-radius;
+        padding: 5px;
+        height: 40px;
+        margin-top: 5px;
+        display: flex;
+        align-items: center;
+
+        &.selected {
+          background: $white;
+        }
+
+        &.selfdefined span.title {
+          font-style: italic;
+        }
+
+        &.not-assigned {
+          background: $white;
+          color: $neutral-400;
+        }
+
+        &:hover {
+          background: $neutral-200;
+
+          button {
+            opacity: 1 !important;
+
+            &[disabled] {
+              opacity: 0.5 !important;
+            }
+          }
+        }
+
+        span {
+          display: inline-block;
+          vertical-align: middle;
+
+          &.title {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            width: 345px;
+
+            span {
+              margin-top: -2px;
+              margin-left: 5px;
+            }
+          }
+        }
+
+        button {
+          opacity: 0;
+        }
+
+        &:last-of-type {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+
+  .editor {
+    width: 40%;
+    border-left: 1px solid $neutral-400;
+    padding: 5px;
+  }
+
+  .list, .editor {
+    position: relative;
+    float: left;
+    height: 100%;
+    box-sizing: border-box;
+  }
+
+  .editor-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.8);
+    box-sizing: border-box;
+    text-align: center;
+    padding-top: 40px;
+  }
+
+  #profile-table {
+    th, td {
+      &:last-of-type {
+        width: 60px !important;
+        text-align: center;
+      }
+    }
+  }
+
+  .qq-upload-drop-area, .qq-upload-extra-drop-area {
+    left: auto;
+    top: -30px;
+    padding: 5px 0;
+    height: 64px;
+  }
+}

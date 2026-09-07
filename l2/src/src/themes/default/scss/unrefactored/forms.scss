@@ -1,0 +1,169 @@
+input,
+button,
+select,
+optgroup,
+textarea {
+  margin: 0;
+  font-family: inherit;
+  font-size: 1.3rem;
+  line-height: inherit;
+}
+
+select.input {
+  min-width: 4em;
+  appearance: none;
+  background: $white url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTguMDAwMTEgOS41MzEyOEwxMi4yMTU4IDUuMzY4MjNMMTIuOTE4NCA2LjA3OTc2TDguMzUxNDQgMTAuNTg5OEg3LjY0ODc5TDMuMDgxNzkgNi4wNzk3NkwzLjc4NDQ0IDUuMzY4MjNMOC4wMDAxMSA5LjUzMTI4WiIgZmlsbD0iIzM4MzgzOCIvPjwvc3ZnPg==') no-repeat right 8px center;
+  cursor: pointer;
+  // This is necessary for the "drop-down-arrow" on the right side.
+  padding-right: 28px;
+
+  option {
+    color: #666666;
+    padding: 3px;
+
+    &:hover {
+      color: $white;
+      background: $form-accent;
+    }
+
+    &[disabled] {
+      color: $neutral-600;
+      background: rgba($neutral-900, 8%);
+      border-color: $neutral-400;
+    }
+  }
+
+  &.input-error {
+    background: $red-light url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTguMDAwMTEgOS41MzEyOEwxMi4yMTU4IDUuMzY4MjNMMTIuOTE4NCA2LjA3OTc2TDguMzUxNDQgMTAuNTg5OEg3LjY0ODc5TDMuMDgxNzkgNi4wNzk3NkwzLjc4NDQ0IDUuMzY4MjNMOC4wMDAxMSA5LjUzMTI4WiIgZmlsbD0iI2U0MmQyYyIvPjwvc3ZnPg==') no-repeat right 8px center;
+  }
+
+  &:active,
+  &:focus {
+    background: $white url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTcuOTc5MDggNi40NDg2M0wzLjc2MzM2IDEwLjYxMDhMMy4wNjA3OSA5Ljg5OTJMNy42Mjc3OSA1LjM5MDJMOC4zMzAzNiA1LjM5MDJMMTIuODk3NCA5Ljg5OTJMMTIuMTk0OCAxMC42MTA4TDcuOTc5MDggNi40NDg2M1oiIGZpbGw9IiMzODM4MzgiLz48L3N2Zz4=') no-repeat right 8px center;
+  }
+
+  &[disabled], &.disabled {
+    color: $neutral-600;
+    background: rgba($neutral-900, 8%) url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTguMDAwMTEgOS41MzEyOEwxMi4yMTU4IDUuMzY4MjNMMTIuOTE4NCA2LjA3OTc2TDguMzUxNDQgMTAuNTg5OEg3LjY0ODc5TDMuMDgxNzkgNi4wNzk3NkwzLjc4NDQ0IDUuMzY4MjNMOC4wMDAxMSA5LjUzMTI4WiIgZmlsbD0iIzM4MzgzOCIvPjwvc3ZnPg==') no-repeat right 8px center;
+    border-color: $neutral-400;
+  }
+}
+
+input {
+  &[type="checkbox"] {
+    appearance: checkbox;
+    width: 13px;
+    height: 13px;
+    border: none;
+    padding: 0;
+  }
+
+  &[type="radio"] {
+    appearance: radio;
+    width: 13px;
+    height: 13px;
+    border: none;
+    padding: 0;
+  }
+}
+
+.input-dual-radio {
+  width: 563px !important;
+}
+
+.input {
+  border: 1px solid $neutral-600;
+  border-radius: $input-border-radius;
+  padding: 2px 5px;
+  box-sizing: border-box;
+  height: $input-height;
+  vertical-align: middle;
+  transition-duration: 250ms;
+  appearance: none;
+
+  &.input-error {
+    color: $red;
+    background: $red-light;
+    border: 1px $red solid;
+  }
+
+  &[disabled], &.disabled {
+    color: $neutral-600;
+    background: rgba($neutral-900, 8%);
+    border-color: $neutral-400;
+  }
+
+  &[readonly], &.readonly {
+    background-color: $neutral-200;
+    cursor: default;
+  }
+
+  &:hover, &.hover {
+    border-color: $neutral-600;
+    color: black;
+  }
+
+  &:active, &.active,
+  &:focus, &.focus {
+    border-color: $form-accent;
+    outline: 2px solid $form-accent;
+    box-shadow: 0px 0px 10px rgba($form-accent, 30%);
+  }
+}
+
+/* Standard width of a content form-element */
+.input,
+.input-size-normal,
+.contentTable .chosen-container-single {
+  width: $input-size-quarter + 20px + $input-size-quarter + 20px + $input-size-quarter + 20px + $input-size-quarter;
+}
+
+/* Refs ID-713 - But this should be refactored in further versions */
+.contentTable .property-selector .chosen-container-single {
+  width: 100%;
+}
+
+.chosen-container {
+  font-weight: normal;
+}
+
+textarea.input {
+  height: auto;
+
+  &.noresize {
+    resize: none;
+  }
+}
+
+.input-size-block,
+.input.input-block {
+  width: 100%;
+  display: block;
+}
+
+/* 3/4 witdh of a default content form-element */
+.input-size-medium,
+.input.input-medium {
+  width: $input-size-quarter + 20px + $input-size-quarter + 20px + $input-size-quarter;
+}
+
+/* 1/2 witdh of a default content form-element */
+.input-size-small,
+.input.input-small {
+  width: $input-size-quarter + 20px + $input-size-quarter;
+}
+
+/* 1/4 witdh of a default content form-element */
+.input-size-mini,
+.input.input-mini {
+  width: $input-size-quarter;
+}
+
+optgroup[disabled],
+option[disabled] {
+  color: #777777;
+}
+
+optgroup option {
+  padding-left: 10px;
+}
