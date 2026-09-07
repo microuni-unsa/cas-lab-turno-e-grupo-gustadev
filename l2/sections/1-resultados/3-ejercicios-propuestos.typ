@@ -88,9 +88,9 @@ Asimismo, la @fig-idoit-logbook ilustra el registro inmutable de auditoría (_Lo
   caption: [Registro inmutable de auditoría (Logbook) en i-doit documentando cronológicamente los 10 eventos de configuración generados.],
 ) <fig-idoit-logbook>
 
-=== d) Reporte de Seguimiento y Trazabilidad del Proyecto (Anexo 21)
+=== d) Reporte de Seguimiento y Trazabilidad de Solicitudes de Cambio
 
-En correspondencia con el formato de reporte de seguimiento de la guía práctica (Anexo 21), la @tab-seguimiento documenta la evolución empírica, el estado final y los resultados de validación de las diez solicitudes procesadas:
+La @tab-seguimiento consolida la evolución técnica, el estado final en el ciclo de vida y los resultados de verificación de las diez solicitudes de cambio procesadas en el proyecto:
 
 #figure(
   table(
@@ -108,7 +108,7 @@ En correspondencia con el formato de reporte de seguimiento de la guía práctic
     [CHG-009], [Rediseño accesible y modo oscuro.], [En revisión], [Diseñador UI], [28/09], [Prototipo validado preliminarmente conforme a directrices WCAG 2.1 AA.],
     [CHG-010], [Persistencia multi-nube (S3/DB).], [Pendiente], [Arq. Cloud], [30/09], [Propuesta arquitectónica de abstracción formulada para evaluación CCB.],
   ),
-  caption: [Reporte de seguimiento, estado de ciclo de vida y resultados de verificación de las RFCs (Anexo 21).],
+  caption: [Reporte de seguimiento, estado de ciclo de vida y resultados de verificación de las Solicitudes de Cambio (RFC).],
 ) <tab-seguimiento>
 
 La trazabilidad bidireccional entre las solicitudes de cambio y el código fuente se constató a través del historial de confirmaciones en GitHub (@fig-gh-commits), donde cada commit referencia explícitamente el identificador de la RFC correspondiente, asegurando que ningún cambio se introduzca sin respaldo documental ni justificación técnica verificable @baufest2003.

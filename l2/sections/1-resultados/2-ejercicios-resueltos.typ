@@ -36,7 +36,7 @@ Cada tarjeta detalla las especificaciones técnicas del requerimiento modificado
   caption: [Detalle analítico de la Solicitud de Cambio `CHG-005` (RFC #5) en GitHub con justificación técnica, urgencia, alcance y criterios de aceptación.],
 ) <fig-gh-issue-detail>
 
-=== b) Modelado del Flujo de Gestión de Cambios (Anexo 21)
+=== b) Modelado del Flujo Metodológico de Gestión de Cambios
 
 El control de cambios previene que modificaciones arbitrarias alteren el alcance comprometido, el presupuesto o el cronograma de entrega. En la @fig-flujo-cambios se detalla el ciclo formal de seis fases por el cual transita toda solicitud emergente antes de integrarse a la línea base @pressman2020:
 

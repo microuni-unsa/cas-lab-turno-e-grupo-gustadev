@@ -1,6 +1,6 @@
 == IV. Análisis y Discusión de Resultados
 
-En correspondencia con las directrices de evaluación del proceso experimental (Anexo 21), se articulan las respuestas a las tres interrogantes metodológicas:
+La evaluación del proceso experimental se articula mediante el análisis de tres interrogantes metodológicas clave:
 
 *1. ¿Con qué valores o parámetros empíricos se comprobó la validez de la práctica?*
 - *Vector de Entradas Formalizado:* Diez Solicitudes de Cambio (`CHG-001` a `CHG-010`) derivadas de los requerimientos funcionales y no funcionales del Laboratorio 1, cubriendo modificaciones de alcance, seguridad, arquitectura e interoperabilidad.
