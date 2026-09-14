@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" width="100%" height="100%" style="font-family: 'Segoe UI', Arial, sans-serif;">
+  <defs>
+    <filter id="shadowSoft" x="-3%" y="-3%" width="106%" height="106%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-opacity="0.06" />
+    </filter>
+  </defs>
+
+  <!-- Fondo Web Application en gris muy claro -->
+  <rect width="900" height="560" fill="#f8fafc" />
+
+  <!-- Navbar en blanco / gris suave -->
+  <rect width="900" height="60" fill="#ffffff" stroke="#e2e8f0" stroke-width="1" />
+  <text x="30" y="38" fill="#1e293b" font-size="20" font-weight="bold">LogistiCorp</text>
+  <text x="145" y="36" fill="#64748b" font-size="14">|  Módulo de Gestión de Pedidos</text>
+  <text x="680" y="36" fill="#334155" font-size="13">Luis Gustavo (CLI-001)</text>
+
+  <!-- Contenedor Principal -->
+  <g transform="translate(30, 80)">
+    <!-- Columna Izquierda: Catálogo y Carrito -->
+    <rect width="520" height="450" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" filter="url(#shadowSoft)" />
+    
+    <!-- Encabezado Tarjeta -->
+    <rect width="520" height="45" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" />
+    <text x="20" y="28" fill="#1e293b" font-size="15" font-weight="bold">Configuración de Pedido Simple (Hoja Composite)</text>
+
+    <!-- Cuenta de Pago Asociada -->
+    <text x="20" y="70" fill="#475569" font-size="13" font-weight="600">Cuenta de Pago Asociada:</text>
+    <rect x="20" y="80" width="480" height="35" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+    <text x="35" y="103" fill="#1e293b" font-size="13">CTA-01 (VISA Débito **** 3344) — Saldo Disponible: $ 500.00</text>
+
+    <!-- Tabla de Ítems del Pedido -->
+    <text x="20" y="140" fill="#475569" font-size="13" font-weight="600">Artículos en el Pedido:</text>
+    
+    <!-- Header Tabla -->
+    <rect x="20" y="150" width="480" height="30" fill="#f1f5f9" rx="4" />
+    <text x="30" y="170" fill="#475569" font-size="12" font-weight="bold">PRODUCTO</text>
+    <text x="220" y="170" fill="#475569" font-size="12" font-weight="bold">PRECIO</text>
+    <text x="320" y="170" fill="#475569" font-size="12" font-weight="bold">CANTIDAD</text>
+    <text x="420" y="170" fill="#475569" font-size="12" font-weight="bold">SUBTOTAL</text>
+
+    <!-- Fila 1 -->
+    <text x="30" y="205" fill="#1e293b" font-size="13">Laptop Ultrabook Pro</text>
+    <text x="220" y="205" fill="#64748b" font-size="13">$ 150.00</text>
+    <text x="340" y="205" fill="#1e293b" font-size="13" font-weight="bold">4</text>
+    <text x="420" y="205" fill="#1e293b" font-size="13">$ 600.00</text>
+
+    <!-- Fila 2 -->
+    <text x="30" y="240" fill="#1e293b" font-size="13">Mouse Óptico Inalámbrico</text>
+    <text x="220" y="240" fill="#64748b" font-size="13">$ 25.00</text>
+    <text x="340" y="240" fill="#1e293b" font-size="13" font-weight="bold">12</text>
+    <text x="420" y="240" fill="#1e293b" font-size="13">$ 300.00</text>
+
+    <line x1="20" y1="260" x2="500" y2="260" stroke="#f1f5f9" stroke-width="1" />
+
+    <!-- Barra de Control de Restricción de 20 unidades -->
+    <rect x="20" y="280" width="480" height="65" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5" />
+    <text x="35" y="303" fill="#1e293b" font-size="13" font-weight="bold">Control de Capacidad de Distribución (Tope máx. 20 unidades):</text>
+    <!-- Barra de progreso en gris suave -->
+    <rect x="35" y="315" width="450" height="12" rx="6" fill="#e2e8f0" />
+    <rect x="35" y="315" width="360" height="12" rx="6" fill="#64748b" />
+    <text x="35" y="340" fill="#475569" font-size="12">Unidades acumuladas: 16 / 20 disponibles (Restan 4 unidades máximo)</text>
+
+    <!-- Botón Añadir a Pedido Compuesto -->
+    <rect x="20" y="375" width="480" height="42" rx="8" fill="#334155" />
+    <text x="135" y="401" fill="#ffffff" font-size="14" font-weight="bold">AGRUPAR EN PEDIDO COMPUESTO</text>
+  </g>
+
+  <!-- Columna Derecha: Resumen de Pedido Compuesto -->
+  <g transform="translate(570, 80)">
+    <rect width="300" height="450" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" filter="url(#shadowSoft)" />
+    
+    <rect width="300" height="45" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" />
+    <text x="20" y="28" fill="#1e293b" font-size="14" font-weight="bold">ESTRUCTURA DEL PEDIDO COMPUESTO</text>
+
+    <g transform="translate(20, 65)">
+      <text x="0" y="15" fill="#64748b" font-size="12">ID Pedido Compuesto: PED-CMP-001</text>
+      <text x="0" y="35" fill="#64748b" font-size="12">Cliente: Luis Sequeiros (Validado)</text>
+      
+      <!-- Subpedido 1 -->
+      <rect x="0" y="55" width="260" height="60" rx="6" fill="#f8fafc" stroke="#e2e8f0" />
+      <text x="10" y="75" fill="#1e293b" font-size="12" font-weight="bold">Subpedido 1 (Simple)</text>
+      <text x="10" y="92" fill="#64748b" font-size="11">Cuenta: CTA-01 | 16 unidades</text>
+      <text x="10" y="107" fill="#334155" font-size="11" font-weight="bold">Subtotal: $ 900.00</text>
+
+      <!-- Subpedido 2 -->
+      <rect x="0" y="125" width="260" height="60" rx="6" fill="#f8fafc" stroke="#e2e8f0" />
+      <text x="10" y="145" fill="#1e293b" font-size="12" font-weight="bold">Subpedido 2 (Simple)</text>
+      <text x="10" y="162" fill="#64748b" font-size="11">Cuenta: CTA-02 | 4 unidades</text>
+      <text x="10" y="177" fill="#334155" font-size="11" font-weight="bold">Subtotal: $ 160.00</text>
+
+      <!-- Resumen Total -->
+      <line x1="0" y1="205" x2="260" y2="205" stroke="#e2e8f0" stroke-width="1.5" />
+      <text x="0" y="230" fill="#64748b" font-size="13">Total Pedido Compuesto:</text>
+      <text x="0" y="260" fill="#0f172a" font-size="24" font-weight="bold">$ 1,060.00</text>
+      <text x="0" y="285" fill="#64748b" font-size="12">Total Unidades: 20 artículos</text>
+
+      <!-- Estado Invariante -->
+      <rect x="0" y="305" width="260" height="35" rx="6" fill="#f1f5f9" stroke="#cbd5e1" />
+      <text x="15" y="327" fill="#334155" font-size="11" font-weight="bold">✓ Invariante: Cuentas del mismo cliente</text>
+
+      <rect x="0" y="350" width="260" height="40" rx="8" fill="#334155" />
+      <text x="50" y="375" fill="#ffffff" font-size="13" font-weight="bold">ENVIAR A COLA DIARIA</text>
+    </g>
+  </g>
+</svg>

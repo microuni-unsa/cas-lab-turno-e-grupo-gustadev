@@ -1,0 +1,28 @@
+@startuml
+[*] --> Pendiente : Registro de pedido
+
+state Pendiente {
+    [*] --> EsperandoLote
+    EsperandoLote --> VerificandoCuentas : Disparo diario
+}
+
+Pendiente --> Rechazado : Fondos insuficientes en cuenta
+Pendiente --> Cobrado : Débito exitoso en cuentas
+
+state Cobrado {
+    [*] --> ListoParaServir
+    ListoParaServir --> Empaquetado
+}
+
+Cobrado --> EnDistribucion : ordenarDistribucion()
+
+state EnDistribucion {
+    [*] --> EnTransito
+    EnTransito --> Entregado
+}
+
+EnDistribucion --> Confirmado : confirmarEntrega()
+
+Confirmado --> [*]
+Rechazado --> [*]
+@enduml

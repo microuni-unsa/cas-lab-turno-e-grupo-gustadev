@@ -1,0 +1,59 @@
+classDiagram
+    class Orden {
+        -String numeroOrden
+        -DateTime fechaCreacion
+        -EstadoOrden estado
+        -float importeTotal
+        +autorizarPago() bool
+        +verificarExistenciasCompletas() bool
+        +despachar() void
+        +cancelar(motivo) void
+    }
+
+    class ArticuloLinea {
+        -int numeroItem
+        -int cantidadSolicitada
+        -bool existenciaAsignada
+        -bool requiereReorden
+        +comprobarExistencia(inventario) bool
+        +asignarInventario() void
+        +solicitarReorden() void
+    }
+
+    class Articulo {
+        -String sku
+        -String descripcion
+        -float precioUnitario
+        -int cantidadStock
+        +consultarStock() int
+        +descontarStock(cant) void
+    }
+
+    class AutorizacionPago {
+        -String transaccionId
+        -float monto
+        -bool exitoso
+        -String codigoAutorizacion
+        +procesarCobro() bool
+    }
+
+    class Despacho {
+        -String guiaRemision
+        -DateTime fechaDespacho
+        -String transportista
+        +generarGuia() void
+        +notificarCliente() void
+    }
+
+    class SolicitudReorden {
+        -String idReorden
+        -int cantidadRequerida
+        -DateTime fechaSolicitud
+        +enviarAProveedor() void
+    }
+
+    Orden "1" *-- "1..*" ArticuloLinea : compone
+    ArticuloLinea --> Articulo : referencia
+    Orden "1" *-- "1" AutorizacionPago : registra
+    Orden "1" *-- "0..1" Despacho : genera
+    ArticuloLinea ..> SolicitudReorden : origina si es necesario

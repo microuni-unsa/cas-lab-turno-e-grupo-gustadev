@@ -1,0 +1,32 @@
+sequenceDiagram
+    autonumber
+    actor Usuario as 👤 Usuario
+    participant ATM as 🏧 Cajero ATM
+    participant Consorcio as 🌐 Consorcio Red
+    participant Banco as 🏦 Banco Emisor
+
+    Usuario->>ATM: Inserta Tarjeta Bancaria
+    ATM->>ATM: Lee banda / chip criptográfico
+    ATM-->>Usuario: Solicita PIN secreto
+    Usuario->>ATM: Ingresa PIN encriptado
+    ATM->>Consorcio: Validar Tarjeta y PIN (ISO 8583)
+    Consorcio->>Banco: Verificar Credenciales de Cuenta
+    Banco-->>Consorcio: Autorización Exitosa (Token Sesión)
+    Consorcio-->>ATM: Confirmación de Validación OK
+    ATM-->>Usuario: Muestra Menú Principal de Operaciones
+
+    Usuario->>ATM: Selecciona "Retiro de Efectivo" (monto: $100)
+    ATM->>ATM: Verifica stock físico de billetes
+    ATM->>Consorcio: Solicitar Débito de Retiro (ID, Monto)
+    Consorcio->>Banco: Aplicar Débito a Cuenta Cliente
+    alt Saldo Suficiente en Banco
+        Banco-->>Consorcio: Débito Aprobado (Cod 00)
+        Consorcio-->>ATM: Transacción Aprobada
+        ATM->>ATM: Dispensa Billetes físicos
+        ATM-->>Usuario: Entrega Efectivo
+        ATM-->>Usuario: Expulsa Tarjeta y entrega comprobante
+    else Saldo Insuficiente en Banco
+        Banco-->>Consorcio: Rechazo por Fondos Insuficientes (Cod 51)
+        Consorcio-->>ATM: Transacción Declinada
+        ATM-->>Usuario: Muestra mensaje "Fondos Insuficientes" y expulsa tarjeta
+    end

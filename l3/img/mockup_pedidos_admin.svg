@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" width="100%" height="100%" style="font-family: 'Segoe UI', Arial, sans-serif;">
+  <defs>
+    <filter id="shadowSoftAdmin" x="-3%" y="-3%" width="106%" height="106%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-opacity="0.06" />
+    </filter>
+  </defs>
+
+  <!-- Fondo Web Application en gris suave -->
+  <rect width="900" height="560" fill="#f8fafc" />
+
+  <!-- Navbar en blanco / gris suave -->
+  <rect width="900" height="60" fill="#ffffff" stroke="#e2e8f0" stroke-width="1" />
+  <text x="30" y="38" fill="#1e293b" font-size="20" font-weight="bold">GestorProcesamientoPedidos</text>
+  <text x="320" y="36" fill="#64748b" font-size="13">«Singleton Centralizado» | Control Diario de Cobro y Distribución</text>
+  <rect x="730" y="18" width="140" height="26" rx="13" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
+  <text x="748" y="35" fill="#334155" font-size="11" font-weight="bold">● INSTANCIA ÚNICA</text>
+
+  <!-- Métricas Rápidas -->
+  <g transform="translate(30, 80)">
+    <!-- KPI 1 -->
+    <rect width="195" height="85" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" filter="url(#shadowSoftAdmin)" />
+    <text x="15" y="28" fill="#64748b" font-size="12">PEDIDOS EN COLA</text>
+    <text x="15" y="60" fill="#1e293b" font-size="26" font-weight="bold">42</text>
+    <text x="80" y="60" fill="#475569" font-size="11" font-weight="600">Pendientes de cobro</text>
+
+    <!-- KPI 2 -->
+    <g transform="translate(215, 0)">
+      <rect width="195" height="85" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" filter="url(#shadowSoftAdmin)" />
+      <text x="15" y="28" fill="#64748b" font-size="12">COBRADOS EXITOSOS</text>
+      <text x="15" y="60" fill="#1e293b" font-size="26" font-weight="bold">38</text>
+      <text x="80" y="60" fill="#475569" font-size="11" font-weight="600">Fondos acreditados</text>
+    </g>
+
+    <!-- KPI 3 -->
+    <g transform="translate(430, 0)">
+      <rect width="195" height="85" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" filter="url(#shadowSoftAdmin)" />
+      <text x="15" y="28" fill="#64748b" font-size="12">RECHAZOS ATÓMICOS</text>
+      <text x="15" y="60" fill="#1e293b" font-size="26" font-weight="bold">4</text>
+      <text x="65" y="60" fill="#475569" font-size="11" font-weight="600">Saldo insuficiente</text>
+    </g>
+
+    <!-- Botón de Ejecución Diaria -->
+    <g transform="translate(645, 0)">
+      <rect width="195" height="85" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" />
+      <text x="18" y="32" fill="#475569" font-size="12" font-weight="bold">PROCESO BATCH</text>
+      <rect x="15" y="45" width="165" height="30" rx="6" fill="#334155" />
+      <text x="25" y="65" fill="#ffffff" font-size="11" font-weight="bold">▶ EJECUTAR COBRO</text>
+    </g>
+  </g>
+
+  <!-- Tabla de Auditoría de Pedidos Diarios -->
+  <g transform="translate(30, 190)">
+    <rect width="840" height="340" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" filter="url(#shadowSoftAdmin)" />
+    
+    <rect width="840" height="40" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" />
+    <text x="20" y="26" fill="#1e293b" font-size="14" font-weight="bold">Registro y Control del Proceso Diario de Cobro y Distribución</text>
+
+    <!-- Encabezados -->
+    <rect x="20" y="55" width="800" height="28" fill="#f1f5f9" rx="4" />
+    <text x="30" y="73" fill="#475569" font-size="11" font-weight="bold">ID PEDIDO</text>
+    <text x="140" y="73" fill="#475569" font-size="11" font-weight="bold">TIPO</text>
+    <text x="240" y="73" fill="#475569" font-size="11" font-weight="bold">CLIENTE</text>
+    <text x="370" y="73" fill="#475569" font-size="11" font-weight="bold">CUENTAS / SALDO</text>
+    <text x="520" y="73" fill="#475569" font-size="11" font-weight="bold">TOTAL</text>
+    <text x="610" y="73" fill="#475569" font-size="11" font-weight="bold">ESTADO</text>
+    <text x="730" y="73" fill="#475569" font-size="11" font-weight="bold">ACCIÓN</text>
+
+    <!-- Fila 1: Aprobado -->
+    <text x="30" y="110" fill="#1e293b" font-size="12" font-family="monospace">PED-CMP-101</text>
+    <text x="140" y="110" fill="#64748b" font-size="12">Compuesto (2)</text>
+    <text x="240" y="110" fill="#1e293b" font-size="12">Luis Sequeiros</text>
+    <text x="370" y="110" fill="#334155" font-size="11">CTA-01, CTA-02 (Fondos OK)</text>
+    <text x="520" y="110" fill="#1e293b" font-size="12" font-weight="bold">$ 180.00</text>
+    <rect x="610" y="95" width="90" height="22" rx="11" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
+    <text x="622" y="110" fill="#1e293b" font-size="11" font-weight="bold">COBRADO</text>
+    <rect x="725" y="95" width="85" height="22" rx="4" fill="#334155" />
+    <text x="732" y="110" fill="#ffffff" font-size="10" font-weight="bold">DISTRIBUIR</text>
+
+    <line x1="20" y1="130" x2="820" y2="130" stroke="#f1f5f9" />
+
+    <!-- Fila 2: En Distribución -->
+    <text x="30" y="155" fill="#1e293b" font-size="12" font-family="monospace">PED-SMP-098</text>
+    <text x="140" y="155" fill="#64748b" font-size="12">Simple (12 un.)</text>
+    <text x="240" y="155" fill="#1e293b" font-size="12">María Flores</text>
+    <text x="370" y="155" fill="#334155" font-size="11">CTA-05 (Debitado)</text>
+    <text x="520" y="155" fill="#1e293b" font-size="12" font-weight="bold">$ 300.00</text>
+    <rect x="610" y="140" width="105" height="22" rx="11" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
+    <text x="617" y="155" fill="#1e293b" font-size="10" font-weight="bold">EN DISTRIBUCIÓN</text>
+    <rect x="725" y="140" width="85" height="22" rx="4" fill="#334155" />
+    <text x="732" y="155" fill="#ffffff" font-size="10" font-weight="bold">CONFIRMAR</text>
+
+    <line x1="20" y1="175" x2="820" y2="175" stroke="#f1f5f9" />
+
+    <!-- Fila 3: Rechazado Atómico -->
+    <text x="30" y="200" fill="#1e293b" font-size="12" font-family="monospace">PED-CMP-104</text>
+    <text x="140" y="200" fill="#64748b" font-size="12">Compuesto (3)</text>
+    <text x="240" y="200" fill="#1e293b" font-size="12">Roberto Díaz</text>
+    <text x="370" y="200" fill="#475569" font-size="11">CTA-09 Insuficiente ($20 &lt; $80)</text>
+    <text x="520" y="200" fill="#1e293b" font-size="12" font-weight="bold">$ 540.00</text>
+    <rect x="610" y="185" width="90" height="22" rx="11" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1" />
+    <text x="620" y="200" fill="#0f172a" font-size="11" font-weight="bold">RECHAZADO</text>
+    <text x="730" y="200" fill="#64748b" font-size="11">Sin acción</text>
+
+    <line x1="20" y1="220" x2="820" y2="220" stroke="#f1f5f9" />
+
+    <!-- Fila 4: Confirmado -->
+    <text x="30" y="245" fill="#1e293b" font-size="12" font-family="monospace">PED-SMP-090</text>
+    <text x="140" y="245" fill="#64748b" font-size="12">Simple (6 un.)</text>
+    <text x="240" y="245" fill="#1e293b" font-size="12">Elena Paredes</text>
+    <text x="370" y="245" fill="#334155" font-size="11">CTA-03 (Liquidado)</text>
+    <text x="520" y="245" fill="#1e293b" font-size="12" font-weight="bold">$ 150.00</text>
+    <rect x="610" y="230" width="95" height="22" rx="11" fill="#ffffff" stroke="#e2e8f0" stroke-width="1" />
+    <text x="618" y="245" fill="#64748b" font-size="11" font-weight="bold">CONFIRMADO</text>
+    <text x="730" y="245" fill="#94a3b8" font-size="11">Archivado</text>
+
+    <!-- Nota inferior de regla de negocio -->
+    <rect x="20" y="280" width="800" height="40" rx="6" fill="#f8fafc" stroke="#e2e8f0" />
+    <text x="35" y="304" fill="#334155" font-size="11"><b>Regla Arquitectónica de Dominio:</b> El rechazo atómico garantiza que si un pedido simple de un pedido compuesto falla por fondos, el pedido compuesto se rechaza íntegramente evitando inconsistencias contables.</text>
+  </g>
+</svg>

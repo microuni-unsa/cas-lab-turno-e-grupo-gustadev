@@ -1,0 +1,110 @@
+classDiagram
+    %% Patrón Composite
+    class Pedido {
+        <<abstract>>
+        #String idPedido
+        #DateTime fechaCreacion
+        #EstadoPedido estado
+        +calcularTotal()* float
+        +totalUnidades()* int
+        +obtenerCuentasAsociadas()* Set~CuentaPago~
+        +marcarEstado(nuevoEstado) void
+        +validarInvariantes()* void
+    }
+
+    class PedidoSimple {
+        -int LIMITE_MAX_UNIDADES = 20
+        +agregarLinea(producto, cant) void
+        +calcularTotal() float
+        +totalUnidades() int
+        +obtenerCuentasAsociadas() Set~CuentaPago~
+        +validarInvariantes() void
+    }
+
+    class PedidoCompuesto {
+        +agregarSubpedido(pedido) void
+        +calcularTotal() float
+        +totalUnidades() int
+        +obtenerCuentasAsociadas() Set~CuentaPago~
+        +marcarEstado(nuevoEstado) void
+        +validarInvariantes() void
+    }
+
+    %% Patrón Singleton
+    class GestorProcesamientoPedidos {
+        <<singleton>>
+        -GestorProcesamientoPedidos _instancia$
+        -List~Pedido~ pedidosRegistrados
+        -List~Dict~ historialRechazos
+        +getInstancia()$ GestorProcesamientoPedidos
+        +registrarPedido(pedido) void
+        +ejecutarCobroDiario() Dict
+        +ordenarDistribucion(pedido) void
+        +confirmarEntrega(pedido) void
+        -_procesarCobroPedido(pedido) bool
+    }
+
+    class Cliente {
+        -String idCliente
+        -String nombre
+        -String direccion
+        -String telefono
+        -String email
+        +agregarCuenta(cuenta) void
+        +tieneCuentaConDinero() bool
+        +obtenerCuenta(id) CuentaPago
+        +poseeCuenta(cuenta) bool
+    }
+
+    class CuentaPago {
+        -String idCuenta
+        -float saldoDisponible
+        +aumentarSaldo(monto) void
+        +debitar(monto) void
+        +tieneSaldo() bool
+    }
+
+    class TarjetaCredito {
+        -String numeroTarjeta
+        -String titular
+        -String fechaVencimiento
+    }
+
+    class LineaPedido {
+        -int cantidad
+        +getSubtotal() float
+    }
+
+    class Producto {
+        -String codigo
+        -String nombre
+        -float precioUnitario
+        -int stock
+        +reservarStock(cant) void
+        +reponerStock(cant) void
+    }
+
+    class EstadoPedido {
+        <<enumeration>>
+        PENDIENTE
+        COBRADO
+        EN_DISTRIBUCION
+        CONFIRMADO
+        RECHAZADO
+    }
+
+    %% Relaciones
+    Pedido <|-- PedidoSimple : hereda (Leaf)
+    Pedido <|-- PedidoCompuesto : hereda (Composite)
+    PedidoCompuesto "1" o-- "2..*" Pedido : contiene subpedidos
+
+    Cliente "1" *-- "1..*" CuentaPago : posee
+    CuentaPago "1" *-- "1" TarjetaCredito : asociada a
+    PedidoSimple "1" --> "1" CuentaPago : paga con
+    Pedido --> Cliente : pertenece a
+
+    PedidoSimple "1" *-- "1..*" LineaPedido : contiene
+    LineaPedido "1" --> "1" Producto : referencia
+
+    GestorProcesamientoPedidos "1" --> "*" Pedido : procesa en lote
+    Pedido --> EstadoPedido : tiene

@@ -1,0 +1,33 @@
+@startuml
+autonumber
+actor "Usuario" as U
+participant "Cajero ATM" as ATM
+participant "Consorcio Red" as CR
+participant "Banco Emisor" as BE
+
+U -> ATM : Inserta Tarjeta Bancaria
+ATM -> ATM : Lee chip criptográfico
+ATM --> U : Solicita PIN
+U -> ATM : Ingresa PIN
+ATM -> CR : Validar Tarjeta y PIN
+CR -> BE : Verificar Credenciales
+BE --> CR : Autorización OK
+CR --> ATM : Validación Confirmada
+ATM --> U : Presenta Menú Principal
+
+U -> ATM : Selecciona Retiro (Monto)
+ATM -> ATM : Verifica billetes físicos disponibles
+ATM -> CR : Solicitar Débito de Retiro
+CR -> BE : Débito en Cuenta
+alt Saldo Suficiente
+    BE --> CR : Débito Aprobado
+    CR --> ATM : Transacción Exitosa
+    ATM -> ATM : Dispensa efectivo
+    ATM --> U : Entrega billetes
+    ATM --> U : Expulsa tarjeta y comprobante
+else Saldo Insuficiente
+    BE --> CR : Rechazo por Fondos Insuficientes
+    CR --> ATM : Operación Declinada
+    ATM --> U : Mensaje Fondos Insuficientes y expulsa tarjeta
+end
+@enduml

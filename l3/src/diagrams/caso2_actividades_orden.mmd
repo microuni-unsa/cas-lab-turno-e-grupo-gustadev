@@ -1,0 +1,26 @@
+flowchart TD
+    Inicio(( )) --> Recibe["Recibe orden"]
+
+    Recibe --> ForkBar["<b>Barra de Bifurcación (Fork)</b>\n<i>* [por cada artículo de línea del pedido]</i>"]
+
+    ForkBar --> Autoriza["Autoriza pago"]
+    Autoriza --> DecPago{"¿Autorización?"}
+    DecPago -- "[fallo]" --> Cancela["Cancela orden"] --> FinCancel(( ))
+    DecPago -- "[éxito]" --> JoinBar
+
+    ForkBar --> Comprueba["Comprueba artículo de línea"]
+    Comprueba --> DecStock{"¿En stock?"}
+    DecStock -- "[en existencia]" --> Asigna["Asigna a orden"]
+    DecStock -- "[se necesita reordenar]" --> Reordena["Reordena artículo"]
+
+    Asigna --> ForkReorden["<b>Bifurcación de Asignación</b>"]
+    ForkReorden -- "[se necesita reordenar]" --> Reordena
+    ForkReorden -- "[asignado]" --> JoinBar
+
+    JoinBar["<b>Barra de Sincronización (Join)</b>\n<i>[existencia asignada a todos los artículos y pago autorizado]</i>"]
+
+    JoinBar --> Despacha["Despacha orden"]
+    Despacha --> Fin(( ))
+
+    classDef barStyle fill:#1e293b,stroke:#0f172a,stroke-width:2px,color:#ffffff,font-weight:bold;
+    class ForkBar,JoinBar,ForkReorden barStyle;

@@ -1,0 +1,37 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+
+actor "Cliente Registrado" as C
+actor "Gestor Singleton (Batch)" as G
+actor "Pasarela / Tarjeta" as P
+actor "Servicio Distribución" as D
+
+rectangle "Sistema de Gestión de Pedidos" {
+    usecase "Aumentar Saldo de Cuenta" as UC1
+    usecase "Verificar Existencia de Saldo" as UC2
+    usecase "Crear Pedido Simple (<=20 unid.)" as UC3
+    usecase "Agrupar Pedidos Compuestos" as UC4
+    usecase "Ejecutar Cobro Diario por Lote" as UC5
+    usecase "Rechazar Pedido por Falta de Fondos" as UC6
+    usecase "Ordenar Distribución" as UC7
+    usecase "Confirmar Entrega" as UC8
+
+    UC3 ..> UC2 : <<include>>
+    UC4 ..> UC2 : <<include>>
+    UC6 ..> UC5 : <<extend>>
+}
+
+C -- UC1
+C -- UC3
+C -- UC4
+UC1 -- P
+
+G -- UC5
+G -- UC7
+G -- UC8
+
+UC5 -- P
+UC7 -- D
+UC8 -- D
+@enduml

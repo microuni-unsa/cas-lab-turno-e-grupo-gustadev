@@ -1,0 +1,9 @@
+stateDiagram-v2
+    direction LR
+    [*] --> Pendiente : Registro de pedido
+    Pendiente --> Rechazado : Fondos insuficientes
+    Pendiente --> Cobrado : Débito exitoso y stock reservado
+    Cobrado --> EnDistribucion : Despacho ordenado
+    EnDistribucion --> Confirmado : Entrega confirmada
+    Confirmado --> [*]
+    Rechazado --> [*]

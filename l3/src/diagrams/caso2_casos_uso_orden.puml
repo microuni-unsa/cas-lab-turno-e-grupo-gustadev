@@ -1,0 +1,33 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+
+actor "Comprador / Cliente" as C
+actor "Pasarela de Pago" as P
+actor "Sistema Almacén" as A
+actor "Operador Logístico" as L
+
+rectangle "Sistema de Procesamiento y Despacho de Órdenes" {
+    usecase "Registrar y Recibir Orden" as UC1
+    usecase "Autorizar Pago de Orden" as UC2
+    usecase "Comprobar Stock por Línea" as UC3
+    usecase "Reordenar Artículo" as UC4
+    usecase "Asignar Stock a Orden" as UC5
+    usecase "Despachar Orden" as UC6
+    usecase "Cancelar Orden por Fallo" as UC7
+
+    UC1 ..> UC2 : <<include>>
+    UC1 ..> UC3 : <<include>>
+    UC4 ..> UC3 : <<extend>>
+    UC7 ..> UC2 : <<extend>>
+    UC6 ..> UC5 : <<include>>
+    UC6 ..> UC2 : <<include>>
+}
+
+C -- UC1
+UC2 -- P
+UC3 -- A
+UC4 -- A
+UC5 -- A
+UC6 -- L
+@enduml

@@ -1,0 +1,34 @@
+@startuml
+skinparam activityFontSize 12
+skinparam activityDiamondFontSize 11
+
+start
+:Recibe orden;
+
+fork
+    note right: Disparador múltiple:\n* [por cada artículo\nde línea del pedido]
+    :Autoriza pago;
+    if () then ([fallo])
+        :Cancela orden;
+        stop
+    else ([éxito])
+    endif
+fork again
+    :Comprueba artículo de línea;
+    if () then ([en existencia])
+        :Asigna a orden;
+        if () then ([se necesita reordenar])
+            :Reordena artículo;
+            detach
+        else ([ok])
+        endif
+    else ([se necesita reordenar])
+        :Reordena artículo;
+        detach
+    endif
+end fork
+note right: Condición de sincronización:\n[existencia asignada a todos los artículos\nde línea y pago autorizado]
+
+:Despacha orden;
+stop
+@enduml

@@ -1,0 +1,104 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+abstract class Pedido {
+    # idPedido : String
+    # fechaCreacion : Date
+    # estado : EstadoPedido
+    + {abstract} calcularTotal() : double
+    + {abstract} totalUnidades() : int
+    + {abstract} obtenerCuentasAsociadas() : Set<CuentaPago>
+    + {abstract} validarInvariantes() : void
+    + marcarEstado(nuevo: EstadoPedido) : void
+}
+
+class PedidoSimple {
+    - {static} LIMITE_MAX_UNIDADES : int = 20
+    + agregarLinea(p: Producto, cant: int) : void
+    + calcularTotal() : double
+    + totalUnidades() : int
+    + obtenerCuentasAsociadas() : Set<CuentaPago>
+    + validarInvariantes() : void
+}
+
+class PedidoCompuesto {
+    + agregarSubpedido(p: Pedido) : void
+    + calcularTotal() : double
+    + totalUnidades() : int
+    + obtenerCuentasAsociadas() : Set<CuentaPago>
+    + marcarEstado(nuevo: EstadoPedido) : void
+    + validarInvariantes() : void
+}
+
+class GestorProcesamientoPedidos <<Singleton>> {
+    - {static} instancia : GestorProcesamientoPedidos
+    - pedidosRegistrados : List<Pedido>
+    - historialRechazos : List<Object>
+    + {static} getInstancia() : GestorProcesamientoPedidos
+    + registrarPedido(p: Pedido) : void
+    + ejecutarCobroDiario() : Map<String, Integer>
+    + ordenarDistribucion(p: Pedido) : void
+    + confirmarEntrega(p: Pedido) : void
+}
+
+class Cliente {
+    - idCliente : String
+    - nombre : String
+    - direccion : String
+    - telefono : String
+    - email : String
+    + agregarCuenta(c: CuentaPago) : void
+    + tieneCuentaConDinero() : boolean
+    + poseeCuenta(c: CuentaPago) : boolean
+}
+
+class CuentaPago {
+    - idCuenta : String
+    - saldoDisponible : double
+    + aumentarSaldo(monto: double) : void
+    + debitar(monto: double) : void
+    + tieneSaldo() : boolean
+}
+
+class TarjetaCredito {
+    - numeroTarjeta : String
+    - titular : String
+    - fechaVencimiento : String
+}
+
+class LineaPedido {
+    - cantidad : int
+    + getSubtotal() : double
+}
+
+class Producto {
+    - codigo : String
+    - nombre : String
+    - precioUnitario : double
+    - stock : int
+    + reservarStock(c: int) : void
+    + reponerStock(c: int) : void
+}
+
+enum EstadoPedido {
+    PENDIENTE
+    COBRADO
+    EN_DISTRIBUCION
+    CONFIRMADO
+    RECHAZADO
+}
+
+Pedido <|-- PedidoSimple
+Pedido <|-- PedidoCompuesto
+PedidoCompuesto "1" o-- "2..*" Pedido : subpedidos
+
+Cliente "1" *-- "1..*" CuentaPago
+CuentaPago "1" *-- "1" TarjetaCredito
+PedidoSimple "1" --> "1" CuentaPago : paga con
+Pedido --> Cliente : realizado por
+
+PedidoSimple "1" *-- "1..*" LineaPedido
+LineaPedido "1" --> "1" Producto : referencia
+GestorProcesamientoPedidos "1" --> "*" Pedido : gestiona ciclo de vida
+Pedido --> EstadoPedido
+@enduml

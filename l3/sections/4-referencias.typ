@@ -1,4 +1,4 @@
-#import "../components/lab-section.typ": lab-section
+#import "/components/lab-section.typ": lab-section
 
 #lab-section(title: "REFERENCIAS")[
   #show heading: set text(weight: "bold")

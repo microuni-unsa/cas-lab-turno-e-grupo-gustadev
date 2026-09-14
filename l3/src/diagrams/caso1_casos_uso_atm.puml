@@ -1,0 +1,41 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+skinparam actorStyle awesome
+
+actor "Usuario / Cliente" as user
+actor "Consorcio de Cajeros\n(Red Interbancaria)" as consorcio
+actor "Banco Emisor" as banco
+
+rectangle "Sistema Cajero Automático (ATM)" {
+    usecase "Autenticar Tarjeta y PIN\n(CU-00)" as UC00
+    usecase "Retirar Efectivo\n(CU-01)" as UC01
+    usecase "Ingresar / Depositar Efectivo\n(CU-02)" as UC02
+    usecase "Hacer Transferencias\n(CU-03)" as UC03
+    usecase "Obtener Información de Cuenta\n(Saldo / Movimientos) (CU-04)" as UC04
+    usecase "Bloquear Tarjeta por 3 Errores\n(CU-05)" as UC05
+    usecase "Emitir Comprobante Impreso\n(CU-06)" as UC06
+
+    UC01 ..> UC00 : <<include>>
+    UC02 ..> UC00 : <<include>>
+    UC03 ..> UC00 : <<include>>
+    UC04 ..> UC00 : <<include>>
+
+    UC05 ..> UC00 : <<extend>>
+    UC06 ..> UC01 : <<extend>>
+    UC06 ..> UC03 : <<extend>>
+}
+
+user -- UC01
+user -- UC02
+user -- UC03
+user -- UC04
+
+UC00 -- consorcio
+UC01 -- consorcio
+UC02 -- consorcio
+UC03 -- consorcio
+UC04 -- consorcio
+
+consorcio -- banco
+@enduml

@@ -1,0 +1,62 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class Orden {
+    - numeroOrden : String
+    - fechaCreacion : Date
+    - estado : EstadoOrden
+    - importeTotal : double
+    + autorizarPago() : boolean
+    + verificarExistenciasCompletas() : boolean
+    + despachar() : void
+    + cancelar(motivo: String) : void
+}
+
+class ArticuloLinea {
+    - numeroItem : int
+    - cantidadSolicitada : int
+    - existenciaAsignada : boolean
+    - requiereReorden : boolean
+    + comprobarExistencia() : boolean
+    + asignarInventario() : void
+    + solicitarReorden() : void
+}
+
+class Articulo {
+    - sku : String
+    - descripcion : String
+    - precioUnitario : double
+    - cantidadStock : int
+    + consultarStock() : int
+    + descontarStock(c: int) : void
+}
+
+class AutorizacionPago {
+    - transaccionId : String
+    - monto : double
+    - exitoso : boolean
+    - codigoAutorizacion : String
+    + procesarCobro() : boolean
+}
+
+class Despacho {
+    - guiaRemision : String
+    - fechaDespacho : Date
+    - transportista : String
+    + generarGuia() : void
+    + notificarCliente() : void
+}
+
+class SolicitudReorden {
+    - idReorden : String
+    - cantidadRequerida : int
+    - fechaSolicitud : Date
+    + enviarAProveedor() : void
+}
+
+Orden "1" *-- "1..*" ArticuloLinea
+ArticuloLinea --> Articulo
+Orden "1" *-- "1" AutorizacionPago
+Orden "1" *-- "0..1" Despacho
+ArticuloLinea ..> SolicitudReorden : genera
+@enduml

@@ -1,0 +1,90 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class CajeroATM {
+    - codigoATM : String
+    - ubicacion : String
+    - estado : EstadoATM
+    + iniciarSesion() : void
+    + autenticarCliente(t: TarjetaBancaria, pin: String) : boolean
+    + procesarOperacion(tx: TransaccionATM) : boolean
+    + cerrarSesion() : void
+}
+
+class RanuraTarjeta {
+    - tarjetaPresente : boolean
+    + leerTarjeta() : TarjetaBancaria
+    + expulsarTarjeta() : void
+    + retenerTarjeta() : void
+}
+
+class DispensadorBilletes {
+    - stockBilletes : Map<Integer, Integer>
+    + verificarDisponibilidad(monto: double) : boolean
+    + dispensarEfectivo(monto: double) : boolean
+}
+
+class TecladoPIN {
+    + capturarPIN() : String
+    + encriptarPIN(pin: String) : String
+}
+
+class TarjetaBancaria {
+    - numeroTarjeta : String
+    - nombreTitular : String
+    - fechaExpiracion : Date
+    - emisorId : String
+}
+
+abstract class TransaccionATM {
+    - idTransaccion : String
+    - fechaHora : Date
+    - monto : double
+    - estado : EstadoTx
+    + {abstract} ejecutar() : boolean
+    + {abstract} revertir() : boolean
+}
+
+class RetiroEfectivo {
+    + ejecutar() : boolean
+}
+
+class DepositoEfectivo {
+    + ejecutar() : boolean
+}
+
+class TransferenciaFondos {
+    - cuentaDestino : String
+    + ejecutar() : boolean
+}
+
+class ConsultaInformacion {
+    + ejecutar() : boolean
+}
+
+class RedConsorcio {
+    - nombreRed : String
+    - gatewayEndpoint : String
+    + enrutarOperacion(tx: TransaccionATM) : RespuestaRed
+    + validarEmisor(bancoId: String) : boolean
+}
+
+class BancoEmisor {
+    - codigoBanco : String
+    - razonSocial : String
+    + autorizarTransaccion(cuenta: String, monto: double) : boolean
+    + obtenerSaldo(cuenta: String) : double
+}
+
+CajeroATM *-- RanuraTarjeta
+CajeroATM *-- DispensadorBilletes
+CajeroATM *-- TecladoPIN
+CajeroATM --> TransaccionATM
+RanuraTarjeta ..> TarjetaBancaria
+TransaccionATM <|-- RetiroEfectivo
+TransaccionATM <|-- DepositoEfectivo
+TransaccionATM <|-- TransferenciaFondos
+TransaccionATM <|-- ConsultaInformacion
+CajeroATM --> RedConsorcio
+RedConsorcio --> BancoEmisor
+@enduml

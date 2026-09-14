@@ -1,0 +1,91 @@
+classDiagram
+    class CajeroATM {
+        -String codigoATM
+        -String ubicacion
+        -EstadoATM estado
+        +iniciarSesion()
+        +autenticarCliente(tarjeta, pin) bool
+        +procesarOperacion(transaccion) bool
+        +cerrarSesion()
+    }
+
+    class RanuraTarjeta {
+        -bool tarjetaPresente
+        +leerTarjeta() TarjetaBancaria
+        +expulsarTarjeta()
+        +retenerTarjeta()
+    }
+
+    class DispensadorBilletes {
+        -int billetes10
+        -int billetes20
+        -int billetes50
+        -int billetes100
+        +verificarDisponibilidad(monto) bool
+        +dispensarEfectivo(monto) bool
+    }
+
+    class TecladoPIN {
+        +capturarPIN() String
+        +encriptarPIN(pin) String
+    }
+
+    class TarjetaBancaria {
+        -String numeroTarjeta
+        -String nombreTitular
+        -Date fechaExpiracion
+        -String chipCryptId
+    }
+
+    class TransaccionATM {
+        <<abstract>>
+        -String idTransaccion
+        -DateTime fechaHora
+        -float monto
+        -EstadoTransaccion estado
+        +ejecutar()*
+        +revertir()*
+    }
+
+    class RetiroEfectivo {
+        +ejecutar()
+    }
+
+    class DepositoEfectivo {
+        +ejecutar()
+    }
+
+    class TransferenciaFondos {
+        -String cuentaDestino
+        +ejecutar()
+    }
+
+    class ConsultaInformacion {
+        +ejecutar()
+    }
+
+    class RedConsorcio {
+        -String nombreRed
+        -String gatewayEndpoint
+        +enrutarOperacion(transaccion) RespuestaConsorcio
+        +validarEmisor(codigoBanco) bool
+    }
+
+    class BancoEmisor {
+        -String codigoBanco
+        -String razonSocial
+        +autorizarTransaccion(cuenta, monto) bool
+        +obtenerSaldo(cuenta) float
+    }
+
+    CajeroATM *-- RanuraTarjeta : compone
+    CajeroATM *-- DispensadorBilletes : compone
+    CajeroATM *-- TecladoPIN : compone
+    CajeroATM --> TransaccionATM : gestiona
+    RanuraTarjeta ..> TarjetaBancaria : lee
+    TransaccionATM <|-- RetiroEfectivo
+    TransaccionATM <|-- DepositoEfectivo
+    TransaccionATM <|-- TransferenciaFondos
+    TransaccionATM <|-- ConsultaInformacion
+    CajeroATM --> RedConsorcio : comunica vía protocolo
+    RedConsorcio --> BancoEmisor : liquida y autoriza con

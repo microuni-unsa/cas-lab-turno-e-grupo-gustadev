@@ -1,0 +1,40 @@
+sequenceDiagram
+    autonumber
+    participant Cron as ⏰ Programador Diario
+    participant Gestor as ⚙️ Gestor (Singleton)
+    participant Pedido as 📦 Pedido Compuesto
+    participant Sub1 as 📄 Pedido Simple 1
+    participant Sub2 as 📄 Pedido Simple 2
+    participant Cta1 as 💳 Cuenta Pago 1
+    participant Cta2 as 💳 Cuenta Pago 2
+    participant Logistica as 🚚 Distribución
+
+    Cron->>Gestor: ejecutarCobroDiario()
+    Gestor->>Pedido: obtenerCuentasAsociadas()
+    Pedido->>Sub1: obtenerCuentasAsociadas()
+    Sub1-->>Pedido: {Cuenta Pago 1}
+    Pedido->>Sub2: obtenerCuentasAsociadas()
+    Sub2-->>Pedido: {Cuenta Pago 2}
+    Pedido-->>Gestor: {Cuenta Pago 1, Cuenta Pago 2}
+
+    Gestor->>Cta1: verificarSaldo(Monto Sub1)
+    alt Cuenta 1 Tiene Saldo Suficiente
+        Cta1-->>Gestor: Saldo OK
+        Gestor->>Cta2: verificarSaldo(Monto Sub2)
+        alt Cuenta 2 También Tiene Saldo
+            Cta2-->>Gestor: Saldo OK
+            Gestor->>Cta1: debitar(Monto Sub1)
+            Gestor->>Cta2: debitar(Monto Sub2)
+            Gestor->>Pedido: marcarEstado(COBRADO)
+            Gestor->>Gestor: ordenarDistribucion(Pedido)
+            Gestor->>Pedido: marcarEstado(EN_DISTRIBUCION)
+            Gestor->>Logistica: emitirOrdenDespacho(Pedido)
+        else Cuenta 2 Carece de Fondos
+            Cta2-->>Gestor: SaldoInsuficienteError
+            Gestor->>Pedido: marcarEstado(RECHAZADO)
+            Note over Gestor,Pedido: Rechazo Atómico: se rechaza todo el pedido compuesto
+        end
+    else Cuenta 1 Carece de Fondos
+        Cta1-->>Gestor: SaldoInsuficienteError
+        Gestor->>Pedido: marcarEstado(RECHAZADO)
+    end

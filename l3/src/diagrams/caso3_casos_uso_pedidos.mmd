@@ -1,0 +1,38 @@
+flowchart LR
+    Cliente(("👤 Cliente"))
+    Gestor["⚙️ Gestor Singleton"]
+    Pasarela["💳 Pasarela"]
+    Distribuidor["🚚 Distribuidor"]
+
+    subgraph Sistema["Sistema de Gestión de Pedidos"]
+        subgraph ColCliente["Gestión de Cuentas y Pedidos"]
+            CU_AumentarSaldo(["Aumentar Saldo\n(CU-PED-01)"])
+            CU_ValidarSaldo(["Verificar Saldo\n(CU-PED-02)"])
+            CU_CrearSimple(["Crear Pedido Simple\n(CU-PED-03)"])
+            CU_CrearCompuesto(["Agrupar Pedido Compuesto\n(CU-PED-04)"])
+        end
+
+        subgraph ColGestor["Procesamiento Batch y Logística"]
+            CU_CobroDiario(["Cobro Diario Masivo\n(CU-PED-05)"])
+            CU_Rechazo(["Rechazo por Fondos\n(CU-PED-06)"])
+            CU_OrdenarDist(["Ordenar Distribución\n(CU-PED-07)"])
+            CU_Confirmar(["Confirmar Entrega\n(CU-PED-08)"])
+        end
+    end
+
+    Cliente --- CU_AumentarSaldo
+    Cliente --- CU_CrearSimple
+    Cliente --- CU_CrearCompuesto
+
+    CU_CrearSimple -. "<<include>>" .-> CU_ValidarSaldo
+    CU_CrearCompuesto -. "<<include>>" .-> CU_ValidarSaldo
+    CU_AumentarSaldo --- Pasarela
+
+    Gestor --- CU_CobroDiario
+    Gestor --- CU_OrdenarDist
+    Gestor --- CU_Confirmar
+
+    CU_CobroDiario -. "<<extend>>" .-> CU_Rechazo
+    CU_CobroDiario --- Pasarela
+    CU_OrdenarDist --- Distribuidor
+    CU_Confirmar --- Distribuidor

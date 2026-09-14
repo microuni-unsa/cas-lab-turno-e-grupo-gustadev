@@ -1,0 +1,32 @@
+flowchart LR
+    subgraph Actores["Actores"]
+        Comprador(("👤 Comprador / Cliente"))
+        Pasarela["💳 Pasarela de Pago"]
+        Almacen["📦 Sistema de Almacén / Stock"]
+        Logistica["🚚 Operador Logístico / Despacho"]
+    end
+
+    subgraph Sistema["Sistema de Procesamiento y Despacho de Órdenes"]
+        CU_Crear(["Registrar y Recibir Orden\n(CU-ORD-01)"])
+        CU_Autorizar(["Autorizar Pago de Orden\n(CU-ORD-02)"])
+        CU_Comprobar(["Comprobar Stock por Línea de Artículo\n(CU-ORD-03)"])
+        CU_Reordenar(["Reordenar Artículo al Proveedor\n(CU-ORD-04)"])
+        CU_Asignar(["Asignar Stock a Orden\n(CU-ORD-05)"])
+        CU_Despachar(["Despachar Orden de Pedido\n(CU-ORD-06)"])
+        CU_Cancelar(["Cancelar Orden por Fallo de Pago\n(CU-ORD-07)"])
+    end
+
+    Comprador --- CU_Crear
+    CU_Crear -. "<<include>>" .-> CU_Autorizar
+    CU_Crear -. "<<include>>" .-> CU_Comprobar
+
+    CU_Autorizar --- Pasarela
+    CU_Comprobar --- Almacen
+    CU_Asignar --- Almacen
+    CU_Reordenar --- Almacen
+    CU_Despachar --- Logistica
+
+    CU_Cancelar -. "<<extend>>" .-> CU_Autorizar
+    CU_Reordenar -. "<<extend>>" .-> CU_Comprobar
+    CU_Asignar -. "<<include>>" .-> CU_Despachar
+    CU_Autorizar -. "<<include>>" .-> CU_Despachar

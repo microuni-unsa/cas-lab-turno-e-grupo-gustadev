@@ -1,0 +1,45 @@
+flowchart LR
+    %% Actores del Sistema
+    subgraph Actores["Actores"]
+        Usuario(("👤 Usuario / Cliente"))
+        Consorcio["🏛️ Consorcio de Cajeros\n(Red Interbancaria)"]
+        Banco["🏦 Banco Emisor\n(Entidad Financiera)"]
+    end
+
+    %% Límite del Sistema
+    subgraph ATM["Sistema Cajero Automático (ATM)"]
+        CU_Auth(["Autenticar Tarjeta y PIN\n(CU-00)"])
+        CU_Retiro(["Retirar Efectivo\n(CU-01)"])
+        CU_Deposito(["Ingresar / Depositar Efectivo\n(CU-02)"])
+        CU_Transferencia(["Hacer Transferencias\n(CU-03)"])
+        CU_Consulta(["Obtener Información de Cuenta\n(Saldo / Movimientos) (CU-04)"])
+        
+        CU_Bloqueo(["Bloquear Tarjeta por Intentos Fallidos\n(CU-05)"])
+        CU_Comprobante(["Emitir Comprobante Impreso\n(CU-06)"])
+    end
+
+    %% Asociaciones de Actor Principal
+    Usuario --- CU_Retiro
+    Usuario --- CU_Deposito
+    Usuario --- CU_Transferencia
+    Usuario --- CU_Consulta
+
+    %% Relaciones <<include>>
+    CU_Retiro -. "<<include>>" .-> CU_Auth
+    CU_Deposito -. "<<include>>" .-> CU_Auth
+    CU_Transferencia -. "<<include>>" .-> CU_Auth
+    CU_Consulta -. "<<include>>" .-> CU_Auth
+
+    %% Relaciones <<extend>>
+    CU_Bloqueo -. "<<extend>>" .-> CU_Auth
+    CU_Comprobante -. "<<extend>>" .-> CU_Retiro
+    CU_Comprobante -. "<<extend>>" .-> CU_Transferencia
+
+    %% Interacción con Actores Secundarios
+    CU_Auth --- Consorcio
+    CU_Retiro --- Consorcio
+    CU_Deposito --- Consorcio
+    CU_Transferencia --- Consorcio
+    CU_Consulta --- Consorcio
+
+    Consorcio --- Banco
