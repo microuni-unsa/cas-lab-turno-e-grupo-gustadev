@@ -21,6 +21,12 @@
       "sourceType": "well-known",
       "computedHash": "efded91ac7f7626239b338ce8622afeb557151b86532b632f3c9eb5b2ff9048f",
       "wellKnownDigest": "sha256:f271a5931d374e3ab970c79e0461a30b741123271519e599b5b9a29b8db2ffaf"
+    },
+    "xlsx": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "skillPath": "skills/xlsx/SKILL.md",
+      "computedHash": "f5945e6e76dc7c178375e5cdf3140959b30cbcd4570ec3dc62296812259fc38d"
     }
   }
 }

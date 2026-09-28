@@ -5,9 +5,12 @@
   width: 100%,
   inset: (bottom: 1em),
 )[
+  #set table(fill: none, stroke: default-border-width + default-border-color)
+  #show table.cell: set text(fill: black)
   #table(
     align: center + horizon,
     stroke: default-border-width + default-border-color,
+    fill: none,
     columns: (1fr, 2fr, 1fr),
     align(horizon)[#image("/img/fixed/epis.png", width: 95%)],
     table.cell(align: center + horizon)[
