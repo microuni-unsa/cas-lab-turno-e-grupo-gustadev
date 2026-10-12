@@ -3,7 +3,7 @@
   "template": "multi-lab",
   "templateVersion": "1.0.0",
   "mode": "multi",
-  "sessions": ["l1"],
+  "sessions": ["l1", "l5"],
   "capture": {
     "columns": 120,
     "rows": 500,

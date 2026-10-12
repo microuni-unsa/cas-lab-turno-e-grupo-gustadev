@@ -1,0 +1,10 @@
+flowchart TD
+    A["WC-Bob en r2<br/>app.txt modificado local"] --> B["svn update"]
+    C["Repo en r3<br/>commit de Alice"] --> B
+    B --> D{"¿Solapan<br/>los cambios?"}
+    D -- "No: merge automático" --> E["WC-Bob en r3<br/>limpia"]
+    D -- "Sí: marca C" --> F["WC-Bob en conflicto<br/>app.txt + .mine / .r2 / .r3"]
+    F --> G["Edición manual en Meld<br/>+ svn resolved"]
+    G --> H["WC-Bob fusionada"]
+    H --> I["svn commit<br/>--> Repo r4"]
+    E --> J["Seguir editando<br/>y commitear"]
